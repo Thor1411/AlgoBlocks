@@ -1,0 +1,1 @@
+{"name":"kkkk","parameters":{},"indicators":[{"name":"rsi14","type":"RSI","params":{"period":14}}],"rules":[{"condition":{"operator":">","left":{"indicator":"rsi14"},"right":{"value":60}},"action":{"type":"sell","value":18}},{"condition":{"operator":"<","left":{"indicator":"rsi14"},"right":{"value":50}},"action":{"type":"buy","value":20}}],"riskManagement":{}}

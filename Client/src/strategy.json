@@ -1,0 +1,100 @@
+{
+    "name": "Moving Average Crossover with Risk Management",
+    "parameters": {},
+    "indicators": [
+      {
+        "name": "sma20",
+        "type": "SMA",
+        "params": {
+          "period": 20
+        }
+      },
+      {
+        "name": "ema50",
+        "type": "EMA",
+        "params": {
+          "period": 50
+        }
+      },
+      {
+        "name": "rsi14",
+        "type": "RSI",
+        "params": {
+          "period": 14
+        }
+      }
+    ],
+    "rules": [
+      {
+        "condition": {
+          "operator": "CROSSOVER",
+          "left": {
+            "indicator": "sma20"
+          },
+          "right": {
+            "indicator": "ema50"
+          }
+        },
+        "action": {
+          "type": "buy",
+          "value": 10
+        }
+      },
+      {
+        "condition": {
+          "operator": "and",
+          "conditions": [
+            {
+              "operator": "GREATER_THAN",
+              "left": {
+                "price": "close"
+              },
+              "right": {
+                "indicator": "sma20"
+              }
+            },
+            {
+              "operator": "LESS_THAN",
+              "left": {
+                "indicator": "rsi14"
+              },
+              "right": {
+                "value": 30
+              }
+            }
+          ]
+        },
+        "action": {
+          "type": "buy",
+          "value": 20
+        }
+      },
+      {
+        "condition": {
+          "operator": "LESS_THAN",
+          "left": {
+            "indicator": "sma20"
+          },
+          "right": {
+            "value": 50
+          }
+        },
+        "action": {
+          "type": "sell",
+          "value": 10
+        }
+      },
+      {
+        "type": "stop_loss",
+        "value": 2.5
+      },
+      {
+        "type": "take_profit",
+        "value": 15.0
+      }
+    ],
+    "riskManagement": {
+      "stopLoss": 2.5,
+      "takeProfit": 15.0
+    }
+  }

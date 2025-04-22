@@ -1,0 +1,1967 @@
+2025-04-18 00:25:59,790 - __main__ - INFO - Running strategy for NFLX...
+2025-04-18 00:25:59,791 - yfinance - DEBUG - Entering download()
+2025-04-18 00:25:59,791 - yfinance - DEBUG - Disabling multithreading because DEBUG logging enabled
+2025-04-18 00:25:59,791 - yfinance - DEBUG - Using User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 14_7_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.3 Safari/605.1.15
+2025-04-18 00:25:59,791 - yfinance - DEBUG -  Entering history()
+2025-04-18 00:25:59,793 - peewee - DEBUG - ('CREATE TABLE IF NOT EXISTS "_kv" ("key" VARCHAR(255) NOT NULL PRIMARY KEY, "value" VARCHAR(255)) WITHOUT ROWID', [])
+2025-04-18 00:25:59,795 - peewee - DEBUG - ('SELECT "t1"."key", "t1"."value" FROM "_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['NFLX', 1, 0])
+2025-04-18 00:25:59,821 - yfinance - DEBUG -   Entering history()
+2025-04-18 00:25:59,824 - yfinance - DEBUG - NFLX: Yahoo GET parameters: {'period1': '2024-01-01 00:00:00-05:00', 'period2': '2025-02-13 00:00:00-05:00', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-04-18 00:25:59,824 - yfinance - DEBUG -    Entering get()
+2025-04-18 00:25:59,824 - yfinance - DEBUG -     Entering _make_request()
+2025-04-18 00:25:59,824 - yfinance - DEBUG - url=https://query2.finance.yahoo.com/v8/finance/chart/NFLX
+2025-04-18 00:25:59,824 - yfinance - DEBUG - params=frozendict.frozendict({'period1': 1704085200, 'period2': 1739422800, 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'})
+2025-04-18 00:25:59,824 - yfinance - DEBUG -      Entering _get_cookie_and_crumb()
+2025-04-18 00:25:59,824 - yfinance - DEBUG - cookie_mode = 'basic'
+2025-04-18 00:25:59,824 - yfinance - DEBUG -       Entering _get_cookie_and_crumb_basic()
+2025-04-18 00:25:59,826 - peewee - DEBUG - ('CREATE TABLE IF NOT EXISTS "_cookieschema" ("strategy" VARCHAR(255) NOT NULL PRIMARY KEY, "fetch_date" DATETIME NOT NULL, "cookie_bytes" BLOB NOT NULL) WITHOUT ROWID', [])
+2025-04-18 00:25:59,826 - peewee - DEBUG - ('SELECT "t1"."strategy", "t1"."fetch_date", "t1"."cookie_bytes" FROM "_cookieschema" AS "t1" WHERE ("t1"."strategy" = ?) LIMIT ? OFFSET ?', ['basic', 1, 0])
+2025-04-18 00:25:59,827 - yfinance - DEBUG - loaded persistent cookie
+2025-04-18 00:25:59,827 - yfinance - DEBUG - reusing cookie
+2025-04-18 00:25:59,829 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): query1.finance.yahoo.com:443
+2025-04-18 00:26:00,100 - urllib3.connectionpool - DEBUG - https://query1.finance.yahoo.com:443 "GET /v1/test/getcrumb HTTP/1.1" 200 11
+2025-04-18 00:26:00,101 - yfinance - DEBUG - crumb = 'Wysn6ELpKJM'
+2025-04-18 00:26:00,101 - yfinance - DEBUG -       Exiting _get_cookie_and_crumb_basic()
+2025-04-18 00:26:00,101 - yfinance - DEBUG -      Exiting _get_cookie_and_crumb()
+2025-04-18 00:26:00,102 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): query2.finance.yahoo.com:443
+2025-04-18 00:26:00,355 - urllib3.connectionpool - DEBUG - https://query2.finance.yahoo.com:443 "GET /v8/finance/chart/NFLX?period1=1704085200&period2=1739422800&interval=1d&includePrePost=False&events=div%2Csplits%2CcapitalGains&crumb=Wysn6ELpKJM HTTP/1.1" 200 None
+2025-04-18 00:26:00,356 - yfinance - DEBUG - response code=200
+2025-04-18 00:26:00,356 - yfinance - DEBUG -     Exiting _make_request()
+2025-04-18 00:26:00,356 - yfinance - DEBUG -    Exiting get()
+2025-04-18 00:26:00,364 - yfinance - DEBUG - NFLX: yfinance received OHLC data: 2024-01-02 14:30:00 -> 2025-02-12 14:30:00
+2025-04-18 00:26:00,367 - yfinance - DEBUG - NFLX: OHLC after cleaning: 2024-01-02 09:30:00-05:00 -> 2025-02-12 09:30:00-05:00
+2025-04-18 00:26:00,380 - yfinance - DEBUG - NFLX: OHLC after combining events: 2024-01-02 00:00:00-05:00 -> 2025-02-12 00:00:00-05:00
+2025-04-18 00:26:00,388 - yfinance - DEBUG - NFLX: yfinance returning OHLC: 2024-01-02 00:00:00-05:00 -> 2025-02-12 00:00:00-05:00
+2025-04-18 00:26:00,388 - yfinance - DEBUG -   Exiting history()
+2025-04-18 00:26:00,388 - yfinance - DEBUG -  Exiting history()
+2025-04-18 00:26:00,391 - yfinance - DEBUG - Exiting download()
+2025-04-18 00:26:00,394 - __main__ - ERROR - Error occurred during execution
+Traceback (most recent call last):
+  File "C:\Users\tejki\Desktop\AlgoBlocks\STC\frontend\backend\strategy_runner.py", line 70, in run_strategy
+    results = cerebro.run()
+  File "C:\Users\tejki\AppData\Local\Programs\Python\Python313\Lib\site-packages\backtrader\cerebro.py", line 1132, in run
+    runstrat = self.runstrategies(iterstrat)
+  File "C:\Users\tejki\AppData\Local\Programs\Python\Python313\Lib\site-packages\backtrader\cerebro.py", line 1215, in runstrategies
+    data._start()
+    ~~~~~~~~~~~^^
+  File "C:\Users\tejki\AppData\Local\Programs\Python\Python313\Lib\site-packages\backtrader\feed.py", line 203, in _start
+    self.start()
+    ~~~~~~~~~~^^
+  File "C:\Users\tejki\AppData\Local\Programs\Python\Python313\Lib\site-packages\backtrader\feeds\pandafeed.py", line 212, in start
+    colnames = [x.lower() for x in self.p.dataname.columns.values]
+                ^^^^^^^
+AttributeError: 'tuple' object has no attribute 'lower'
+2025-04-18 00:41:34,522 - __main__ - INFO - Running strategy for NVDA from 2024-01-01 to 2025-02-14
+2025-04-18 00:41:34,522 - __main__ - DEBUG - Downloading data for NVDA from 2024-01-01 to 2025-02-14
+2025-04-18 00:41:34,522 - yfinance - DEBUG - Entering download()
+2025-04-18 00:41:34,522 - yfinance - DEBUG - Disabling multithreading because DEBUG logging enabled
+2025-04-18 00:41:34,522 - yfinance - DEBUG - Using User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 14.7; rv:135.0) Gecko/20100101 Firefox/135.0
+2025-04-18 00:41:34,522 - yfinance - DEBUG -  Entering history()
+2025-04-18 00:41:34,525 - peewee - DEBUG - ('CREATE TABLE IF NOT EXISTS "_kv" ("key" VARCHAR(255) NOT NULL PRIMARY KEY, "value" VARCHAR(255)) WITHOUT ROWID', [])
+2025-04-18 00:41:34,525 - peewee - DEBUG - ('SELECT "t1"."key", "t1"."value" FROM "_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['NVDA', 1, 0])
+2025-04-18 00:41:34,554 - yfinance - DEBUG -   Entering history()
+2025-04-18 00:41:34,557 - yfinance - DEBUG - NVDA: Yahoo GET parameters: {'period1': '2024-01-01 00:00:00-05:00', 'period2': '2025-02-14 00:00:00-05:00', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-04-18 00:41:34,557 - yfinance - DEBUG -    Entering get()
+2025-04-18 00:41:34,557 - yfinance - DEBUG -     Entering _make_request()
+2025-04-18 00:41:34,557 - yfinance - DEBUG - url=https://query2.finance.yahoo.com/v8/finance/chart/NVDA
+2025-04-18 00:41:34,557 - yfinance - DEBUG - params=frozendict.frozendict({'period1': 1704085200, 'period2': 1739509200, 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'})
+2025-04-18 00:41:34,557 - yfinance - DEBUG -      Entering _get_cookie_and_crumb()
+2025-04-18 00:41:34,557 - yfinance - DEBUG - cookie_mode = 'basic'
+2025-04-18 00:41:34,557 - yfinance - DEBUG -       Entering _get_cookie_and_crumb_basic()
+2025-04-18 00:41:34,559 - peewee - DEBUG - ('CREATE TABLE IF NOT EXISTS "_cookieschema" ("strategy" VARCHAR(255) NOT NULL PRIMARY KEY, "fetch_date" DATETIME NOT NULL, "cookie_bytes" BLOB NOT NULL) WITHOUT ROWID', [])
+2025-04-18 00:41:34,560 - peewee - DEBUG - ('SELECT "t1"."strategy", "t1"."fetch_date", "t1"."cookie_bytes" FROM "_cookieschema" AS "t1" WHERE ("t1"."strategy" = ?) LIMIT ? OFFSET ?', ['basic', 1, 0])
+2025-04-18 00:41:34,561 - yfinance - DEBUG - loaded persistent cookie
+2025-04-18 00:41:34,561 - yfinance - DEBUG - reusing cookie
+2025-04-18 00:41:34,564 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): query1.finance.yahoo.com:443
+2025-04-18 00:41:34,806 - urllib3.connectionpool - DEBUG - https://query1.finance.yahoo.com:443 "GET /v1/test/getcrumb HTTP/1.1" 200 11
+2025-04-18 00:41:34,806 - yfinance - DEBUG - crumb = 'Wysn6ELpKJM'
+2025-04-18 00:41:34,806 - yfinance - DEBUG -       Exiting _get_cookie_and_crumb_basic()
+2025-04-18 00:41:34,806 - yfinance - DEBUG -      Exiting _get_cookie_and_crumb()
+2025-04-18 00:41:34,808 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): query2.finance.yahoo.com:443
+2025-04-18 00:41:35,069 - urllib3.connectionpool - DEBUG - https://query2.finance.yahoo.com:443 "GET /v8/finance/chart/NVDA?period1=1704085200&period2=1739509200&interval=1d&includePrePost=False&events=div%2Csplits%2CcapitalGains&crumb=Wysn6ELpKJM HTTP/1.1" 200 None
+2025-04-18 00:41:35,115 - yfinance - DEBUG - response code=200
+2025-04-18 00:41:35,115 - yfinance - DEBUG -     Exiting _make_request()
+2025-04-18 00:41:35,115 - yfinance - DEBUG -    Exiting get()
+2025-04-18 00:41:35,119 - yfinance - DEBUG - NVDA: yfinance received OHLC data: 2024-01-02 14:30:00 -> 2025-02-13 14:30:00
+2025-04-18 00:41:35,120 - yfinance - DEBUG - NVDA: OHLC after cleaning: 2024-01-02 09:30:00-05:00 -> 2025-02-13 09:30:00-05:00
+2025-04-18 00:41:35,132 - yfinance - DEBUG - NVDA: OHLC after combining events: 2024-01-02 00:00:00-05:00 -> 2025-02-13 00:00:00-05:00
+2025-04-18 00:41:35,135 - yfinance - DEBUG - NVDA: yfinance returning OHLC: 2024-01-02 00:00:00-05:00 -> 2025-02-13 00:00:00-05:00
+2025-04-18 00:41:35,135 - yfinance - DEBUG -   Exiting history()
+2025-04-18 00:41:35,135 - yfinance - DEBUG -  Exiting history()
+2025-04-18 00:41:35,137 - yfinance - DEBUG - Exiting download()
+2025-04-18 00:41:35,160 - __main__ - INFO - Created indicator: rsi14 of type RSI
+2025-04-18 00:41:35,165 - __main__ - INFO - BUY ORDER CREATED - Size: 20
+2025-04-18 00:41:35,165 - __main__ - INFO - BUY EXECUTED, Price: 86.84, Cost: 1736.75, Comm: 1.74
+2025-04-18 00:41:35,167 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,167 - __main__ - INFO - SELL EXECUTED, Price: 94.88, Cost: 1563.07, Comm: 1.71
+2025-04-18 00:41:35,167 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,167 - __main__ - INFO - SELL EXECUTED, Price: 94.34, Cost: -1335.73, Comm: 1.70
+2025-04-18 00:41:35,167 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,168 - __main__ - INFO - SELL EXECUTED, Price: 93.57, Cost: -1684.23, Comm: 1.68
+2025-04-18 00:41:35,168 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,168 - __main__ - INFO - SELL EXECUTED, Price: 95.43, Cost: -1717.70, Comm: 1.72
+2025-04-18 00:41:35,168 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,168 - __main__ - INFO - SELL EXECUTED, Price: 101.99, Cost: -1835.90, Comm: 1.84
+2025-04-18 00:41:35,168 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,169 - __main__ - INFO - SELL EXECUTED, Price: 104.41, Cost: -1879.46, Comm: 1.88
+2025-04-18 00:41:35,169 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,169 - __main__ - INFO - SELL EXECUTED, Price: 110.21, Cost: -1983.74, Comm: 1.98
+2025-04-18 00:41:35,169 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,169 - __main__ - INFO - SELL EXECUTED, Price: 113.01, Cost: -2034.23, Comm: 2.03
+2025-04-18 00:41:35,169 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,169 - __main__ - INFO - SELL EXECUTED, Price: 114.61, Cost: -2063.02, Comm: 2.06
+2025-04-18 00:41:35,169 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,170 - __main__ - INFO - SELL EXECUTED, Price: 112.48, Cost: -2024.69, Comm: 2.02
+2025-04-18 00:41:35,170 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,170 - __main__ - INFO - SELL EXECUTED, Price: 113.58, Cost: -2044.51, Comm: 2.04
+2025-04-18 00:41:35,170 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,170 - __main__ - INFO - SELL EXECUTED, Price: 115.68, Cost: -2082.20, Comm: 2.08
+2025-04-18 00:41:35,170 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,170 - __main__ - INFO - SELL EXECUTED, Price: 118.33, Cost: -2129.98, Comm: 2.13
+2025-04-18 00:41:35,171 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,171 - __main__ - INFO - SELL EXECUTED, Price: 124.01, Cost: -2232.13, Comm: 2.23
+2025-04-18 00:41:35,171 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,171 - __main__ - INFO - SELL EXECUTED, Price: 119.73, Cost: -2155.15, Comm: 2.16
+2025-04-18 00:41:35,171 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,172 - __main__ - INFO - SELL EXECUTED, Price: 120.33, Cost: -2165.95, Comm: 2.17
+2025-04-18 00:41:35,172 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,172 - __main__ - INFO - SELL EXECUTED, Price: 121.74, Cost: -2191.32, Comm: 2.19
+2025-04-18 00:41:35,172 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,173 - __main__ - INFO - SELL EXECUTED, Price: 123.03, Cost: -2214.53, Comm: 2.21
+2025-04-18 00:41:35,173 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,173 - __main__ - INFO - SELL EXECUTED, Price: 129.36, Cost: -2328.45, Comm: 2.33
+2025-04-18 00:41:35,173 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,174 - __main__ - INFO - SELL EXECUTED, Price: 129.93, Cost: -2338.70, Comm: 2.34
+2025-04-18 00:41:35,174 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,175 - __main__ - INFO - SELL EXECUTED, Price: 132.96, Cost: -2393.23, Comm: 2.39
+2025-04-18 00:41:35,175 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,176 - __main__ - INFO - SELL EXECUTED, Price: 131.11, Cost: -2359.94, Comm: 2.36
+2025-04-18 00:41:35,176 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,176 - __main__ - INFO - SELL EXECUTED, Price: 139.77, Cost: -2515.78, Comm: 2.52
+2025-04-18 00:41:35,177 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,177 - __main__ - INFO - SELL EXECUTED, Price: 127.09, Cost: -2287.60, Comm: 2.29
+2025-04-18 00:41:35,178 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,178 - __main__ - INFO - SELL EXECUTED, Price: 123.21, Cost: -2217.77, Comm: 2.22
+2025-04-18 00:41:35,178 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,179 - __main__ - INFO - SELL EXECUTED, Price: 124.07, Cost: -2233.25, Comm: 2.23
+2025-04-18 00:41:35,179 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,180 - __main__ - INFO - SELL EXECUTED, Price: 127.35, Cost: -2292.28, Comm: 2.29
+2025-04-18 00:41:35,180 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,180 - __main__ - INFO - SELL EXECUTED, Price: 134.00, Cost: -2411.95, Comm: 2.41
+2025-04-18 00:41:35,180 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,180 - __main__ - INFO - SELL EXECUTED, Price: 135.72, Cost: -2442.90, Comm: 2.44
+2025-04-18 00:41:35,182 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,182 - __main__ - INFO - SELL EXECUTED, Price: 128.37, Cost: -2310.63, Comm: 2.31
+2025-04-18 00:41:35,183 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,183 - __main__ - INFO - SELL EXECUTED, Price: 129.99, Cost: -2339.78, Comm: 2.34
+2025-04-18 00:41:35,185 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,185 - __main__ - INFO - SELL EXECUTED, Price: 130.24, Cost: -2344.30, Comm: 2.34
+2025-04-18 00:41:35,186 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,186 - __main__ - INFO - SELL EXECUTED, Price: 134.09, Cost: -2413.59, Comm: 2.41
+2025-04-18 00:41:35,186 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,186 - __main__ - INFO - SELL EXECUTED, Price: 131.89, Cost: -2374.00, Comm: 2.37
+2025-04-18 00:41:35,186 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,186 - __main__ - INFO - SELL EXECUTED, Price: 133.99, Cost: -2411.79, Comm: 2.41
+2025-04-18 00:41:35,186 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,187 - __main__ - INFO - SELL EXECUTED, Price: 136.45, Cost: -2456.07, Comm: 2.46
+2025-04-18 00:41:35,187 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,187 - __main__ - INFO - SELL EXECUTED, Price: 137.85, Cost: -2481.26, Comm: 2.48
+2025-04-18 00:41:35,187 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,187 - __main__ - INFO - SELL EXECUTED, Price: 139.32, Cost: -2507.72, Comm: 2.51
+2025-04-18 00:41:35,188 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,188 - __main__ - INFO - SELL EXECUTED, Price: 138.65, Cost: -2495.66, Comm: 2.50
+2025-04-18 00:41:35,188 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,189 - __main__ - INFO - SELL EXECUTED, Price: 138.11, Cost: -2485.94, Comm: 2.49
+2025-04-18 00:41:35,189 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,189 - __main__ - INFO - SELL EXECUTED, Price: 142.89, Cost: -2571.97, Comm: 2.57
+2025-04-18 00:41:35,189 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,189 - __main__ - INFO - SELL EXECUTED, Price: 142.01, Cost: -2556.13, Comm: 2.56
+2025-04-18 00:41:35,189 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,190 - __main__ - INFO - SELL EXECUTED, Price: 140.80, Cost: -2534.35, Comm: 2.53
+2025-04-18 00:41:35,190 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,190 - __main__ - INFO - SELL EXECUTED, Price: 140.91, Cost: -2536.33, Comm: 2.54
+2025-04-18 00:41:35,190 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,191 - __main__ - INFO - SELL EXECUTED, Price: 142.98, Cost: -2573.59, Comm: 2.57
+2025-04-18 00:41:35,191 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,191 - __main__ - INFO - SELL EXECUTED, Price: 140.27, Cost: -2524.81, Comm: 2.52
+2025-04-18 00:41:35,191 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,191 - __main__ - INFO - SELL EXECUTED, Price: 139.52, Cost: -2511.32, Comm: 2.51
+2025-04-18 00:41:35,192 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,192 - __main__ - INFO - SELL EXECUTED, Price: 146.37, Cost: -2634.60, Comm: 2.63
+2025-04-18 00:41:35,193 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,193 - __main__ - INFO - SELL EXECUTED, Price: 148.75, Cost: -2677.43, Comm: 2.68
+2025-04-18 00:41:35,193 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,193 - __main__ - INFO - SELL EXECUTED, Price: 148.66, Cost: -2675.81, Comm: 2.68
+2025-04-18 00:41:35,193 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,193 - __main__ - INFO - SELL EXECUTED, Price: 146.76, Cost: -2641.61, Comm: 2.64
+2025-04-18 00:41:35,193 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,194 - __main__ - INFO - SELL EXECUTED, Price: 149.05, Cost: -2682.83, Comm: 2.68
+2025-04-18 00:41:35,194 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,194 - __main__ - INFO - SELL EXECUTED, Price: 147.62, Cost: -2657.09, Comm: 2.66
+2025-04-18 00:41:35,194 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,194 - __main__ - INFO - SELL EXECUTED, Price: 144.85, Cost: -2607.24, Comm: 2.61
+2025-04-18 00:41:35,196 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:41:35,196 - __main__ - INFO - SELL EXECUTED, Price: 153.02, Cost: -2754.29, Comm: 2.75
+2025-04-18 00:41:35,198 - __main__ - ERROR - Error saving results to output.json: `np.float_` was removed in the NumPy 2.0 release. Use `np.float64` instead.
+2025-04-18 00:46:47,223 - __main__ - INFO - Running strategy for NVDA from 2024-01-01 to 2025-02-14
+2025-04-18 00:46:47,223 - __main__ - DEBUG - Downloading data for NVDA from 2024-01-01 to 2025-02-14
+2025-04-18 00:46:47,223 - yfinance - DEBUG - Entering download()
+2025-04-18 00:46:47,223 - yfinance - DEBUG - Disabling multithreading because DEBUG logging enabled
+2025-04-18 00:46:47,223 - yfinance - DEBUG - Using User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+2025-04-18 00:46:47,223 - yfinance - DEBUG -  Entering history()
+2025-04-18 00:46:47,224 - peewee - DEBUG - ('CREATE TABLE IF NOT EXISTS "_kv" ("key" VARCHAR(255) NOT NULL PRIMARY KEY, "value" VARCHAR(255)) WITHOUT ROWID', [])
+2025-04-18 00:46:47,225 - peewee - DEBUG - ('SELECT "t1"."key", "t1"."value" FROM "_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['NVDA', 1, 0])
+2025-04-18 00:46:47,249 - yfinance - DEBUG -   Entering history()
+2025-04-18 00:46:47,253 - yfinance - DEBUG - NVDA: Yahoo GET parameters: {'period1': '2024-01-01 00:00:00-05:00', 'period2': '2025-02-14 00:00:00-05:00', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-04-18 00:46:47,253 - yfinance - DEBUG -    Entering get()
+2025-04-18 00:46:47,253 - yfinance - DEBUG -     Entering _make_request()
+2025-04-18 00:46:47,253 - yfinance - DEBUG - url=https://query2.finance.yahoo.com/v8/finance/chart/NVDA
+2025-04-18 00:46:47,253 - yfinance - DEBUG - params=frozendict.frozendict({'period1': 1704085200, 'period2': 1739509200, 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'})
+2025-04-18 00:46:47,253 - yfinance - DEBUG -      Entering _get_cookie_and_crumb()
+2025-04-18 00:46:47,253 - yfinance - DEBUG - cookie_mode = 'basic'
+2025-04-18 00:46:47,253 - yfinance - DEBUG -       Entering _get_cookie_and_crumb_basic()
+2025-04-18 00:46:47,255 - peewee - DEBUG - ('CREATE TABLE IF NOT EXISTS "_cookieschema" ("strategy" VARCHAR(255) NOT NULL PRIMARY KEY, "fetch_date" DATETIME NOT NULL, "cookie_bytes" BLOB NOT NULL) WITHOUT ROWID', [])
+2025-04-18 00:46:47,255 - peewee - DEBUG - ('SELECT "t1"."strategy", "t1"."fetch_date", "t1"."cookie_bytes" FROM "_cookieschema" AS "t1" WHERE ("t1"."strategy" = ?) LIMIT ? OFFSET ?', ['basic', 1, 0])
+2025-04-18 00:46:47,256 - yfinance - DEBUG - loaded persistent cookie
+2025-04-18 00:46:47,256 - yfinance - DEBUG - reusing cookie
+2025-04-18 00:46:47,258 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): query1.finance.yahoo.com:443
+2025-04-18 00:46:47,789 - urllib3.connectionpool - DEBUG - https://query1.finance.yahoo.com:443 "GET /v1/test/getcrumb HTTP/1.1" 200 11
+2025-04-18 00:46:47,790 - yfinance - DEBUG - crumb = 'Wysn6ELpKJM'
+2025-04-18 00:46:47,791 - yfinance - DEBUG -       Exiting _get_cookie_and_crumb_basic()
+2025-04-18 00:46:47,791 - yfinance - DEBUG -      Exiting _get_cookie_and_crumb()
+2025-04-18 00:46:47,794 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): query2.finance.yahoo.com:443
+2025-04-18 00:46:48,083 - urllib3.connectionpool - DEBUG - https://query2.finance.yahoo.com:443 "GET /v8/finance/chart/NVDA?period1=1704085200&period2=1739509200&interval=1d&includePrePost=False&events=div%2Csplits%2CcapitalGains&crumb=Wysn6ELpKJM HTTP/1.1" 200 None
+2025-04-18 00:46:48,451 - yfinance - DEBUG - response code=200
+2025-04-18 00:46:48,451 - yfinance - DEBUG -     Exiting _make_request()
+2025-04-18 00:46:48,451 - yfinance - DEBUG -    Exiting get()
+2025-04-18 00:46:48,456 - yfinance - DEBUG - NVDA: yfinance received OHLC data: 2024-01-02 14:30:00 -> 2025-02-13 14:30:00
+2025-04-18 00:46:48,458 - yfinance - DEBUG - NVDA: OHLC after cleaning: 2024-01-02 09:30:00-05:00 -> 2025-02-13 09:30:00-05:00
+2025-04-18 00:46:48,470 - yfinance - DEBUG - NVDA: OHLC after combining events: 2024-01-02 00:00:00-05:00 -> 2025-02-13 00:00:00-05:00
+2025-04-18 00:46:48,473 - yfinance - DEBUG - NVDA: yfinance returning OHLC: 2024-01-02 00:00:00-05:00 -> 2025-02-13 00:00:00-05:00
+2025-04-18 00:46:48,474 - yfinance - DEBUG -   Exiting history()
+2025-04-18 00:46:48,474 - yfinance - DEBUG -  Exiting history()
+2025-04-18 00:46:48,475 - yfinance - DEBUG - Exiting download()
+2025-04-18 00:46:48,496 - __main__ - INFO - Created indicator: rsi14 of type RSI
+2025-04-18 00:46:48,501 - __main__ - INFO - BUY ORDER CREATED - Size: 20
+2025-04-18 00:46:48,502 - __main__ - INFO - BUY EXECUTED, Price: 86.84, Cost: 1736.75, Comm: 1.74
+2025-04-18 00:46:48,504 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,504 - __main__ - INFO - SELL EXECUTED, Price: 94.88, Cost: 1563.07, Comm: 1.71
+2025-04-18 00:46:48,505 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,505 - __main__ - INFO - SELL EXECUTED, Price: 94.34, Cost: -1335.73, Comm: 1.70
+2025-04-18 00:46:48,505 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,505 - __main__ - INFO - SELL EXECUTED, Price: 93.57, Cost: -1684.23, Comm: 1.68
+2025-04-18 00:46:48,505 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,506 - __main__ - INFO - SELL EXECUTED, Price: 95.43, Cost: -1717.70, Comm: 1.72
+2025-04-18 00:46:48,506 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,506 - __main__ - INFO - SELL EXECUTED, Price: 101.99, Cost: -1835.90, Comm: 1.84
+2025-04-18 00:46:48,506 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,506 - __main__ - INFO - SELL EXECUTED, Price: 104.41, Cost: -1879.46, Comm: 1.88
+2025-04-18 00:46:48,506 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,506 - __main__ - INFO - SELL EXECUTED, Price: 110.21, Cost: -1983.74, Comm: 1.98
+2025-04-18 00:46:48,507 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,507 - __main__ - INFO - SELL EXECUTED, Price: 113.01, Cost: -2034.23, Comm: 2.03
+2025-04-18 00:46:48,507 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,507 - __main__ - INFO - SELL EXECUTED, Price: 114.61, Cost: -2063.02, Comm: 2.06
+2025-04-18 00:46:48,507 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,507 - __main__ - INFO - SELL EXECUTED, Price: 112.48, Cost: -2024.69, Comm: 2.02
+2025-04-18 00:46:48,507 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,508 - __main__ - INFO - SELL EXECUTED, Price: 113.58, Cost: -2044.51, Comm: 2.04
+2025-04-18 00:46:48,508 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,508 - __main__ - INFO - SELL EXECUTED, Price: 115.68, Cost: -2082.20, Comm: 2.08
+2025-04-18 00:46:48,508 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,508 - __main__ - INFO - SELL EXECUTED, Price: 118.33, Cost: -2129.98, Comm: 2.13
+2025-04-18 00:46:48,509 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,509 - __main__ - INFO - SELL EXECUTED, Price: 124.01, Cost: -2232.13, Comm: 2.23
+2025-04-18 00:46:48,509 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,509 - __main__ - INFO - SELL EXECUTED, Price: 119.73, Cost: -2155.15, Comm: 2.16
+2025-04-18 00:46:48,509 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,509 - __main__ - INFO - SELL EXECUTED, Price: 120.33, Cost: -2165.95, Comm: 2.17
+2025-04-18 00:46:48,509 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,510 - __main__ - INFO - SELL EXECUTED, Price: 121.74, Cost: -2191.32, Comm: 2.19
+2025-04-18 00:46:48,510 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,510 - __main__ - INFO - SELL EXECUTED, Price: 123.03, Cost: -2214.53, Comm: 2.21
+2025-04-18 00:46:48,510 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,510 - __main__ - INFO - SELL EXECUTED, Price: 129.36, Cost: -2328.45, Comm: 2.33
+2025-04-18 00:46:48,510 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,511 - __main__ - INFO - SELL EXECUTED, Price: 129.93, Cost: -2338.70, Comm: 2.34
+2025-04-18 00:46:48,511 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,511 - __main__ - INFO - SELL EXECUTED, Price: 132.96, Cost: -2393.23, Comm: 2.39
+2025-04-18 00:46:48,511 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,511 - __main__ - INFO - SELL EXECUTED, Price: 131.11, Cost: -2359.94, Comm: 2.36
+2025-04-18 00:46:48,511 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,511 - __main__ - INFO - SELL EXECUTED, Price: 139.77, Cost: -2515.78, Comm: 2.52
+2025-04-18 00:46:48,512 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,512 - __main__ - INFO - SELL EXECUTED, Price: 127.09, Cost: -2287.60, Comm: 2.29
+2025-04-18 00:46:48,512 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,512 - __main__ - INFO - SELL EXECUTED, Price: 123.21, Cost: -2217.77, Comm: 2.22
+2025-04-18 00:46:48,512 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,513 - __main__ - INFO - SELL EXECUTED, Price: 124.07, Cost: -2233.25, Comm: 2.23
+2025-04-18 00:46:48,513 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,513 - __main__ - INFO - SELL EXECUTED, Price: 127.35, Cost: -2292.27, Comm: 2.29
+2025-04-18 00:46:48,513 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,514 - __main__ - INFO - SELL EXECUTED, Price: 134.00, Cost: -2411.95, Comm: 2.41
+2025-04-18 00:46:48,514 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,514 - __main__ - INFO - SELL EXECUTED, Price: 135.72, Cost: -2442.90, Comm: 2.44
+2025-04-18 00:46:48,515 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,515 - __main__ - INFO - SELL EXECUTED, Price: 128.37, Cost: -2310.63, Comm: 2.31
+2025-04-18 00:46:48,516 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,516 - __main__ - INFO - SELL EXECUTED, Price: 129.99, Cost: -2339.78, Comm: 2.34
+2025-04-18 00:46:48,519 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,520 - __main__ - INFO - SELL EXECUTED, Price: 130.24, Cost: -2344.30, Comm: 2.34
+2025-04-18 00:46:48,520 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,520 - __main__ - INFO - SELL EXECUTED, Price: 134.09, Cost: -2413.59, Comm: 2.41
+2025-04-18 00:46:48,520 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,520 - __main__ - INFO - SELL EXECUTED, Price: 131.89, Cost: -2374.00, Comm: 2.37
+2025-04-18 00:46:48,521 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,521 - __main__ - INFO - SELL EXECUTED, Price: 133.99, Cost: -2411.79, Comm: 2.41
+2025-04-18 00:46:48,521 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,521 - __main__ - INFO - SELL EXECUTED, Price: 136.45, Cost: -2456.07, Comm: 2.46
+2025-04-18 00:46:48,521 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,521 - __main__ - INFO - SELL EXECUTED, Price: 137.85, Cost: -2481.26, Comm: 2.48
+2025-04-18 00:46:48,521 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,522 - __main__ - INFO - SELL EXECUTED, Price: 139.32, Cost: -2507.72, Comm: 2.51
+2025-04-18 00:46:48,522 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,522 - __main__ - INFO - SELL EXECUTED, Price: 138.65, Cost: -2495.66, Comm: 2.50
+2025-04-18 00:46:48,522 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,522 - __main__ - INFO - SELL EXECUTED, Price: 138.11, Cost: -2485.94, Comm: 2.49
+2025-04-18 00:46:48,522 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,523 - __main__ - INFO - SELL EXECUTED, Price: 142.89, Cost: -2571.97, Comm: 2.57
+2025-04-18 00:46:48,523 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,523 - __main__ - INFO - SELL EXECUTED, Price: 142.01, Cost: -2556.13, Comm: 2.56
+2025-04-18 00:46:48,523 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,523 - __main__ - INFO - SELL EXECUTED, Price: 140.80, Cost: -2534.35, Comm: 2.53
+2025-04-18 00:46:48,524 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,524 - __main__ - INFO - SELL EXECUTED, Price: 140.91, Cost: -2536.33, Comm: 2.54
+2025-04-18 00:46:48,524 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,524 - __main__ - INFO - SELL EXECUTED, Price: 142.98, Cost: -2573.59, Comm: 2.57
+2025-04-18 00:46:48,524 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,524 - __main__ - INFO - SELL EXECUTED, Price: 140.27, Cost: -2524.81, Comm: 2.52
+2025-04-18 00:46:48,524 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,525 - __main__ - INFO - SELL EXECUTED, Price: 139.52, Cost: -2511.32, Comm: 2.51
+2025-04-18 00:46:48,525 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,525 - __main__ - INFO - SELL EXECUTED, Price: 146.37, Cost: -2634.60, Comm: 2.63
+2025-04-18 00:46:48,525 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,525 - __main__ - INFO - SELL EXECUTED, Price: 148.75, Cost: -2677.43, Comm: 2.68
+2025-04-18 00:46:48,526 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,526 - __main__ - INFO - SELL EXECUTED, Price: 148.66, Cost: -2675.81, Comm: 2.68
+2025-04-18 00:46:48,526 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,527 - __main__ - INFO - SELL EXECUTED, Price: 146.76, Cost: -2641.61, Comm: 2.64
+2025-04-18 00:46:48,527 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,527 - __main__ - INFO - SELL EXECUTED, Price: 149.05, Cost: -2682.83, Comm: 2.68
+2025-04-18 00:46:48,527 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,527 - __main__ - INFO - SELL EXECUTED, Price: 147.62, Cost: -2657.09, Comm: 2.66
+2025-04-18 00:46:48,527 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,527 - __main__ - INFO - SELL EXECUTED, Price: 144.85, Cost: -2607.24, Comm: 2.61
+2025-04-18 00:46:48,529 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:46:48,529 - __main__ - INFO - SELL EXECUTED, Price: 153.02, Cost: -2754.29, Comm: 2.75
+2025-04-18 00:46:48,531 - __main__ - ERROR - Error saving results to output.json: `np.float_` was removed in the NumPy 2.0 release. Use `np.float64` instead.
+2025-04-18 00:48:12,575 - __main__ - INFO - Running strategy for NVDA from 2024-01-01 to 2025-02-14
+2025-04-18 00:48:12,576 - __main__ - ERROR - Error occurred during execution
+Traceback (most recent call last):
+  File "C:\Users\tejki\Desktop\AlgoBlocks\STC\frontend\backend\strategy_runner.py", line 211, in run_strategy
+    data = prepare_data(symbol, start_date, end_date)
+           ^^^^^^^^^^^^
+NameError: name 'prepare_data' is not defined
+2025-04-18 00:49:53,737 - __main__ - INFO - Running strategy for NVDA from 2024-01-01 to 2025-02-14
+2025-04-18 00:49:53,737 - __main__ - DEBUG - Downloading data for NVDA from 2024-01-01 to 2025-02-14
+2025-04-18 00:49:53,737 - yfinance - DEBUG - Entering download()
+2025-04-18 00:49:53,737 - yfinance - DEBUG - Disabling multithreading because DEBUG logging enabled
+2025-04-18 00:49:53,738 - yfinance - DEBUG - Using User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 Edg/131.0.2903.86
+2025-04-18 00:49:53,738 - yfinance - DEBUG -  Entering history()
+2025-04-18 00:49:53,739 - peewee - DEBUG - ('CREATE TABLE IF NOT EXISTS "_kv" ("key" VARCHAR(255) NOT NULL PRIMARY KEY, "value" VARCHAR(255)) WITHOUT ROWID', [])
+2025-04-18 00:49:53,739 - peewee - DEBUG - ('SELECT "t1"."key", "t1"."value" FROM "_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['NVDA', 1, 0])
+2025-04-18 00:49:53,767 - yfinance - DEBUG -   Entering history()
+2025-04-18 00:49:53,770 - yfinance - DEBUG - NVDA: Yahoo GET parameters: {'period1': '2024-01-01 00:00:00-05:00', 'period2': '2025-02-14 00:00:00-05:00', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-04-18 00:49:53,770 - yfinance - DEBUG -    Entering get()
+2025-04-18 00:49:53,770 - yfinance - DEBUG -     Entering _make_request()
+2025-04-18 00:49:53,770 - yfinance - DEBUG - url=https://query2.finance.yahoo.com/v8/finance/chart/NVDA
+2025-04-18 00:49:53,770 - yfinance - DEBUG - params=frozendict.frozendict({'period1': 1704085200, 'period2': 1739509200, 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'})
+2025-04-18 00:49:53,771 - yfinance - DEBUG -      Entering _get_cookie_and_crumb()
+2025-04-18 00:49:53,771 - yfinance - DEBUG - cookie_mode = 'basic'
+2025-04-18 00:49:53,771 - yfinance - DEBUG -       Entering _get_cookie_and_crumb_basic()
+2025-04-18 00:49:53,772 - peewee - DEBUG - ('CREATE TABLE IF NOT EXISTS "_cookieschema" ("strategy" VARCHAR(255) NOT NULL PRIMARY KEY, "fetch_date" DATETIME NOT NULL, "cookie_bytes" BLOB NOT NULL) WITHOUT ROWID', [])
+2025-04-18 00:49:53,772 - peewee - DEBUG - ('SELECT "t1"."strategy", "t1"."fetch_date", "t1"."cookie_bytes" FROM "_cookieschema" AS "t1" WHERE ("t1"."strategy" = ?) LIMIT ? OFFSET ?', ['basic', 1, 0])
+2025-04-18 00:49:53,772 - yfinance - DEBUG - loaded persistent cookie
+2025-04-18 00:49:53,773 - yfinance - DEBUG - reusing cookie
+2025-04-18 00:49:53,775 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): query1.finance.yahoo.com:443
+2025-04-18 00:49:53,979 - urllib3.connectionpool - DEBUG - https://query1.finance.yahoo.com:443 "GET /v1/test/getcrumb HTTP/1.1" 200 11
+2025-04-18 00:49:53,979 - yfinance - DEBUG - crumb = 'Wysn6ELpKJM'
+2025-04-18 00:49:53,980 - yfinance - DEBUG -       Exiting _get_cookie_and_crumb_basic()
+2025-04-18 00:49:53,980 - yfinance - DEBUG -      Exiting _get_cookie_and_crumb()
+2025-04-18 00:49:53,981 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): query2.finance.yahoo.com:443
+2025-04-18 00:49:54,201 - urllib3.connectionpool - DEBUG - https://query2.finance.yahoo.com:443 "GET /v8/finance/chart/NVDA?period1=1704085200&period2=1739509200&interval=1d&includePrePost=False&events=div%2Csplits%2CcapitalGains&crumb=Wysn6ELpKJM HTTP/1.1" 200 None
+2025-04-18 00:49:54,232 - yfinance - DEBUG - response code=200
+2025-04-18 00:49:54,232 - yfinance - DEBUG -     Exiting _make_request()
+2025-04-18 00:49:54,233 - yfinance - DEBUG -    Exiting get()
+2025-04-18 00:49:54,239 - yfinance - DEBUG - NVDA: yfinance received OHLC data: 2024-01-02 14:30:00 -> 2025-02-13 14:30:00
+2025-04-18 00:49:54,241 - yfinance - DEBUG - NVDA: OHLC after cleaning: 2024-01-02 09:30:00-05:00 -> 2025-02-13 09:30:00-05:00
+2025-04-18 00:49:54,255 - yfinance - DEBUG - NVDA: OHLC after combining events: 2024-01-02 00:00:00-05:00 -> 2025-02-13 00:00:00-05:00
+2025-04-18 00:49:54,258 - yfinance - DEBUG - NVDA: yfinance returning OHLC: 2024-01-02 00:00:00-05:00 -> 2025-02-13 00:00:00-05:00
+2025-04-18 00:49:54,258 - yfinance - DEBUG -   Exiting history()
+2025-04-18 00:49:54,258 - yfinance - DEBUG -  Exiting history()
+2025-04-18 00:49:54,260 - yfinance - DEBUG - Exiting download()
+2025-04-18 00:49:54,279 - __main__ - INFO - Created indicator: rsi14 of type RSI
+2025-04-18 00:49:54,286 - __main__ - INFO - BUY ORDER CREATED - Size: 20
+2025-04-18 00:49:54,286 - __main__ - INFO - BUY EXECUTED, Price: 86.84, Cost: 1736.75, Comm: 1.74
+2025-04-18 00:49:54,288 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,288 - __main__ - INFO - SELL EXECUTED, Price: 94.88, Cost: 1563.07, Comm: 1.71
+2025-04-18 00:49:54,288 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,288 - __main__ - INFO - SELL EXECUTED, Price: 94.34, Cost: -1335.73, Comm: 1.70
+2025-04-18 00:49:54,289 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,289 - __main__ - INFO - SELL EXECUTED, Price: 93.57, Cost: -1684.23, Comm: 1.68
+2025-04-18 00:49:54,289 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,289 - __main__ - INFO - SELL EXECUTED, Price: 95.43, Cost: -1717.70, Comm: 1.72
+2025-04-18 00:49:54,289 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,289 - __main__ - INFO - SELL EXECUTED, Price: 101.99, Cost: -1835.90, Comm: 1.84
+2025-04-18 00:49:54,289 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,290 - __main__ - INFO - SELL EXECUTED, Price: 104.41, Cost: -1879.46, Comm: 1.88
+2025-04-18 00:49:54,290 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,290 - __main__ - INFO - SELL EXECUTED, Price: 110.21, Cost: -1983.74, Comm: 1.98
+2025-04-18 00:49:54,290 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,290 - __main__ - INFO - SELL EXECUTED, Price: 113.01, Cost: -2034.23, Comm: 2.03
+2025-04-18 00:49:54,290 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,290 - __main__ - INFO - SELL EXECUTED, Price: 114.61, Cost: -2063.02, Comm: 2.06
+2025-04-18 00:49:54,291 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,291 - __main__ - INFO - SELL EXECUTED, Price: 112.48, Cost: -2024.69, Comm: 2.02
+2025-04-18 00:49:54,291 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,291 - __main__ - INFO - SELL EXECUTED, Price: 113.58, Cost: -2044.51, Comm: 2.04
+2025-04-18 00:49:54,291 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,291 - __main__ - INFO - SELL EXECUTED, Price: 115.68, Cost: -2082.20, Comm: 2.08
+2025-04-18 00:49:54,291 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,292 - __main__ - INFO - SELL EXECUTED, Price: 118.33, Cost: -2129.98, Comm: 2.13
+2025-04-18 00:49:54,292 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,292 - __main__ - INFO - SELL EXECUTED, Price: 124.01, Cost: -2232.13, Comm: 2.23
+2025-04-18 00:49:54,292 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,292 - __main__ - INFO - SELL EXECUTED, Price: 119.73, Cost: -2155.15, Comm: 2.16
+2025-04-18 00:49:54,292 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,292 - __main__ - INFO - SELL EXECUTED, Price: 120.33, Cost: -2165.95, Comm: 2.17
+2025-04-18 00:49:54,292 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,293 - __main__ - INFO - SELL EXECUTED, Price: 121.74, Cost: -2191.32, Comm: 2.19
+2025-04-18 00:49:54,293 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,293 - __main__ - INFO - SELL EXECUTED, Price: 123.03, Cost: -2214.53, Comm: 2.21
+2025-04-18 00:49:54,293 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,293 - __main__ - INFO - SELL EXECUTED, Price: 129.36, Cost: -2328.45, Comm: 2.33
+2025-04-18 00:49:54,293 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,293 - __main__ - INFO - SELL EXECUTED, Price: 129.93, Cost: -2338.70, Comm: 2.34
+2025-04-18 00:49:54,294 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,294 - __main__ - INFO - SELL EXECUTED, Price: 132.96, Cost: -2393.23, Comm: 2.39
+2025-04-18 00:49:54,294 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,294 - __main__ - INFO - SELL EXECUTED, Price: 131.11, Cost: -2359.94, Comm: 2.36
+2025-04-18 00:49:54,294 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,294 - __main__ - INFO - SELL EXECUTED, Price: 139.77, Cost: -2515.78, Comm: 2.52
+2025-04-18 00:49:54,294 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,294 - __main__ - INFO - SELL EXECUTED, Price: 127.09, Cost: -2287.60, Comm: 2.29
+2025-04-18 00:49:54,295 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,295 - __main__ - INFO - SELL EXECUTED, Price: 123.21, Cost: -2217.77, Comm: 2.22
+2025-04-18 00:49:54,295 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,295 - __main__ - INFO - SELL EXECUTED, Price: 124.07, Cost: -2233.25, Comm: 2.23
+2025-04-18 00:49:54,295 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,296 - __main__ - INFO - SELL EXECUTED, Price: 127.35, Cost: -2292.28, Comm: 2.29
+2025-04-18 00:49:54,296 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,296 - __main__ - INFO - SELL EXECUTED, Price: 134.00, Cost: -2411.95, Comm: 2.41
+2025-04-18 00:49:54,296 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,296 - __main__ - INFO - SELL EXECUTED, Price: 135.72, Cost: -2442.90, Comm: 2.44
+2025-04-18 00:49:54,298 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,298 - __main__ - INFO - SELL EXECUTED, Price: 128.37, Cost: -2310.63, Comm: 2.31
+2025-04-18 00:49:54,298 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,299 - __main__ - INFO - SELL EXECUTED, Price: 129.99, Cost: -2339.78, Comm: 2.34
+2025-04-18 00:49:54,301 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,302 - __main__ - INFO - SELL EXECUTED, Price: 130.24, Cost: -2344.30, Comm: 2.34
+2025-04-18 00:49:54,302 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,302 - __main__ - INFO - SELL EXECUTED, Price: 134.09, Cost: -2413.59, Comm: 2.41
+2025-04-18 00:49:54,302 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,302 - __main__ - INFO - SELL EXECUTED, Price: 131.89, Cost: -2374.00, Comm: 2.37
+2025-04-18 00:49:54,302 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,302 - __main__ - INFO - SELL EXECUTED, Price: 133.99, Cost: -2411.79, Comm: 2.41
+2025-04-18 00:49:54,303 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,303 - __main__ - INFO - SELL EXECUTED, Price: 136.45, Cost: -2456.07, Comm: 2.46
+2025-04-18 00:49:54,303 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,303 - __main__ - INFO - SELL EXECUTED, Price: 137.85, Cost: -2481.26, Comm: 2.48
+2025-04-18 00:49:54,303 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,303 - __main__ - INFO - SELL EXECUTED, Price: 139.32, Cost: -2507.72, Comm: 2.51
+2025-04-18 00:49:54,303 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,304 - __main__ - INFO - SELL EXECUTED, Price: 138.65, Cost: -2495.66, Comm: 2.50
+2025-04-18 00:49:54,304 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,304 - __main__ - INFO - SELL EXECUTED, Price: 138.11, Cost: -2485.94, Comm: 2.49
+2025-04-18 00:49:54,304 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,304 - __main__ - INFO - SELL EXECUTED, Price: 142.89, Cost: -2571.97, Comm: 2.57
+2025-04-18 00:49:54,304 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,304 - __main__ - INFO - SELL EXECUTED, Price: 142.01, Cost: -2556.13, Comm: 2.56
+2025-04-18 00:49:54,305 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,305 - __main__ - INFO - SELL EXECUTED, Price: 140.80, Cost: -2534.35, Comm: 2.53
+2025-04-18 00:49:54,305 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,305 - __main__ - INFO - SELL EXECUTED, Price: 140.91, Cost: -2536.33, Comm: 2.54
+2025-04-18 00:49:54,305 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,305 - __main__ - INFO - SELL EXECUTED, Price: 142.98, Cost: -2573.59, Comm: 2.57
+2025-04-18 00:49:54,306 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,306 - __main__ - INFO - SELL EXECUTED, Price: 140.27, Cost: -2524.81, Comm: 2.52
+2025-04-18 00:49:54,306 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,306 - __main__ - INFO - SELL EXECUTED, Price: 139.52, Cost: -2511.32, Comm: 2.51
+2025-04-18 00:49:54,306 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,307 - __main__ - INFO - SELL EXECUTED, Price: 146.37, Cost: -2634.60, Comm: 2.63
+2025-04-18 00:49:54,307 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,307 - __main__ - INFO - SELL EXECUTED, Price: 148.75, Cost: -2677.43, Comm: 2.68
+2025-04-18 00:49:54,307 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,307 - __main__ - INFO - SELL EXECUTED, Price: 148.66, Cost: -2675.81, Comm: 2.68
+2025-04-18 00:49:54,307 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,307 - __main__ - INFO - SELL EXECUTED, Price: 146.76, Cost: -2641.61, Comm: 2.64
+2025-04-18 00:49:54,307 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,308 - __main__ - INFO - SELL EXECUTED, Price: 149.05, Cost: -2682.83, Comm: 2.68
+2025-04-18 00:49:54,308 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,308 - __main__ - INFO - SELL EXECUTED, Price: 147.62, Cost: -2657.09, Comm: 2.66
+2025-04-18 00:49:54,308 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,308 - __main__ - INFO - SELL EXECUTED, Price: 144.85, Cost: -2607.24, Comm: 2.61
+2025-04-18 00:49:54,310 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:49:54,310 - __main__ - INFO - SELL EXECUTED, Price: 153.02, Cost: -2754.29, Comm: 2.75
+2025-04-18 00:57:22,255 - __main__ - INFO - Running strategy for MSFT from 2024-01-01 to 2025-02-15
+2025-04-18 00:57:22,255 - __main__ - DEBUG - Downloading data for MSFT from 2024-01-01 to 2025-02-15
+2025-04-18 00:57:22,255 - yfinance - DEBUG - Entering download()
+2025-04-18 00:57:22,255 - yfinance - DEBUG - Disabling multithreading because DEBUG logging enabled
+2025-04-18 00:57:22,256 - yfinance - DEBUG - Using User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+2025-04-18 00:57:22,256 - yfinance - DEBUG -  Entering history()
+2025-04-18 00:57:22,257 - peewee - DEBUG - ('CREATE TABLE IF NOT EXISTS "_kv" ("key" VARCHAR(255) NOT NULL PRIMARY KEY, "value" VARCHAR(255)) WITHOUT ROWID', [])
+2025-04-18 00:57:22,257 - peewee - DEBUG - ('SELECT "t1"."key", "t1"."value" FROM "_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['MSFT', 1, 0])
+2025-04-18 00:57:22,258 - yfinance - DEBUG -   Entering _fetch_ticker_tz()
+2025-04-18 00:57:22,258 - yfinance - DEBUG -    Entering get()
+2025-04-18 00:57:22,258 - yfinance - DEBUG -     Entering _make_request()
+2025-04-18 00:57:22,258 - yfinance - DEBUG - url=https://query2.finance.yahoo.com/v8/finance/chart/MSFT
+2025-04-18 00:57:22,258 - yfinance - DEBUG - params=frozendict.frozendict({'range': '1d', 'interval': '1d'})
+2025-04-18 00:57:22,258 - yfinance - DEBUG -      Entering _get_cookie_and_crumb()
+2025-04-18 00:57:22,258 - yfinance - DEBUG - cookie_mode = 'basic'
+2025-04-18 00:57:22,258 - yfinance - DEBUG -       Entering _get_cookie_and_crumb_basic()
+2025-04-18 00:57:22,259 - peewee - DEBUG - ('CREATE TABLE IF NOT EXISTS "_cookieschema" ("strategy" VARCHAR(255) NOT NULL PRIMARY KEY, "fetch_date" DATETIME NOT NULL, "cookie_bytes" BLOB NOT NULL) WITHOUT ROWID', [])
+2025-04-18 00:57:22,259 - peewee - DEBUG - ('SELECT "t1"."strategy", "t1"."fetch_date", "t1"."cookie_bytes" FROM "_cookieschema" AS "t1" WHERE ("t1"."strategy" = ?) LIMIT ? OFFSET ?', ['basic', 1, 0])
+2025-04-18 00:57:22,259 - yfinance - DEBUG - loaded persistent cookie
+2025-04-18 00:57:22,259 - yfinance - DEBUG - reusing cookie
+2025-04-18 00:57:22,261 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): query1.finance.yahoo.com:443
+2025-04-18 00:57:22,498 - urllib3.connectionpool - DEBUG - https://query1.finance.yahoo.com:443 "GET /v1/test/getcrumb HTTP/1.1" 200 11
+2025-04-18 00:57:22,498 - yfinance - DEBUG - crumb = 'Wysn6ELpKJM'
+2025-04-18 00:57:22,499 - yfinance - DEBUG -       Exiting _get_cookie_and_crumb_basic()
+2025-04-18 00:57:22,499 - yfinance - DEBUG -      Exiting _get_cookie_and_crumb()
+2025-04-18 00:57:22,500 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): query2.finance.yahoo.com:443
+2025-04-18 00:57:22,836 - urllib3.connectionpool - DEBUG - https://query2.finance.yahoo.com:443 "GET /v8/finance/chart/MSFT?range=1d&interval=1d&crumb=Wysn6ELpKJM HTTP/1.1" 200 1202
+2025-04-18 00:57:22,837 - yfinance - DEBUG - response code=200
+2025-04-18 00:57:22,837 - yfinance - DEBUG -     Exiting _make_request()
+2025-04-18 00:57:22,837 - yfinance - DEBUG -    Exiting get()
+2025-04-18 00:57:22,837 - yfinance - DEBUG -   Exiting _fetch_ticker_tz()
+2025-04-18 00:57:22,864 - peewee - DEBUG - ('BEGIN', None)
+2025-04-18 00:57:22,865 - peewee - DEBUG - ('INSERT INTO "_kv" ("key", "value") VALUES (?, ?)', ['MSFT', 'America/New_York'])
+2025-04-18 00:57:22,869 - yfinance - DEBUG -   Entering history()
+2025-04-18 00:57:22,873 - yfinance - DEBUG - MSFT: Yahoo GET parameters: {'period1': '2024-01-01 00:00:00-05:00', 'period2': '2025-02-15 00:00:00-05:00', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-04-18 00:57:22,873 - yfinance - DEBUG -    Entering get()
+2025-04-18 00:57:22,873 - yfinance - DEBUG -     Entering _make_request()
+2025-04-18 00:57:22,873 - yfinance - DEBUG - url=https://query2.finance.yahoo.com/v8/finance/chart/MSFT
+2025-04-18 00:57:22,873 - yfinance - DEBUG - params=frozendict.frozendict({'period1': 1704085200, 'period2': 1739595600, 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'})
+2025-04-18 00:57:22,873 - yfinance - DEBUG -      Entering _get_cookie_and_crumb()
+2025-04-18 00:57:22,873 - yfinance - DEBUG - cookie_mode = 'basic'
+2025-04-18 00:57:22,873 - yfinance - DEBUG -       Entering _get_cookie_and_crumb_basic()
+2025-04-18 00:57:22,873 - yfinance - DEBUG - reusing cookie
+2025-04-18 00:57:22,873 - yfinance - DEBUG - reusing crumb
+2025-04-18 00:57:22,873 - yfinance - DEBUG -       Exiting _get_cookie_and_crumb_basic()
+2025-04-18 00:57:22,873 - yfinance - DEBUG -      Exiting _get_cookie_and_crumb()
+2025-04-18 00:57:23,003 - urllib3.connectionpool - DEBUG - https://query2.finance.yahoo.com:443 "GET /v8/finance/chart/MSFT?period1=1704085200&period2=1739595600&interval=1d&includePrePost=False&events=div%2Csplits%2CcapitalGains&crumb=Wysn6ELpKJM HTTP/1.1" 200 None
+2025-04-18 00:57:23,004 - yfinance - DEBUG - response code=200
+2025-04-18 00:57:23,004 - yfinance - DEBUG -     Exiting _make_request()
+2025-04-18 00:57:23,004 - yfinance - DEBUG -    Exiting get()
+2025-04-18 00:57:23,007 - yfinance - DEBUG - MSFT: yfinance received OHLC data: 2024-01-02 14:30:00 -> 2025-02-14 14:30:00
+2025-04-18 00:57:23,008 - yfinance - DEBUG - MSFT: OHLC after cleaning: 2024-01-02 09:30:00-05:00 -> 2025-02-14 09:30:00-05:00
+2025-04-18 00:57:23,016 - yfinance - DEBUG - MSFT: OHLC after combining events: 2024-01-02 00:00:00-05:00 -> 2025-02-14 00:00:00-05:00
+2025-04-18 00:57:23,022 - yfinance - DEBUG - MSFT: yfinance returning OHLC: 2024-01-02 00:00:00-05:00 -> 2025-02-14 00:00:00-05:00
+2025-04-18 00:57:23,022 - yfinance - DEBUG -   Exiting history()
+2025-04-18 00:57:23,023 - yfinance - DEBUG -  Exiting history()
+2025-04-18 00:57:23,025 - yfinance - DEBUG - Exiting download()
+2025-04-18 00:57:23,052 - __main__ - INFO - Created indicator: rsi14 of type RSI
+2025-04-18 00:57:23,059 - __main__ - INFO - BUY ORDER CREATED - Size: 20
+2025-04-18 00:57:23,060 - __main__ - INFO - BUY EXECUTED, Price: 399.92, Cost: 7998.34, Comm: 8.00
+2025-04-18 00:57:23,060 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,060 - __main__ - INFO - SELL EXECUTED, Price: 416.11, Cost: 7198.50, Comm: 7.49
+2025-04-18 00:57:23,061 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,061 - __main__ - INFO - SELL EXECUTED, Price: 418.80, Cost: -5901.01, Comm: 7.54
+2025-04-18 00:57:23,061 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,062 - __main__ - INFO - SELL EXECUTED, Price: 426.57, Cost: -7678.32, Comm: 7.68
+2025-04-18 00:57:23,062 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,062 - __main__ - INFO - SELL EXECUTED, Price: 426.44, Cost: -7676.00, Comm: 7.68
+2025-04-18 00:57:23,062 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,063 - __main__ - INFO - SELL EXECUTED, Price: 422.02, Cost: -7596.32, Comm: 7.60
+2025-04-18 00:57:23,065 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,066 - __main__ - INFO - SELL EXECUTED, Price: 419.36, Cost: -7548.46, Comm: 7.55
+2025-04-18 00:57:23,066 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,066 - __main__ - INFO - SELL EXECUTED, Price: 424.36, Cost: -7638.48, Comm: 7.64
+2025-04-18 00:57:23,066 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,066 - __main__ - INFO - SELL EXECUTED, Price: 427.60, Cost: -7696.82, Comm: 7.70
+2025-04-18 00:57:23,066 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,066 - __main__ - INFO - SELL EXECUTED, Price: 430.46, Cost: -7748.36, Comm: 7.75
+2025-04-18 00:57:23,067 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,067 - __main__ - INFO - SELL EXECUTED, Price: 424.72, Cost: -7644.92, Comm: 7.64
+2025-04-18 00:57:23,067 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,067 - __main__ - INFO - SELL EXECUTED, Price: 427.14, Cost: -7688.59, Comm: 7.69
+2025-04-18 00:57:23,067 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,068 - __main__ - INFO - SELL EXECUTED, Price: 423.23, Cost: -7618.08, Comm: 7.62
+2025-04-18 00:57:23,068 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,069 - __main__ - INFO - SELL EXECUTED, Price: 421.84, Cost: -7593.20, Comm: 7.59
+2025-04-18 00:57:23,070 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,071 - __main__ - INFO - SELL EXECUTED, Price: 432.80, Cost: -7790.42, Comm: 7.79
+2025-04-18 00:57:23,071 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,071 - __main__ - INFO - SELL EXECUTED, Price: 438.30, Cost: -7889.38, Comm: 7.89
+2025-04-18 00:57:23,071 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,071 - __main__ - INFO - SELL EXECUTED, Price: 435.74, Cost: -7843.39, Comm: 7.84
+2025-04-18 00:57:23,071 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,071 - __main__ - INFO - SELL EXECUTED, Price: 440.03, Cost: -7920.52, Comm: 7.92
+2025-04-18 00:57:23,072 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,072 - __main__ - INFO - SELL EXECUTED, Price: 447.11, Cost: -8047.94, Comm: 8.05
+2025-04-18 00:57:23,072 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,072 - __main__ - INFO - SELL EXECUTED, Price: 443.72, Cost: -7986.91, Comm: 7.99
+2025-04-18 00:57:23,072 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,072 - __main__ - INFO - SELL EXECUTED, Price: 444.79, Cost: -8006.24, Comm: 8.01
+2025-04-18 00:57:23,073 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,073 - __main__ - INFO - SELL EXECUTED, Price: 447.20, Cost: -8049.55, Comm: 8.05
+2025-04-18 00:57:23,073 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,073 - __main__ - INFO - SELL EXECUTED, Price: 445.66, Cost: -8021.81, Comm: 8.02
+2025-04-18 00:57:23,073 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,073 - __main__ - INFO - SELL EXECUTED, Price: 446.40, Cost: -8035.23, Comm: 8.04
+2025-04-18 00:57:23,073 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,074 - __main__ - INFO - SELL EXECUTED, Price: 449.56, Cost: -8092.14, Comm: 8.09
+2025-04-18 00:57:23,074 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,074 - __main__ - INFO - SELL EXECUTED, Price: 450.45, Cost: -8108.07, Comm: 8.11
+2025-04-18 00:57:23,074 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,074 - __main__ - INFO - SELL EXECUTED, Price: 446.06, Cost: -8029.15, Comm: 8.03
+2025-04-18 00:57:23,074 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,074 - __main__ - INFO - SELL EXECUTED, Price: 450.58, Cost: -8110.39, Comm: 8.11
+2025-04-18 00:57:23,075 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,075 - __main__ - INFO - SELL EXECUTED, Price: 455.54, Cost: -8199.69, Comm: 8.20
+2025-04-18 00:57:23,075 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,075 - __main__ - INFO - SELL EXECUTED, Price: 456.95, Cost: -8225.11, Comm: 8.23
+2025-04-18 00:57:23,075 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,075 - __main__ - INFO - SELL EXECUTED, Price: 463.85, Cost: -8349.30, Comm: 8.35
+2025-04-18 00:57:23,075 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,075 - __main__ - INFO - SELL EXECUTED, Price: 464.30, Cost: -8357.36, Comm: 8.36
+2025-04-18 00:57:23,076 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,076 - __main__ - INFO - SELL EXECUTED, Price: 458.55, Cost: -8253.92, Comm: 8.25
+2025-04-18 00:57:23,076 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,076 - __main__ - INFO - SELL EXECUTED, Price: 460.30, Cost: -8285.42, Comm: 8.29
+2025-04-18 00:57:23,078 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,079 - __main__ - INFO - SELL EXECUTED, Price: 428.88, Cost: -7719.84, Comm: 7.72
+2025-04-18 00:57:23,079 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,079 - __main__ - INFO - SELL EXECUTED, Price: 438.47, Cost: -7892.49, Comm: 7.89
+2025-04-18 00:57:23,079 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,079 - __main__ - INFO - SELL EXECUTED, Price: 433.26, Cost: -7798.72, Comm: 7.80
+2025-04-18 00:57:23,079 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,079 - __main__ - INFO - SELL EXECUTED, Price: 435.47, Cost: -7838.52, Comm: 7.84
+2025-04-18 00:57:23,080 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,080 - __main__ - INFO - SELL EXECUTED, Price: 432.55, Cost: -7785.81, Comm: 7.79
+2025-04-18 00:57:23,081 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,081 - __main__ - INFO - SELL EXECUTED, Price: 435.69, Cost: -7842.47, Comm: 7.84
+2025-04-18 00:57:23,082 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,082 - __main__ - INFO - SELL EXECUTED, Price: 413.70, Cost: -7446.61, Comm: 7.45
+2025-04-18 00:57:23,083 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,083 - __main__ - INFO - SELL EXECUTED, Price: 437.04, Cost: -7866.79, Comm: 7.87
+2025-04-18 00:57:23,083 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,083 - __main__ - INFO - SELL EXECUTED, Price: 441.41, Cost: -7945.47, Comm: 7.95
+2025-04-18 00:57:23,084 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,084 - __main__ - INFO - SELL EXECUTED, Price: 441.71, Cost: -7950.86, Comm: 7.95
+2025-04-18 00:57:23,084 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,084 - __main__ - INFO - SELL EXECUTED, Price: 443.50, Cost: -7983.01, Comm: 7.98
+2025-04-18 00:57:23,084 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,085 - __main__ - INFO - SELL EXECUTED, Price: 443.16, Cost: -7976.91, Comm: 7.98
+2025-04-18 00:57:23,086 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,086 - __main__ - INFO - SELL EXECUTED, Price: 448.21, Cost: -8067.80, Comm: 8.07
+2025-04-18 00:57:23,086 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,087 - __main__ - INFO - SELL EXECUTED, Price: 447.54, Cost: -8055.77, Comm: 8.06
+2025-04-18 00:57:23,087 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,087 - __main__ - INFO - SELL EXECUTED, Price: 446.37, Cost: -8034.75, Comm: 8.03
+2025-04-18 00:57:23,087 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,088 - __main__ - INFO - SELL EXECUTED, Price: 450.11, Cost: -8101.93, Comm: 8.10
+2025-04-18 00:57:23,088 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,088 - __main__ - INFO - SELL EXECUTED, Price: 450.42, Cost: -8107.50, Comm: 8.11
+2025-04-18 00:57:23,089 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,089 - __main__ - INFO - SELL EXECUTED, Price: 441.12, Cost: -7940.08, Comm: 7.94
+2025-04-18 00:57:23,090 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,090 - __main__ - INFO - SELL EXECUTED, Price: 444.27, Cost: -7996.85, Comm: 8.00
+2025-04-18 00:57:23,090 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,090 - __main__ - INFO - SELL EXECUTED, Price: 423.16, Cost: -7616.91, Comm: 7.62
+2025-04-18 00:57:23,090 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:57:23,090 - __main__ - INFO - SELL EXECUTED, Price: 445.80, Cost: -8024.33, Comm: 8.02
+2025-04-18 00:58:49,247 - __main__ - INFO - Running strategy for TSLA from 2024-01-01 to 2025-02-15
+2025-04-18 00:58:49,248 - __main__ - DEBUG - Downloading data for TSLA from 2024-01-01 to 2025-02-15
+2025-04-18 00:58:49,248 - yfinance - DEBUG - Entering download()
+2025-04-18 00:58:49,248 - yfinance - DEBUG - Disabling multithreading because DEBUG logging enabled
+2025-04-18 00:58:49,248 - yfinance - DEBUG - Using User-Agent: Mozilla/5.0 (X11; Linux i686; rv:135.0) Gecko/20100101 Firefox/135.0
+2025-04-18 00:58:49,248 - yfinance - DEBUG -  Entering history()
+2025-04-18 00:58:49,251 - peewee - DEBUG - ('CREATE TABLE IF NOT EXISTS "_kv" ("key" VARCHAR(255) NOT NULL PRIMARY KEY, "value" VARCHAR(255)) WITHOUT ROWID', [])
+2025-04-18 00:58:49,252 - peewee - DEBUG - ('SELECT "t1"."key", "t1"."value" FROM "_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['TSLA', 1, 0])
+2025-04-18 00:58:49,252 - yfinance - DEBUG -   Entering _fetch_ticker_tz()
+2025-04-18 00:58:49,252 - yfinance - DEBUG -    Entering get()
+2025-04-18 00:58:49,252 - yfinance - DEBUG -     Entering _make_request()
+2025-04-18 00:58:49,252 - yfinance - DEBUG - url=https://query2.finance.yahoo.com/v8/finance/chart/TSLA
+2025-04-18 00:58:49,252 - yfinance - DEBUG - params=frozendict.frozendict({'range': '1d', 'interval': '1d'})
+2025-04-18 00:58:49,252 - yfinance - DEBUG -      Entering _get_cookie_and_crumb()
+2025-04-18 00:58:49,252 - yfinance - DEBUG - cookie_mode = 'basic'
+2025-04-18 00:58:49,252 - yfinance - DEBUG -       Entering _get_cookie_and_crumb_basic()
+2025-04-18 00:58:49,253 - peewee - DEBUG - ('CREATE TABLE IF NOT EXISTS "_cookieschema" ("strategy" VARCHAR(255) NOT NULL PRIMARY KEY, "fetch_date" DATETIME NOT NULL, "cookie_bytes" BLOB NOT NULL) WITHOUT ROWID', [])
+2025-04-18 00:58:49,253 - peewee - DEBUG - ('SELECT "t1"."strategy", "t1"."fetch_date", "t1"."cookie_bytes" FROM "_cookieschema" AS "t1" WHERE ("t1"."strategy" = ?) LIMIT ? OFFSET ?', ['basic', 1, 0])
+2025-04-18 00:58:49,254 - yfinance - DEBUG - loaded persistent cookie
+2025-04-18 00:58:49,254 - yfinance - DEBUG - reusing cookie
+2025-04-18 00:58:49,256 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): query1.finance.yahoo.com:443
+2025-04-18 00:58:49,462 - urllib3.connectionpool - DEBUG - https://query1.finance.yahoo.com:443 "GET /v1/test/getcrumb HTTP/1.1" 200 11
+2025-04-18 00:58:49,462 - yfinance - DEBUG - crumb = 'Wysn6ELpKJM'
+2025-04-18 00:58:49,462 - yfinance - DEBUG -       Exiting _get_cookie_and_crumb_basic()
+2025-04-18 00:58:49,462 - yfinance - DEBUG -      Exiting _get_cookie_and_crumb()
+2025-04-18 00:58:49,463 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): query2.finance.yahoo.com:443
+2025-04-18 00:58:49,674 - urllib3.connectionpool - DEBUG - https://query2.finance.yahoo.com:443 "GET /v8/finance/chart/TSLA?range=1d&interval=1d&crumb=Wysn6ELpKJM HTTP/1.1" 200 1196
+2025-04-18 00:58:49,675 - yfinance - DEBUG - response code=200
+2025-04-18 00:58:49,675 - yfinance - DEBUG -     Exiting _make_request()
+2025-04-18 00:58:49,675 - yfinance - DEBUG -    Exiting get()
+2025-04-18 00:58:49,675 - yfinance - DEBUG -   Exiting _fetch_ticker_tz()
+2025-04-18 00:58:49,702 - peewee - DEBUG - ('BEGIN', None)
+2025-04-18 00:58:49,702 - peewee - DEBUG - ('INSERT INTO "_kv" ("key", "value") VALUES (?, ?)', ['TSLA', 'America/New_York'])
+2025-04-18 00:58:49,708 - yfinance - DEBUG -   Entering history()
+2025-04-18 00:58:49,711 - yfinance - DEBUG - TSLA: Yahoo GET parameters: {'period1': '2024-01-01 00:00:00-05:00', 'period2': '2025-02-15 00:00:00-05:00', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-04-18 00:58:49,711 - yfinance - DEBUG -    Entering get()
+2025-04-18 00:58:49,711 - yfinance - DEBUG -     Entering _make_request()
+2025-04-18 00:58:49,711 - yfinance - DEBUG - url=https://query2.finance.yahoo.com/v8/finance/chart/TSLA
+2025-04-18 00:58:49,711 - yfinance - DEBUG - params=frozendict.frozendict({'period1': 1704085200, 'period2': 1739595600, 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'})
+2025-04-18 00:58:49,711 - yfinance - DEBUG -      Entering _get_cookie_and_crumb()
+2025-04-18 00:58:49,711 - yfinance - DEBUG - cookie_mode = 'basic'
+2025-04-18 00:58:49,711 - yfinance - DEBUG -       Entering _get_cookie_and_crumb_basic()
+2025-04-18 00:58:49,711 - yfinance - DEBUG - reusing cookie
+2025-04-18 00:58:49,711 - yfinance - DEBUG - reusing crumb
+2025-04-18 00:58:49,711 - yfinance - DEBUG -       Exiting _get_cookie_and_crumb_basic()
+2025-04-18 00:58:49,711 - yfinance - DEBUG -      Exiting _get_cookie_and_crumb()
+2025-04-18 00:58:49,811 - urllib3.connectionpool - DEBUG - https://query2.finance.yahoo.com:443 "GET /v8/finance/chart/TSLA?period1=1704085200&period2=1739595600&interval=1d&includePrePost=False&events=div%2Csplits%2CcapitalGains&crumb=Wysn6ELpKJM HTTP/1.1" 200 None
+2025-04-18 00:58:49,812 - yfinance - DEBUG - response code=200
+2025-04-18 00:58:49,813 - yfinance - DEBUG -     Exiting _make_request()
+2025-04-18 00:58:49,813 - yfinance - DEBUG -    Exiting get()
+2025-04-18 00:58:49,817 - yfinance - DEBUG - TSLA: yfinance received OHLC data: 2024-01-02 14:30:00 -> 2025-02-14 14:30:00
+2025-04-18 00:58:49,818 - yfinance - DEBUG - TSLA: OHLC after cleaning: 2024-01-02 09:30:00-05:00 -> 2025-02-14 09:30:00-05:00
+2025-04-18 00:58:49,827 - yfinance - DEBUG - TSLA: OHLC after combining events: 2024-01-02 00:00:00-05:00 -> 2025-02-14 00:00:00-05:00
+2025-04-18 00:58:49,837 - yfinance - DEBUG - TSLA: yfinance returning OHLC: 2024-01-02 00:00:00-05:00 -> 2025-02-14 00:00:00-05:00
+2025-04-18 00:58:49,837 - yfinance - DEBUG -   Exiting history()
+2025-04-18 00:58:49,837 - yfinance - DEBUG -  Exiting history()
+2025-04-18 00:58:49,839 - yfinance - DEBUG - Exiting download()
+2025-04-18 00:58:49,862 - __main__ - INFO - Created indicator: rsi14 of type RSI
+2025-04-18 00:58:49,867 - __main__ - INFO - BUY ORDER CREATED - Size: 20
+2025-04-18 00:58:49,868 - __main__ - INFO - BUY EXECUTED, Price: 211.88, Cost: 4237.60, Comm: 4.24
+2025-04-18 00:58:49,872 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,872 - __main__ - INFO - SELL EXECUTED, Price: 186.98, Cost: 3813.84, Comm: 3.37
+2025-04-18 00:58:49,874 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,875 - __main__ - INFO - SELL EXECUTED, Price: 195.17, Cost: -2698.96, Comm: 3.51
+2025-04-18 00:58:49,875 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,875 - __main__ - INFO - SELL EXECUTED, Price: 199.55, Cost: -3591.90, Comm: 3.59
+2025-04-18 00:58:49,875 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,875 - __main__ - INFO - SELL EXECUTED, Price: 201.02, Cost: -3618.36, Comm: 3.62
+2025-04-18 00:58:49,875 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,875 - __main__ - INFO - SELL EXECUTED, Price: 218.89, Cost: -3940.02, Comm: 3.94
+2025-04-18 00:58:49,876 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,876 - __main__ - INFO - SELL EXECUTED, Price: 234.56, Cost: -4222.08, Comm: 4.22
+2025-04-18 00:58:49,876 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,876 - __main__ - INFO - SELL EXECUTED, Price: 249.81, Cost: -4496.58, Comm: 4.50
+2025-04-18 00:58:49,876 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,876 - __main__ - INFO - SELL EXECUTED, Price: 247.71, Cost: -4458.78, Comm: 4.46
+2025-04-18 00:58:49,877 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,877 - __main__ - INFO - SELL EXECUTED, Price: 251.00, Cost: -4518.00, Comm: 4.52
+2025-04-18 00:58:49,877 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,877 - __main__ - INFO - SELL EXECUTED, Price: 262.80, Cost: -4730.40, Comm: 4.73
+2025-04-18 00:58:49,877 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,877 - __main__ - INFO - SELL EXECUTED, Price: 263.30, Cost: -4739.40, Comm: 4.74
+2025-04-18 00:58:49,877 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,878 - __main__ - INFO - SELL EXECUTED, Price: 235.80, Cost: -4244.40, Comm: 4.24
+2025-04-18 00:58:49,878 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,878 - __main__ - INFO - SELL EXECUTED, Price: 255.97, Cost: -4607.46, Comm: 4.61
+2025-04-18 00:58:49,878 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,878 - __main__ - INFO - SELL EXECUTED, Price: 255.31, Cost: -4595.58, Comm: 4.60
+2025-04-18 00:58:49,878 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,878 - __main__ - INFO - SELL EXECUTED, Price: 252.73, Cost: -4549.14, Comm: 4.55
+2025-04-18 00:58:49,879 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,879 - __main__ - INFO - SELL EXECUTED, Price: 251.09, Cost: -4519.62, Comm: 4.52
+2025-04-18 00:58:49,879 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,879 - __main__ - INFO - SELL EXECUTED, Price: 247.79, Cost: -4460.22, Comm: 4.46
+2025-04-18 00:58:49,879 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,879 - __main__ - INFO - SELL EXECUTED, Price: 253.60, Cost: -4564.80, Comm: 4.56
+2025-04-18 00:58:49,880 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,880 - __main__ - INFO - SELL EXECUTED, Price: 225.42, Cost: -4057.56, Comm: 4.06
+2025-04-18 00:58:49,883 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,884 - __main__ - INFO - SELL EXECUTED, Price: 241.52, Cost: -4347.36, Comm: 4.35
+2025-04-18 00:58:49,884 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,884 - __main__ - INFO - SELL EXECUTED, Price: 254.08, Cost: -4573.44, Comm: 4.57
+2025-04-18 00:58:49,884 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,885 - __main__ - INFO - SELL EXECUTED, Price: 252.54, Cost: -4545.72, Comm: 4.55
+2025-04-18 00:58:49,885 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,885 - __main__ - INFO - SELL EXECUTED, Price: 260.60, Cost: -4690.80, Comm: 4.69
+2025-04-18 00:58:49,885 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,885 - __main__ - INFO - SELL EXECUTED, Price: 257.38, Cost: -4632.84, Comm: 4.63
+2025-04-18 00:58:49,885 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,885 - __main__ - INFO - SELL EXECUTED, Price: 259.04, Cost: -4662.72, Comm: 4.66
+2025-04-18 00:58:49,886 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,886 - __main__ - INFO - SELL EXECUTED, Price: 262.67, Cost: -4728.06, Comm: 4.73
+2025-04-18 00:58:49,886 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,886 - __main__ - INFO - SELL EXECUTED, Price: 247.55, Cost: -4455.90, Comm: 4.46
+2025-04-18 00:58:49,887 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,887 - __main__ - INFO - SELL EXECUTED, Price: 256.01, Cost: -4608.18, Comm: 4.61
+2025-04-18 00:58:49,887 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,887 - __main__ - INFO - SELL EXECUTED, Price: 270.00, Cost: -4860.00, Comm: 4.86
+2025-04-18 00:58:49,887 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,888 - __main__ - INFO - SELL EXECUTED, Price: 264.51, Cost: -4761.18, Comm: 4.76
+2025-04-18 00:58:49,888 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,888 - __main__ - INFO - SELL EXECUTED, Price: 258.04, Cost: -4644.72, Comm: 4.64
+2025-04-18 00:58:49,888 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,888 - __main__ - INFO - SELL EXECUTED, Price: 257.99, Cost: -4643.82, Comm: 4.64
+2025-04-18 00:58:49,888 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,888 - __main__ - INFO - SELL EXECUTED, Price: 288.89, Cost: -5200.02, Comm: 5.20
+2025-04-18 00:58:49,889 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,889 - __main__ - INFO - SELL EXECUTED, Price: 299.14, Cost: -5384.52, Comm: 5.38
+2025-04-18 00:58:49,889 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,889 - __main__ - INFO - SELL EXECUTED, Price: 346.30, Cost: -6233.40, Comm: 6.23
+2025-04-18 00:58:49,889 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,889 - __main__ - INFO - SELL EXECUTED, Price: 342.74, Cost: -6169.32, Comm: 6.17
+2025-04-18 00:58:49,889 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,889 - __main__ - INFO - SELL EXECUTED, Price: 335.85, Cost: -6045.30, Comm: 6.05
+2025-04-18 00:58:49,890 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,890 - __main__ - INFO - SELL EXECUTED, Price: 327.69, Cost: -5898.42, Comm: 5.90
+2025-04-18 00:58:49,890 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,890 - __main__ - INFO - SELL EXECUTED, Price: 310.57, Cost: -5590.26, Comm: 5.59
+2025-04-18 00:58:49,890 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,890 - __main__ - INFO - SELL EXECUTED, Price: 340.73, Cost: -6133.14, Comm: 6.13
+2025-04-18 00:58:49,890 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,890 - __main__ - INFO - SELL EXECUTED, Price: 335.76, Cost: -6043.68, Comm: 6.04
+2025-04-18 00:58:49,891 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,891 - __main__ - INFO - SELL EXECUTED, Price: 345.00, Cost: -6210.00, Comm: 6.21
+2025-04-18 00:58:49,891 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,891 - __main__ - INFO - SELL EXECUTED, Price: 343.81, Cost: -6188.58, Comm: 6.19
+2025-04-18 00:58:49,891 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,891 - __main__ - INFO - SELL EXECUTED, Price: 341.09, Cost: -6139.62, Comm: 6.14
+2025-04-18 00:58:49,892 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,892 - __main__ - INFO - SELL EXECUTED, Price: 360.14, Cost: -6482.52, Comm: 6.48
+2025-04-18 00:58:49,892 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,892 - __main__ - INFO - SELL EXECUTED, Price: 341.00, Cost: -6138.00, Comm: 6.14
+2025-04-18 00:58:49,892 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,892 - __main__ - INFO - SELL EXECUTED, Price: 341.80, Cost: -6152.40, Comm: 6.15
+2025-04-18 00:58:49,892 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,893 - __main__ - INFO - SELL EXECUTED, Price: 336.08, Cost: -6049.44, Comm: 6.05
+2025-04-18 00:58:49,893 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,893 - __main__ - INFO - SELL EXECUTED, Price: 352.38, Cost: -6342.84, Comm: 6.34
+2025-04-18 00:58:49,893 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,893 - __main__ - INFO - SELL EXECUTED, Price: 351.80, Cost: -6332.40, Comm: 6.33
+2025-04-18 00:58:49,893 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,894 - __main__ - INFO - SELL EXECUTED, Price: 353.00, Cost: -6354.00, Comm: 6.35
+2025-04-18 00:58:49,894 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,894 - __main__ - INFO - SELL EXECUTED, Price: 359.87, Cost: -6477.66, Comm: 6.48
+2025-04-18 00:58:49,894 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,894 - __main__ - INFO - SELL EXECUTED, Price: 377.42, Cost: -6793.56, Comm: 6.79
+2025-04-18 00:58:49,894 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,894 - __main__ - INFO - SELL EXECUTED, Price: 397.61, Cost: -7156.98, Comm: 7.16
+2025-04-18 00:58:49,895 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,895 - __main__ - INFO - SELL EXECUTED, Price: 392.68, Cost: -7068.24, Comm: 7.07
+2025-04-18 00:58:49,895 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,895 - __main__ - INFO - SELL EXECUTED, Price: 409.70, Cost: -7374.60, Comm: 7.37
+2025-04-18 00:58:49,895 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,895 - __main__ - INFO - SELL EXECUTED, Price: 424.84, Cost: -7647.12, Comm: 7.65
+2025-04-18 00:58:49,895 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,895 - __main__ - INFO - SELL EXECUTED, Price: 420.00, Cost: -7560.00, Comm: 7.56
+2025-04-18 00:58:49,896 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,896 - __main__ - INFO - SELL EXECUTED, Price: 441.09, Cost: -7939.62, Comm: 7.94
+2025-04-18 00:58:49,896 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,896 - __main__ - INFO - SELL EXECUTED, Price: 475.90, Cost: -8566.20, Comm: 8.57
+2025-04-18 00:58:49,896 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,897 - __main__ - INFO - SELL EXECUTED, Price: 466.50, Cost: -8397.00, Comm: 8.40
+2025-04-18 00:58:49,897 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,897 - __main__ - INFO - SELL EXECUTED, Price: 451.88, Cost: -8133.84, Comm: 8.13
+2025-04-18 00:58:49,897 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,898 - __main__ - INFO - SELL EXECUTED, Price: 425.51, Cost: -7659.18, Comm: 7.66
+2025-04-18 00:58:49,898 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,899 - __main__ - INFO - SELL EXECUTED, Price: 431.00, Cost: -7758.00, Comm: 7.76
+2025-04-18 00:58:49,899 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,899 - __main__ - INFO - SELL EXECUTED, Price: 435.90, Cost: -7846.20, Comm: 7.85
+2025-04-18 00:58:49,900 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,900 - __main__ - INFO - SELL EXECUTED, Price: 465.16, Cost: -8372.88, Comm: 8.37
+2025-04-18 00:58:49,900 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:58:49,900 - __main__ - INFO - SELL EXECUTED, Price: 449.52, Cost: -8091.36, Comm: 8.09
+2025-04-18 00:59:06,045 - __main__ - INFO - Running strategy for TSLA from 2024-01-01 to 2024-10-03
+2025-04-18 00:59:06,045 - __main__ - DEBUG - Downloading data for TSLA from 2024-01-01 to 2024-10-03
+2025-04-18 00:59:06,045 - yfinance - DEBUG - Entering download()
+2025-04-18 00:59:06,045 - yfinance - DEBUG - Disabling multithreading because DEBUG logging enabled
+2025-04-18 00:59:06,045 - yfinance - DEBUG - Using User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 14.7; rv:135.0) Gecko/20100101 Firefox/135.0
+2025-04-18 00:59:06,045 - yfinance - DEBUG -  Entering history()
+2025-04-18 00:59:06,048 - peewee - DEBUG - ('CREATE TABLE IF NOT EXISTS "_kv" ("key" VARCHAR(255) NOT NULL PRIMARY KEY, "value" VARCHAR(255)) WITHOUT ROWID', [])
+2025-04-18 00:59:06,048 - peewee - DEBUG - ('SELECT "t1"."key", "t1"."value" FROM "_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['TSLA', 1, 0])
+2025-04-18 00:59:06,073 - yfinance - DEBUG -   Entering history()
+2025-04-18 00:59:06,075 - yfinance - DEBUG - TSLA: Yahoo GET parameters: {'period1': '2024-01-01 00:00:00-05:00', 'period2': '2024-10-03 00:00:00-04:00', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-04-18 00:59:06,075 - yfinance - DEBUG -    Entering get()
+2025-04-18 00:59:06,075 - yfinance - DEBUG -     Entering _make_request()
+2025-04-18 00:59:06,076 - yfinance - DEBUG - url=https://query2.finance.yahoo.com/v8/finance/chart/TSLA
+2025-04-18 00:59:06,076 - yfinance - DEBUG - params=frozendict.frozendict({'period1': 1704085200, 'period2': 1727928000, 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'})
+2025-04-18 00:59:06,076 - yfinance - DEBUG -      Entering _get_cookie_and_crumb()
+2025-04-18 00:59:06,076 - yfinance - DEBUG - cookie_mode = 'basic'
+2025-04-18 00:59:06,076 - yfinance - DEBUG -       Entering _get_cookie_and_crumb_basic()
+2025-04-18 00:59:06,077 - peewee - DEBUG - ('CREATE TABLE IF NOT EXISTS "_cookieschema" ("strategy" VARCHAR(255) NOT NULL PRIMARY KEY, "fetch_date" DATETIME NOT NULL, "cookie_bytes" BLOB NOT NULL) WITHOUT ROWID', [])
+2025-04-18 00:59:06,077 - peewee - DEBUG - ('SELECT "t1"."strategy", "t1"."fetch_date", "t1"."cookie_bytes" FROM "_cookieschema" AS "t1" WHERE ("t1"."strategy" = ?) LIMIT ? OFFSET ?', ['basic', 1, 0])
+2025-04-18 00:59:06,077 - yfinance - DEBUG - loaded persistent cookie
+2025-04-18 00:59:06,077 - yfinance - DEBUG - reusing cookie
+2025-04-18 00:59:06,079 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): query1.finance.yahoo.com:443
+2025-04-18 00:59:06,248 - urllib3.connectionpool - DEBUG - https://query1.finance.yahoo.com:443 "GET /v1/test/getcrumb HTTP/1.1" 200 11
+2025-04-18 00:59:06,249 - yfinance - DEBUG - crumb = 'Wysn6ELpKJM'
+2025-04-18 00:59:06,249 - yfinance - DEBUG -       Exiting _get_cookie_and_crumb_basic()
+2025-04-18 00:59:06,249 - yfinance - DEBUG -      Exiting _get_cookie_and_crumb()
+2025-04-18 00:59:06,250 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): query2.finance.yahoo.com:443
+2025-04-18 00:59:06,489 - urllib3.connectionpool - DEBUG - https://query2.finance.yahoo.com:443 "GET /v8/finance/chart/TSLA?period1=1704085200&period2=1727928000&interval=1d&includePrePost=False&events=div%2Csplits%2CcapitalGains&crumb=Wysn6ELpKJM HTTP/1.1" 200 None
+2025-04-18 00:59:06,490 - yfinance - DEBUG - response code=200
+2025-04-18 00:59:06,490 - yfinance - DEBUG -     Exiting _make_request()
+2025-04-18 00:59:06,490 - yfinance - DEBUG -    Exiting get()
+2025-04-18 00:59:06,493 - yfinance - DEBUG - TSLA: yfinance received OHLC data: 2024-01-02 14:30:00 -> 2024-10-02 13:30:00
+2025-04-18 00:59:06,494 - yfinance - DEBUG - TSLA: OHLC after cleaning: 2024-01-02 09:30:00-05:00 -> 2024-10-02 09:30:00-04:00
+2025-04-18 00:59:06,500 - yfinance - DEBUG - TSLA: OHLC after combining events: 2024-01-02 00:00:00-05:00 -> 2024-10-02 00:00:00-04:00
+2025-04-18 00:59:06,506 - yfinance - DEBUG - TSLA: yfinance returning OHLC: 2024-01-02 00:00:00-05:00 -> 2024-10-02 00:00:00-04:00
+2025-04-18 00:59:06,506 - yfinance - DEBUG -   Exiting history()
+2025-04-18 00:59:06,506 - yfinance - DEBUG -  Exiting history()
+2025-04-18 00:59:06,509 - yfinance - DEBUG - Exiting download()
+2025-04-18 00:59:06,526 - __main__ - INFO - Created indicator: rsi14 of type RSI
+2025-04-18 00:59:06,528 - __main__ - INFO - BUY ORDER CREATED - Size: 20
+2025-04-18 00:59:06,529 - __main__ - INFO - BUY EXECUTED, Price: 211.88, Cost: 4237.60, Comm: 4.24
+2025-04-18 00:59:06,532 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:06,532 - __main__ - INFO - SELL EXECUTED, Price: 186.98, Cost: 3813.84, Comm: 3.37
+2025-04-18 00:59:06,536 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:06,536 - __main__ - INFO - SELL EXECUTED, Price: 195.17, Cost: -2698.96, Comm: 3.51
+2025-04-18 00:59:06,536 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:06,536 - __main__ - INFO - SELL EXECUTED, Price: 199.55, Cost: -3591.90, Comm: 3.59
+2025-04-18 00:59:06,536 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:06,537 - __main__ - INFO - SELL EXECUTED, Price: 201.02, Cost: -3618.36, Comm: 3.62
+2025-04-18 00:59:06,537 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:06,537 - __main__ - INFO - SELL EXECUTED, Price: 218.89, Cost: -3940.02, Comm: 3.94
+2025-04-18 00:59:06,537 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:06,537 - __main__ - INFO - SELL EXECUTED, Price: 234.56, Cost: -4222.08, Comm: 4.22
+2025-04-18 00:59:06,537 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:06,537 - __main__ - INFO - SELL EXECUTED, Price: 249.81, Cost: -4496.58, Comm: 4.50
+2025-04-18 00:59:06,537 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:06,538 - __main__ - INFO - SELL EXECUTED, Price: 247.71, Cost: -4458.78, Comm: 4.46
+2025-04-18 00:59:06,538 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:06,538 - __main__ - INFO - SELL EXECUTED, Price: 251.00, Cost: -4518.00, Comm: 4.52
+2025-04-18 00:59:06,538 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:06,538 - __main__ - INFO - SELL EXECUTED, Price: 262.80, Cost: -4730.40, Comm: 4.73
+2025-04-18 00:59:06,538 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:06,538 - __main__ - INFO - SELL EXECUTED, Price: 263.30, Cost: -4739.40, Comm: 4.74
+2025-04-18 00:59:06,538 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:06,539 - __main__ - INFO - SELL EXECUTED, Price: 235.80, Cost: -4244.40, Comm: 4.24
+2025-04-18 00:59:06,539 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:06,539 - __main__ - INFO - SELL EXECUTED, Price: 255.97, Cost: -4607.46, Comm: 4.61
+2025-04-18 00:59:06,539 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:06,539 - __main__ - INFO - SELL EXECUTED, Price: 255.31, Cost: -4595.58, Comm: 4.60
+2025-04-18 00:59:06,539 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:06,539 - __main__ - INFO - SELL EXECUTED, Price: 252.73, Cost: -4549.14, Comm: 4.55
+2025-04-18 00:59:06,539 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:06,539 - __main__ - INFO - SELL EXECUTED, Price: 251.09, Cost: -4519.62, Comm: 4.52
+2025-04-18 00:59:06,540 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:06,540 - __main__ - INFO - SELL EXECUTED, Price: 247.79, Cost: -4460.22, Comm: 4.46
+2025-04-18 00:59:06,540 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:06,540 - __main__ - INFO - SELL EXECUTED, Price: 253.60, Cost: -4564.80, Comm: 4.56
+2025-04-18 00:59:06,540 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:06,540 - __main__ - INFO - SELL EXECUTED, Price: 225.42, Cost: -4057.56, Comm: 4.06
+2025-04-18 00:59:06,542 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:06,542 - __main__ - INFO - SELL EXECUTED, Price: 241.52, Cost: -4347.36, Comm: 4.35
+2025-04-18 00:59:06,542 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:06,543 - __main__ - INFO - SELL EXECUTED, Price: 254.08, Cost: -4573.44, Comm: 4.57
+2025-04-18 00:59:06,543 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:06,543 - __main__ - INFO - SELL EXECUTED, Price: 252.54, Cost: -4545.72, Comm: 4.55
+2025-04-18 00:59:06,543 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:06,543 - __main__ - INFO - SELL EXECUTED, Price: 260.60, Cost: -4690.80, Comm: 4.69
+2025-04-18 00:59:06,543 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:06,543 - __main__ - INFO - SELL EXECUTED, Price: 257.38, Cost: -4632.84, Comm: 4.63
+2025-04-18 00:59:06,543 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:06,544 - __main__ - INFO - SELL EXECUTED, Price: 259.04, Cost: -4662.72, Comm: 4.66
+2025-04-18 00:59:06,544 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:06,544 - __main__ - INFO - SELL EXECUTED, Price: 262.67, Cost: -4728.06, Comm: 4.73
+2025-04-18 00:59:06,544 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:06,544 - __main__ - INFO - SELL EXECUTED, Price: 247.55, Cost: -4455.90, Comm: 4.46
+2025-04-18 00:59:09,894 - __main__ - INFO - Running strategy for GOOGL from 2024-01-01 to 2024-10-03
+2025-04-18 00:59:09,895 - __main__ - DEBUG - Downloading data for GOOGL from 2024-01-01 to 2024-10-03
+2025-04-18 00:59:09,895 - yfinance - DEBUG - Entering download()
+2025-04-18 00:59:09,895 - yfinance - DEBUG - Disabling multithreading because DEBUG logging enabled
+2025-04-18 00:59:09,895 - yfinance - DEBUG - Using User-Agent: Mozilla/5.0 (X11; Linux i686; rv:135.0) Gecko/20100101 Firefox/135.0
+2025-04-18 00:59:09,896 - yfinance - DEBUG -  Entering history()
+2025-04-18 00:59:09,897 - peewee - DEBUG - ('CREATE TABLE IF NOT EXISTS "_kv" ("key" VARCHAR(255) NOT NULL PRIMARY KEY, "value" VARCHAR(255)) WITHOUT ROWID', [])
+2025-04-18 00:59:09,898 - peewee - DEBUG - ('SELECT "t1"."key", "t1"."value" FROM "_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['GOOGL', 1, 0])
+2025-04-18 00:59:09,925 - yfinance - DEBUG -   Entering history()
+2025-04-18 00:59:09,928 - yfinance - DEBUG - GOOGL: Yahoo GET parameters: {'period1': '2024-01-01 00:00:00-05:00', 'period2': '2024-10-03 00:00:00-04:00', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-04-18 00:59:09,928 - yfinance - DEBUG -    Entering get()
+2025-04-18 00:59:09,928 - yfinance - DEBUG -     Entering _make_request()
+2025-04-18 00:59:09,928 - yfinance - DEBUG - url=https://query2.finance.yahoo.com/v8/finance/chart/GOOGL
+2025-04-18 00:59:09,928 - yfinance - DEBUG - params=frozendict.frozendict({'period1': 1704085200, 'period2': 1727928000, 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'})
+2025-04-18 00:59:09,928 - yfinance - DEBUG -      Entering _get_cookie_and_crumb()
+2025-04-18 00:59:09,928 - yfinance - DEBUG - cookie_mode = 'basic'
+2025-04-18 00:59:09,928 - yfinance - DEBUG -       Entering _get_cookie_and_crumb_basic()
+2025-04-18 00:59:09,929 - peewee - DEBUG - ('CREATE TABLE IF NOT EXISTS "_cookieschema" ("strategy" VARCHAR(255) NOT NULL PRIMARY KEY, "fetch_date" DATETIME NOT NULL, "cookie_bytes" BLOB NOT NULL) WITHOUT ROWID', [])
+2025-04-18 00:59:09,930 - peewee - DEBUG - ('SELECT "t1"."strategy", "t1"."fetch_date", "t1"."cookie_bytes" FROM "_cookieschema" AS "t1" WHERE ("t1"."strategy" = ?) LIMIT ? OFFSET ?', ['basic', 1, 0])
+2025-04-18 00:59:09,930 - yfinance - DEBUG - loaded persistent cookie
+2025-04-18 00:59:09,931 - yfinance - DEBUG - reusing cookie
+2025-04-18 00:59:09,934 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): query1.finance.yahoo.com:443
+2025-04-18 00:59:10,120 - urllib3.connectionpool - DEBUG - https://query1.finance.yahoo.com:443 "GET /v1/test/getcrumb HTTP/1.1" 200 11
+2025-04-18 00:59:10,121 - yfinance - DEBUG - crumb = 'Wysn6ELpKJM'
+2025-04-18 00:59:10,121 - yfinance - DEBUG -       Exiting _get_cookie_and_crumb_basic()
+2025-04-18 00:59:10,121 - yfinance - DEBUG -      Exiting _get_cookie_and_crumb()
+2025-04-18 00:59:10,123 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): query2.finance.yahoo.com:443
+2025-04-18 00:59:10,290 - urllib3.connectionpool - DEBUG - https://query2.finance.yahoo.com:443 "GET /v8/finance/chart/GOOGL?period1=1704085200&period2=1727928000&interval=1d&includePrePost=False&events=div%2Csplits%2CcapitalGains&crumb=Wysn6ELpKJM HTTP/1.1" 200 None
+2025-04-18 00:59:10,291 - yfinance - DEBUG - response code=200
+2025-04-18 00:59:10,291 - yfinance - DEBUG -     Exiting _make_request()
+2025-04-18 00:59:10,291 - yfinance - DEBUG -    Exiting get()
+2025-04-18 00:59:10,295 - yfinance - DEBUG - GOOGL: yfinance received OHLC data: 2024-01-02 14:30:00 -> 2024-10-02 13:30:00
+2025-04-18 00:59:10,296 - yfinance - DEBUG - GOOGL: OHLC after cleaning: 2024-01-02 09:30:00-05:00 -> 2024-10-02 09:30:00-04:00
+2025-04-18 00:59:10,304 - yfinance - DEBUG - GOOGL: OHLC after combining events: 2024-01-02 00:00:00-05:00 -> 2024-10-02 00:00:00-04:00
+2025-04-18 00:59:10,309 - yfinance - DEBUG - GOOGL: yfinance returning OHLC: 2024-01-02 00:00:00-05:00 -> 2024-10-02 00:00:00-04:00
+2025-04-18 00:59:10,309 - yfinance - DEBUG -   Exiting history()
+2025-04-18 00:59:10,309 - yfinance - DEBUG -  Exiting history()
+2025-04-18 00:59:10,311 - yfinance - DEBUG - Exiting download()
+2025-04-18 00:59:10,337 - __main__ - INFO - Created indicator: rsi14 of type RSI
+2025-04-18 00:59:10,340 - __main__ - INFO - BUY ORDER CREATED - Size: 20
+2025-04-18 00:59:10,340 - __main__ - INFO - BUY EXECUTED, Price: 141.44, Cost: 2828.88, Comm: 2.83
+2025-04-18 00:59:10,341 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,341 - __main__ - INFO - SELL EXECUTED, Price: 147.71, Cost: 2545.99, Comm: 2.66
+2025-04-18 00:59:10,342 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,342 - __main__ - INFO - SELL EXECUTED, Price: 147.46, Cost: -2076.39, Comm: 2.65
+2025-04-18 00:59:10,342 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,343 - __main__ - INFO - SELL EXECUTED, Price: 147.30, Cost: -2651.32, Comm: 2.65
+2025-04-18 00:59:10,343 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,343 - __main__ - INFO - SELL EXECUTED, Price: 148.76, Cost: -2677.66, Comm: 2.68
+2025-04-18 00:59:10,343 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,343 - __main__ - INFO - SELL EXECUTED, Price: 148.41, Cost: -2671.39, Comm: 2.67
+2025-04-18 00:59:10,343 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,343 - __main__ - INFO - SELL EXECUTED, Price: 149.23, Cost: -2686.08, Comm: 2.69
+2025-04-18 00:59:10,343 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,344 - __main__ - INFO - SELL EXECUTED, Price: 149.51, Cost: -2691.09, Comm: 2.69
+2025-04-18 00:59:10,344 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,344 - __main__ - INFO - SELL EXECUTED, Price: 150.46, Cost: -2708.29, Comm: 2.71
+2025-04-18 00:59:10,345 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,345 - __main__ - INFO - SELL EXECUTED, Price: 150.13, Cost: -2702.38, Comm: 2.70
+2025-04-18 00:59:10,345 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,346 - __main__ - INFO - SELL EXECUTED, Price: 149.97, Cost: -2699.51, Comm: 2.70
+2025-04-18 00:59:10,346 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,346 - __main__ - INFO - SELL EXECUTED, Price: 152.77, Cost: -2749.85, Comm: 2.75
+2025-04-18 00:59:10,346 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,347 - __main__ - INFO - SELL EXECUTED, Price: 152.87, Cost: -2751.64, Comm: 2.75
+2025-04-18 00:59:10,348 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,348 - __main__ - INFO - SELL EXECUTED, Price: 152.77, Cost: -2749.85, Comm: 2.75
+2025-04-18 00:59:10,349 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,350 - __main__ - INFO - SELL EXECUTED, Price: 152.05, Cost: -2736.95, Comm: 2.74
+2025-04-18 00:59:10,350 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,350 - __main__ - INFO - SELL EXECUTED, Price: 155.35, Cost: -2796.25, Comm: 2.80
+2025-04-18 00:59:10,350 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,351 - __main__ - INFO - SELL EXECUTED, Price: 155.47, Cost: -2798.40, Comm: 2.80
+2025-04-18 00:59:10,351 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,351 - __main__ - INFO - SELL EXECUTED, Price: 156.16, Cost: -2810.94, Comm: 2.81
+2025-04-18 00:59:10,352 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,352 - __main__ - INFO - SELL EXECUTED, Price: 157.21, Cost: -2829.75, Comm: 2.83
+2025-04-18 00:59:10,352 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,352 - __main__ - INFO - SELL EXECUTED, Price: 158.10, Cost: -2845.87, Comm: 2.85
+2025-04-18 00:59:10,353 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,353 - __main__ - INFO - SELL EXECUTED, Price: 156.74, Cost: -2821.33, Comm: 2.82
+2025-04-18 00:59:10,353 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,353 - __main__ - INFO - SELL EXECUTED, Price: 150.61, Cost: -2710.98, Comm: 2.71
+2025-04-18 00:59:10,353 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,353 - __main__ - INFO - SELL EXECUTED, Price: 168.26, Cost: -3028.60, Comm: 3.03
+2025-04-18 00:59:10,354 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,354 - __main__ - INFO - SELL EXECUTED, Price: 164.82, Cost: -2966.80, Comm: 2.97
+2025-04-18 00:59:10,354 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,354 - __main__ - INFO - SELL EXECUTED, Price: 166.76, Cost: -3001.73, Comm: 3.00
+2025-04-18 00:59:10,354 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,354 - __main__ - INFO - SELL EXECUTED, Price: 166.66, Cost: -2999.94, Comm: 3.00
+2025-04-18 00:59:10,354 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,355 - __main__ - INFO - SELL EXECUTED, Price: 167.70, Cost: -3018.57, Comm: 3.02
+2025-04-18 00:59:10,355 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,355 - __main__ - INFO - SELL EXECUTED, Price: 168.20, Cost: -3027.53, Comm: 3.03
+2025-04-18 00:59:10,355 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,355 - __main__ - INFO - SELL EXECUTED, Price: 168.58, Cost: -3034.51, Comm: 3.03
+2025-04-18 00:59:10,355 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,355 - __main__ - INFO - SELL EXECUTED, Price: 167.23, Cost: -3010.15, Comm: 3.01
+2025-04-18 00:59:10,355 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,355 - __main__ - INFO - SELL EXECUTED, Price: 163.48, Cost: -2942.61, Comm: 2.94
+2025-04-18 00:59:10,355 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,356 - __main__ - INFO - SELL EXECUTED, Price: 168.96, Cost: -3041.32, Comm: 3.04
+2025-04-18 00:59:10,356 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,356 - __main__ - INFO - SELL EXECUTED, Price: 169.82, Cost: -3056.73, Comm: 3.06
+2025-04-18 00:59:10,356 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,356 - __main__ - INFO - SELL EXECUTED, Price: 172.47, Cost: -3104.38, Comm: 3.10
+2025-04-18 00:59:10,356 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,356 - __main__ - INFO - SELL EXECUTED, Price: 173.35, Cost: -3120.32, Comm: 3.12
+2025-04-18 00:59:10,356 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,357 - __main__ - INFO - SELL EXECUTED, Price: 175.35, Cost: -3156.33, Comm: 3.16
+2025-04-18 00:59:10,357 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,357 - __main__ - INFO - SELL EXECUTED, Price: 176.06, Cost: -3169.05, Comm: 3.17
+2025-04-18 00:59:10,357 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,357 - __main__ - INFO - SELL EXECUTED, Price: 175.80, Cost: -3164.39, Comm: 3.16
+2025-04-18 00:59:10,357 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,357 - __main__ - INFO - SELL EXECUTED, Price: 176.23, Cost: -3172.09, Comm: 3.17
+2025-04-18 00:59:10,357 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,358 - __main__ - INFO - SELL EXECUTED, Price: 174.15, Cost: -3134.65, Comm: 3.13
+2025-04-18 00:59:10,358 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,358 - __main__ - INFO - SELL EXECUTED, Price: 173.62, Cost: -3125.16, Comm: 3.13
+2025-04-18 00:59:10,358 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,358 - __main__ - INFO - SELL EXECUTED, Price: 174.60, Cost: -3142.71, Comm: 3.14
+2025-04-18 00:59:10,358 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,359 - __main__ - INFO - SELL EXECUTED, Price: 174.37, Cost: -3138.59, Comm: 3.14
+2025-04-18 00:59:10,359 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,359 - __main__ - INFO - SELL EXECUTED, Price: 175.06, Cost: -3151.13, Comm: 3.15
+2025-04-18 00:59:10,359 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,359 - __main__ - INFO - SELL EXECUTED, Price: 176.21, Cost: -3171.74, Comm: 3.17
+2025-04-18 00:59:10,360 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,360 - __main__ - INFO - SELL EXECUTED, Price: 177.61, Cost: -3196.90, Comm: 3.20
+2025-04-18 00:59:10,360 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,360 - __main__ - INFO - SELL EXECUTED, Price: 175.47, Cost: -3158.52, Comm: 3.16
+2025-04-18 00:59:10,360 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,360 - __main__ - INFO - SELL EXECUTED, Price: 176.50, Cost: -3176.99, Comm: 3.18
+2025-04-18 00:59:10,360 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,361 - __main__ - INFO - SELL EXECUTED, Price: 179.51, Cost: -3231.15, Comm: 3.23
+2025-04-18 00:59:10,361 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,361 - __main__ - INFO - SELL EXECUTED, Price: 178.97, Cost: -3221.47, Comm: 3.22
+2025-04-18 00:59:10,361 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,361 - __main__ - INFO - SELL EXECUTED, Price: 181.97, Cost: -3275.45, Comm: 3.28
+2025-04-18 00:59:10,361 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,361 - __main__ - INFO - SELL EXECUTED, Price: 183.51, Cost: -3303.25, Comm: 3.30
+2025-04-18 00:59:10,361 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,361 - __main__ - INFO - SELL EXECUTED, Price: 183.65, Cost: -3305.76, Comm: 3.31
+2025-04-18 00:59:10,362 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,362 - __main__ - INFO - SELL EXECUTED, Price: 182.37, Cost: -3282.63, Comm: 3.28
+2025-04-18 00:59:10,362 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,362 - __main__ - INFO - SELL EXECUTED, Price: 181.39, Cost: -3265.05, Comm: 3.27
+2025-04-18 00:59:10,362 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,362 - __main__ - INFO - SELL EXECUTED, Price: 184.18, Cost: -3315.27, Comm: 3.32
+2025-04-18 00:59:10,362 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,362 - __main__ - INFO - SELL EXECUTED, Price: 185.19, Cost: -3333.38, Comm: 3.33
+2025-04-18 00:59:10,362 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,363 - __main__ - INFO - SELL EXECUTED, Price: 189.21, Cost: -3405.84, Comm: 3.41
+2025-04-18 00:59:10,363 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,363 - __main__ - INFO - SELL EXECUTED, Price: 189.62, Cost: -3413.19, Comm: 3.41
+2025-04-18 00:59:10,363 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,364 - __main__ - INFO - SELL EXECUTED, Price: 188.47, Cost: -3392.39, Comm: 3.39
+2025-04-18 00:59:10,364 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,365 - __main__ - INFO - SELL EXECUTED, Price: 189.16, Cost: -3404.94, Comm: 3.40
+2025-04-18 00:59:10,369 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,369 - __main__ - INFO - SELL EXECUTED, Price: 167.31, Cost: -3011.50, Comm: 3.01
+2025-04-18 00:59:10,369 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:10,369 - __main__ - INFO - SELL EXECUTED, Price: 166.04, Cost: -2988.69, Comm: 2.99
+2025-04-18 00:59:13,378 - __main__ - INFO - Running strategy for NVDA from 2024-01-01 to 2024-10-03
+2025-04-18 00:59:13,378 - __main__ - DEBUG - Downloading data for NVDA from 2024-01-01 to 2024-10-03
+2025-04-18 00:59:13,378 - yfinance - DEBUG - Entering download()
+2025-04-18 00:59:13,378 - yfinance - DEBUG - Disabling multithreading because DEBUG logging enabled
+2025-04-18 00:59:13,379 - yfinance - DEBUG - Using User-Agent: Mozilla/5.0 (X11; Linux i686; rv:135.0) Gecko/20100101 Firefox/135.0
+2025-04-18 00:59:13,379 - yfinance - DEBUG -  Entering history()
+2025-04-18 00:59:13,380 - peewee - DEBUG - ('CREATE TABLE IF NOT EXISTS "_kv" ("key" VARCHAR(255) NOT NULL PRIMARY KEY, "value" VARCHAR(255)) WITHOUT ROWID', [])
+2025-04-18 00:59:13,380 - peewee - DEBUG - ('SELECT "t1"."key", "t1"."value" FROM "_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['NVDA', 1, 0])
+2025-04-18 00:59:13,405 - yfinance - DEBUG -   Entering history()
+2025-04-18 00:59:13,407 - yfinance - DEBUG - NVDA: Yahoo GET parameters: {'period1': '2024-01-01 00:00:00-05:00', 'period2': '2024-10-03 00:00:00-04:00', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-04-18 00:59:13,407 - yfinance - DEBUG -    Entering get()
+2025-04-18 00:59:13,407 - yfinance - DEBUG -     Entering _make_request()
+2025-04-18 00:59:13,408 - yfinance - DEBUG - url=https://query2.finance.yahoo.com/v8/finance/chart/NVDA
+2025-04-18 00:59:13,408 - yfinance - DEBUG - params=frozendict.frozendict({'period1': 1704085200, 'period2': 1727928000, 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'})
+2025-04-18 00:59:13,408 - yfinance - DEBUG -      Entering _get_cookie_and_crumb()
+2025-04-18 00:59:13,408 - yfinance - DEBUG - cookie_mode = 'basic'
+2025-04-18 00:59:13,408 - yfinance - DEBUG -       Entering _get_cookie_and_crumb_basic()
+2025-04-18 00:59:13,409 - peewee - DEBUG - ('CREATE TABLE IF NOT EXISTS "_cookieschema" ("strategy" VARCHAR(255) NOT NULL PRIMARY KEY, "fetch_date" DATETIME NOT NULL, "cookie_bytes" BLOB NOT NULL) WITHOUT ROWID', [])
+2025-04-18 00:59:13,409 - peewee - DEBUG - ('SELECT "t1"."strategy", "t1"."fetch_date", "t1"."cookie_bytes" FROM "_cookieschema" AS "t1" WHERE ("t1"."strategy" = ?) LIMIT ? OFFSET ?', ['basic', 1, 0])
+2025-04-18 00:59:13,409 - yfinance - DEBUG - loaded persistent cookie
+2025-04-18 00:59:13,409 - yfinance - DEBUG - reusing cookie
+2025-04-18 00:59:13,411 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): query1.finance.yahoo.com:443
+2025-04-18 00:59:13,580 - urllib3.connectionpool - DEBUG - https://query1.finance.yahoo.com:443 "GET /v1/test/getcrumb HTTP/1.1" 200 11
+2025-04-18 00:59:13,580 - yfinance - DEBUG - crumb = 'Wysn6ELpKJM'
+2025-04-18 00:59:13,580 - yfinance - DEBUG -       Exiting _get_cookie_and_crumb_basic()
+2025-04-18 00:59:13,580 - yfinance - DEBUG -      Exiting _get_cookie_and_crumb()
+2025-04-18 00:59:13,581 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): query2.finance.yahoo.com:443
+2025-04-18 00:59:13,785 - urllib3.connectionpool - DEBUG - https://query2.finance.yahoo.com:443 "GET /v8/finance/chart/NVDA?period1=1704085200&period2=1727928000&interval=1d&includePrePost=False&events=div%2Csplits%2CcapitalGains&crumb=Wysn6ELpKJM HTTP/1.1" 200 None
+2025-04-18 00:59:13,786 - yfinance - DEBUG - response code=200
+2025-04-18 00:59:13,786 - yfinance - DEBUG -     Exiting _make_request()
+2025-04-18 00:59:13,786 - yfinance - DEBUG -    Exiting get()
+2025-04-18 00:59:13,788 - yfinance - DEBUG - NVDA: yfinance received OHLC data: 2024-01-02 14:30:00 -> 2024-10-02 13:30:00
+2025-04-18 00:59:13,789 - yfinance - DEBUG - NVDA: OHLC after cleaning: 2024-01-02 09:30:00-05:00 -> 2024-10-02 09:30:00-04:00
+2025-04-18 00:59:13,798 - yfinance - DEBUG - NVDA: OHLC after combining events: 2024-01-02 00:00:00-05:00 -> 2024-10-02 00:00:00-04:00
+2025-04-18 00:59:13,803 - yfinance - DEBUG - NVDA: yfinance returning OHLC: 2024-01-02 00:00:00-05:00 -> 2024-10-02 00:00:00-04:00
+2025-04-18 00:59:13,803 - yfinance - DEBUG -   Exiting history()
+2025-04-18 00:59:13,803 - yfinance - DEBUG -  Exiting history()
+2025-04-18 00:59:13,806 - yfinance - DEBUG - Exiting download()
+2025-04-18 00:59:13,823 - __main__ - INFO - Created indicator: rsi14 of type RSI
+2025-04-18 00:59:13,827 - __main__ - INFO - BUY ORDER CREATED - Size: 20
+2025-04-18 00:59:13,828 - __main__ - INFO - BUY EXECUTED, Price: 86.84, Cost: 1736.75, Comm: 1.74
+2025-04-18 00:59:13,831 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:13,831 - __main__ - INFO - SELL EXECUTED, Price: 94.88, Cost: 1563.07, Comm: 1.71
+2025-04-18 00:59:13,832 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:13,832 - __main__ - INFO - SELL EXECUTED, Price: 94.34, Cost: -1335.73, Comm: 1.70
+2025-04-18 00:59:13,832 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:13,832 - __main__ - INFO - SELL EXECUTED, Price: 93.57, Cost: -1684.23, Comm: 1.68
+2025-04-18 00:59:13,832 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:13,832 - __main__ - INFO - SELL EXECUTED, Price: 95.43, Cost: -1717.70, Comm: 1.72
+2025-04-18 00:59:13,832 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:13,833 - __main__ - INFO - SELL EXECUTED, Price: 101.99, Cost: -1835.90, Comm: 1.84
+2025-04-18 00:59:13,833 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:13,833 - __main__ - INFO - SELL EXECUTED, Price: 104.41, Cost: -1879.46, Comm: 1.88
+2025-04-18 00:59:13,833 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:13,833 - __main__ - INFO - SELL EXECUTED, Price: 110.21, Cost: -1983.74, Comm: 1.98
+2025-04-18 00:59:13,833 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:13,833 - __main__ - INFO - SELL EXECUTED, Price: 113.01, Cost: -2034.23, Comm: 2.03
+2025-04-18 00:59:13,833 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:13,834 - __main__ - INFO - SELL EXECUTED, Price: 114.61, Cost: -2063.02, Comm: 2.06
+2025-04-18 00:59:13,834 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:13,834 - __main__ - INFO - SELL EXECUTED, Price: 112.48, Cost: -2024.69, Comm: 2.02
+2025-04-18 00:59:13,835 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:13,835 - __main__ - INFO - SELL EXECUTED, Price: 113.58, Cost: -2044.51, Comm: 2.04
+2025-04-18 00:59:13,835 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:13,835 - __main__ - INFO - SELL EXECUTED, Price: 115.68, Cost: -2082.20, Comm: 2.08
+2025-04-18 00:59:13,835 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:13,835 - __main__ - INFO - SELL EXECUTED, Price: 118.33, Cost: -2129.98, Comm: 2.13
+2025-04-18 00:59:13,836 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:13,836 - __main__ - INFO - SELL EXECUTED, Price: 124.01, Cost: -2232.13, Comm: 2.23
+2025-04-18 00:59:13,836 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:13,837 - __main__ - INFO - SELL EXECUTED, Price: 119.73, Cost: -2155.15, Comm: 2.16
+2025-04-18 00:59:13,837 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:13,837 - __main__ - INFO - SELL EXECUTED, Price: 120.33, Cost: -2165.95, Comm: 2.17
+2025-04-18 00:59:13,837 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:13,837 - __main__ - INFO - SELL EXECUTED, Price: 121.74, Cost: -2191.32, Comm: 2.19
+2025-04-18 00:59:13,837 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:13,838 - __main__ - INFO - SELL EXECUTED, Price: 123.03, Cost: -2214.53, Comm: 2.21
+2025-04-18 00:59:13,838 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:13,838 - __main__ - INFO - SELL EXECUTED, Price: 129.36, Cost: -2328.45, Comm: 2.33
+2025-04-18 00:59:13,838 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:13,838 - __main__ - INFO - SELL EXECUTED, Price: 129.93, Cost: -2338.70, Comm: 2.34
+2025-04-18 00:59:13,838 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:13,838 - __main__ - INFO - SELL EXECUTED, Price: 132.96, Cost: -2393.23, Comm: 2.39
+2025-04-18 00:59:13,839 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:13,839 - __main__ - INFO - SELL EXECUTED, Price: 131.11, Cost: -2359.94, Comm: 2.36
+2025-04-18 00:59:13,839 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:13,839 - __main__ - INFO - SELL EXECUTED, Price: 139.77, Cost: -2515.78, Comm: 2.52
+2025-04-18 00:59:13,840 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:13,840 - __main__ - INFO - SELL EXECUTED, Price: 127.09, Cost: -2287.60, Comm: 2.29
+2025-04-18 00:59:13,840 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:13,840 - __main__ - INFO - SELL EXECUTED, Price: 123.21, Cost: -2217.77, Comm: 2.22
+2025-04-18 00:59:13,840 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:13,840 - __main__ - INFO - SELL EXECUTED, Price: 124.07, Cost: -2233.25, Comm: 2.23
+2025-04-18 00:59:13,841 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:13,842 - __main__ - INFO - SELL EXECUTED, Price: 127.35, Cost: -2292.27, Comm: 2.29
+2025-04-18 00:59:13,842 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:13,842 - __main__ - INFO - SELL EXECUTED, Price: 134.00, Cost: -2411.95, Comm: 2.41
+2025-04-18 00:59:13,842 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:13,842 - __main__ - INFO - SELL EXECUTED, Price: 135.72, Cost: -2442.90, Comm: 2.44
+2025-04-18 00:59:13,844 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:13,844 - __main__ - INFO - SELL EXECUTED, Price: 128.37, Cost: -2310.63, Comm: 2.31
+2025-04-18 00:59:13,844 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 00:59:13,845 - __main__ - INFO - SELL EXECUTED, Price: 129.99, Cost: -2339.78, Comm: 2.34
+2025-04-18 01:02:07,166 - __main__ - INFO - Running strategy for NVDA from 2024-01-01 to 2024-10-03
+2025-04-18 01:02:07,166 - __main__ - DEBUG - Downloading data for NVDA from 2024-01-01 to 2024-10-03
+2025-04-18 01:02:07,166 - yfinance - DEBUG - Entering download()
+2025-04-18 01:02:07,167 - yfinance - DEBUG - Disabling multithreading because DEBUG logging enabled
+2025-04-18 01:02:07,167 - yfinance - DEBUG - Using User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+2025-04-18 01:02:07,167 - yfinance - DEBUG -  Entering history()
+2025-04-18 01:02:07,169 - peewee - DEBUG - ('CREATE TABLE IF NOT EXISTS "_kv" ("key" VARCHAR(255) NOT NULL PRIMARY KEY, "value" VARCHAR(255)) WITHOUT ROWID', [])
+2025-04-18 01:02:07,170 - peewee - DEBUG - ('SELECT "t1"."key", "t1"."value" FROM "_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['NVDA', 1, 0])
+2025-04-18 01:02:07,194 - yfinance - DEBUG -   Entering history()
+2025-04-18 01:02:07,197 - yfinance - DEBUG - NVDA: Yahoo GET parameters: {'period1': '2024-01-01 00:00:00-05:00', 'period2': '2024-10-03 00:00:00-04:00', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-04-18 01:02:07,197 - yfinance - DEBUG -    Entering get()
+2025-04-18 01:02:07,197 - yfinance - DEBUG -     Entering _make_request()
+2025-04-18 01:02:07,197 - yfinance - DEBUG - url=https://query2.finance.yahoo.com/v8/finance/chart/NVDA
+2025-04-18 01:02:07,197 - yfinance - DEBUG - params=frozendict.frozendict({'period1': 1704085200, 'period2': 1727928000, 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'})
+2025-04-18 01:02:07,197 - yfinance - DEBUG -      Entering _get_cookie_and_crumb()
+2025-04-18 01:02:07,197 - yfinance - DEBUG - cookie_mode = 'basic'
+2025-04-18 01:02:07,197 - yfinance - DEBUG -       Entering _get_cookie_and_crumb_basic()
+2025-04-18 01:02:07,199 - peewee - DEBUG - ('CREATE TABLE IF NOT EXISTS "_cookieschema" ("strategy" VARCHAR(255) NOT NULL PRIMARY KEY, "fetch_date" DATETIME NOT NULL, "cookie_bytes" BLOB NOT NULL) WITHOUT ROWID', [])
+2025-04-18 01:02:07,199 - peewee - DEBUG - ('SELECT "t1"."strategy", "t1"."fetch_date", "t1"."cookie_bytes" FROM "_cookieschema" AS "t1" WHERE ("t1"."strategy" = ?) LIMIT ? OFFSET ?', ['basic', 1, 0])
+2025-04-18 01:02:07,200 - yfinance - DEBUG - loaded persistent cookie
+2025-04-18 01:02:07,200 - yfinance - DEBUG - reusing cookie
+2025-04-18 01:02:07,203 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): query1.finance.yahoo.com:443
+2025-04-18 01:02:07,433 - urllib3.connectionpool - DEBUG - https://query1.finance.yahoo.com:443 "GET /v1/test/getcrumb HTTP/1.1" 200 11
+2025-04-18 01:02:07,434 - yfinance - DEBUG - crumb = 'Wysn6ELpKJM'
+2025-04-18 01:02:07,434 - yfinance - DEBUG -       Exiting _get_cookie_and_crumb_basic()
+2025-04-18 01:02:07,434 - yfinance - DEBUG -      Exiting _get_cookie_and_crumb()
+2025-04-18 01:02:07,437 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): query2.finance.yahoo.com:443
+2025-04-18 01:02:07,666 - urllib3.connectionpool - DEBUG - https://query2.finance.yahoo.com:443 "GET /v8/finance/chart/NVDA?period1=1704085200&period2=1727928000&interval=1d&includePrePost=False&events=div%2Csplits%2CcapitalGains&crumb=Wysn6ELpKJM HTTP/1.1" 200 None
+2025-04-18 01:02:07,668 - yfinance - DEBUG - response code=200
+2025-04-18 01:02:07,669 - yfinance - DEBUG -     Exiting _make_request()
+2025-04-18 01:02:07,669 - yfinance - DEBUG -    Exiting get()
+2025-04-18 01:02:07,675 - yfinance - DEBUG - NVDA: yfinance received OHLC data: 2024-01-02 14:30:00 -> 2024-10-02 13:30:00
+2025-04-18 01:02:07,676 - yfinance - DEBUG - NVDA: OHLC after cleaning: 2024-01-02 09:30:00-05:00 -> 2024-10-02 09:30:00-04:00
+2025-04-18 01:02:07,689 - yfinance - DEBUG - NVDA: OHLC after combining events: 2024-01-02 00:00:00-05:00 -> 2024-10-02 00:00:00-04:00
+2025-04-18 01:02:07,692 - yfinance - DEBUG - NVDA: yfinance returning OHLC: 2024-01-02 00:00:00-05:00 -> 2024-10-02 00:00:00-04:00
+2025-04-18 01:02:07,693 - yfinance - DEBUG -   Exiting history()
+2025-04-18 01:02:07,693 - yfinance - DEBUG -  Exiting history()
+2025-04-18 01:02:07,694 - yfinance - DEBUG - Exiting download()
+2025-04-18 01:02:07,711 - __main__ - INFO - Created indicator: rsi14 of type RSI
+2025-04-18 01:02:07,715 - __main__ - INFO - BUY ORDER CREATED - Size: 20, Current Position: 0
+2025-04-18 01:02:07,716 - __main__ - INFO - BUY EXECUTED, Price: 86.84, Cost: 1736.75, Comm: 1.74, Position Size: 20.0
+2025-04-18 01:02:07,717 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 20.0
+2025-04-18 01:02:07,718 - __main__ - INFO - SELL EXECUTED, Price: 94.88, Cost: 1563.07, Comm: 1.71, Position Size: 38.0
+2025-04-18 01:02:07,719 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 38.0
+2025-04-18 01:02:07,720 - __main__ - INFO - SELL EXECUTED, Price: 94.34, Cost: -1335.73, Comm: 1.70, Position Size: 56.0
+2025-04-18 01:02:07,721 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 56.0
+2025-04-18 01:02:07,721 - __main__ - INFO - SELL EXECUTED, Price: 93.57, Cost: -1684.23, Comm: 1.68, Position Size: 74.0
+2025-04-18 01:02:07,721 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 74.0
+2025-04-18 01:02:07,721 - __main__ - INFO - SELL EXECUTED, Price: 95.43, Cost: -1717.70, Comm: 1.72, Position Size: 92.0
+2025-04-18 01:02:07,721 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 92.0
+2025-04-18 01:02:07,722 - __main__ - INFO - SELL EXECUTED, Price: 101.99, Cost: -1835.90, Comm: 1.84, Position Size: 110.0
+2025-04-18 01:02:07,722 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 110.0
+2025-04-18 01:02:07,722 - __main__ - INFO - SELL EXECUTED, Price: 104.41, Cost: -1879.46, Comm: 1.88, Position Size: 128.0
+2025-04-18 01:02:07,722 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 128.0
+2025-04-18 01:02:07,722 - __main__ - INFO - SELL EXECUTED, Price: 110.21, Cost: -1983.74, Comm: 1.98, Position Size: 146.0
+2025-04-18 01:02:07,722 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 146.0
+2025-04-18 01:02:07,723 - __main__ - INFO - SELL EXECUTED, Price: 113.01, Cost: -2034.23, Comm: 2.03, Position Size: 164.0
+2025-04-18 01:02:07,723 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 164.0
+2025-04-18 01:02:07,723 - __main__ - INFO - SELL EXECUTED, Price: 114.61, Cost: -2063.02, Comm: 2.06, Position Size: 182.0
+2025-04-18 01:02:07,723 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 182.0
+2025-04-18 01:02:07,723 - __main__ - INFO - SELL EXECUTED, Price: 112.48, Cost: -2024.69, Comm: 2.02, Position Size: 200.0
+2025-04-18 01:02:07,723 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 200.0
+2025-04-18 01:02:07,723 - __main__ - INFO - SELL EXECUTED, Price: 113.58, Cost: -2044.51, Comm: 2.04, Position Size: 218.0
+2025-04-18 01:02:07,723 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 218.0
+2025-04-18 01:02:07,724 - __main__ - INFO - SELL EXECUTED, Price: 115.68, Cost: -2082.20, Comm: 2.08, Position Size: 236.0
+2025-04-18 01:02:07,724 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 236.0
+2025-04-18 01:02:07,724 - __main__ - INFO - SELL EXECUTED, Price: 118.33, Cost: -2129.98, Comm: 2.13, Position Size: 254.0
+2025-04-18 01:02:07,724 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 254.0
+2025-04-18 01:02:07,724 - __main__ - INFO - SELL EXECUTED, Price: 124.01, Cost: -2232.13, Comm: 2.23, Position Size: 272.0
+2025-04-18 01:02:07,724 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 272.0
+2025-04-18 01:02:07,724 - __main__ - INFO - SELL EXECUTED, Price: 119.73, Cost: -2155.15, Comm: 2.16, Position Size: 290.0
+2025-04-18 01:02:07,725 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 290.0
+2025-04-18 01:02:07,725 - __main__ - INFO - SELL EXECUTED, Price: 120.33, Cost: -2165.95, Comm: 2.17, Position Size: 308.0
+2025-04-18 01:02:07,725 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 308.0
+2025-04-18 01:02:07,725 - __main__ - INFO - SELL EXECUTED, Price: 121.74, Cost: -2191.32, Comm: 2.19, Position Size: 326.0
+2025-04-18 01:02:07,725 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 326.0
+2025-04-18 01:02:07,725 - __main__ - INFO - SELL EXECUTED, Price: 123.03, Cost: -2214.53, Comm: 2.21, Position Size: 344.0
+2025-04-18 01:02:07,725 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 344.0
+2025-04-18 01:02:07,725 - __main__ - INFO - SELL EXECUTED, Price: 129.36, Cost: -2328.45, Comm: 2.33, Position Size: 362.0
+2025-04-18 01:02:07,726 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 362.0
+2025-04-18 01:02:07,726 - __main__ - INFO - SELL EXECUTED, Price: 129.93, Cost: -2338.70, Comm: 2.34, Position Size: 380.0
+2025-04-18 01:02:07,726 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 380.0
+2025-04-18 01:02:07,726 - __main__ - INFO - SELL EXECUTED, Price: 132.96, Cost: -2393.23, Comm: 2.39, Position Size: 398.0
+2025-04-18 01:02:07,726 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 398.0
+2025-04-18 01:02:07,727 - __main__ - INFO - SELL EXECUTED, Price: 131.11, Cost: -2359.94, Comm: 2.36, Position Size: 416.0
+2025-04-18 01:02:07,727 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 416.0
+2025-04-18 01:02:07,727 - __main__ - INFO - SELL EXECUTED, Price: 139.77, Cost: -2515.78, Comm: 2.52, Position Size: 434.0
+2025-04-18 01:02:07,727 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 434.0
+2025-04-18 01:02:07,727 - __main__ - INFO - SELL EXECUTED, Price: 127.09, Cost: -2287.60, Comm: 2.29, Position Size: 452.0
+2025-04-18 01:02:07,727 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 452.0
+2025-04-18 01:02:07,727 - __main__ - INFO - SELL EXECUTED, Price: 123.21, Cost: -2217.77, Comm: 2.22, Position Size: 470.0
+2025-04-18 01:02:07,728 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 470.0
+2025-04-18 01:02:07,728 - __main__ - INFO - SELL EXECUTED, Price: 124.07, Cost: -2233.25, Comm: 2.23, Position Size: 488.0
+2025-04-18 01:02:07,729 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 488.0
+2025-04-18 01:02:07,729 - __main__ - INFO - SELL EXECUTED, Price: 127.35, Cost: -2292.28, Comm: 2.29, Position Size: 506.0
+2025-04-18 01:02:07,729 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 506.0
+2025-04-18 01:02:07,729 - __main__ - INFO - SELL EXECUTED, Price: 134.00, Cost: -2411.95, Comm: 2.41, Position Size: 524.0
+2025-04-18 01:02:07,729 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 524.0
+2025-04-18 01:02:07,730 - __main__ - INFO - SELL EXECUTED, Price: 135.72, Cost: -2442.90, Comm: 2.44, Position Size: 542.0
+2025-04-18 01:02:07,731 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 542.0
+2025-04-18 01:02:07,731 - __main__ - INFO - SELL EXECUTED, Price: 128.37, Cost: -2310.63, Comm: 2.31, Position Size: 560.0
+2025-04-18 01:02:07,731 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 560.0
+2025-04-18 01:02:07,732 - __main__ - INFO - SELL EXECUTED, Price: 129.99, Cost: -2339.78, Comm: 2.34, Position Size: 578.0
+2025-04-18 01:05:35,126 - __main__ - INFO - Running strategy for NVDA from 2024-01-01 to 2024-10-03
+2025-04-18 01:05:35,126 - __main__ - DEBUG - Downloading data for NVDA from 2024-01-01 to 2024-10-03
+2025-04-18 01:05:35,126 - yfinance - DEBUG - Entering download()
+2025-04-18 01:05:35,126 - yfinance - DEBUG - Disabling multithreading because DEBUG logging enabled
+2025-04-18 01:05:35,126 - yfinance - DEBUG - Using User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 14.7; rv:135.0) Gecko/20100101 Firefox/135.0
+2025-04-18 01:05:35,126 - yfinance - DEBUG -  Entering history()
+2025-04-18 01:05:35,128 - peewee - DEBUG - ('CREATE TABLE IF NOT EXISTS "_kv" ("key" VARCHAR(255) NOT NULL PRIMARY KEY, "value" VARCHAR(255)) WITHOUT ROWID', [])
+2025-04-18 01:05:35,128 - peewee - DEBUG - ('SELECT "t1"."key", "t1"."value" FROM "_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['NVDA', 1, 0])
+2025-04-18 01:05:35,163 - yfinance - DEBUG -   Entering history()
+2025-04-18 01:05:35,167 - yfinance - DEBUG - NVDA: Yahoo GET parameters: {'period1': '2024-01-01 00:00:00-05:00', 'period2': '2024-10-03 00:00:00-04:00', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-04-18 01:05:35,167 - yfinance - DEBUG -    Entering get()
+2025-04-18 01:05:35,167 - yfinance - DEBUG -     Entering _make_request()
+2025-04-18 01:05:35,167 - yfinance - DEBUG - url=https://query2.finance.yahoo.com/v8/finance/chart/NVDA
+2025-04-18 01:05:35,167 - yfinance - DEBUG - params=frozendict.frozendict({'period1': 1704085200, 'period2': 1727928000, 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'})
+2025-04-18 01:05:35,167 - yfinance - DEBUG -      Entering _get_cookie_and_crumb()
+2025-04-18 01:05:35,167 - yfinance - DEBUG - cookie_mode = 'basic'
+2025-04-18 01:05:35,167 - yfinance - DEBUG -       Entering _get_cookie_and_crumb_basic()
+2025-04-18 01:05:35,169 - peewee - DEBUG - ('CREATE TABLE IF NOT EXISTS "_cookieschema" ("strategy" VARCHAR(255) NOT NULL PRIMARY KEY, "fetch_date" DATETIME NOT NULL, "cookie_bytes" BLOB NOT NULL) WITHOUT ROWID', [])
+2025-04-18 01:05:35,169 - peewee - DEBUG - ('SELECT "t1"."strategy", "t1"."fetch_date", "t1"."cookie_bytes" FROM "_cookieschema" AS "t1" WHERE ("t1"."strategy" = ?) LIMIT ? OFFSET ?', ['basic', 1, 0])
+2025-04-18 01:05:35,169 - yfinance - DEBUG - loaded persistent cookie
+2025-04-18 01:05:35,169 - yfinance - DEBUG - reusing cookie
+2025-04-18 01:05:35,171 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): query1.finance.yahoo.com:443
+2025-04-18 01:05:35,405 - urllib3.connectionpool - DEBUG - https://query1.finance.yahoo.com:443 "GET /v1/test/getcrumb HTTP/1.1" 200 11
+2025-04-18 01:05:35,406 - yfinance - DEBUG - crumb = 'Wysn6ELpKJM'
+2025-04-18 01:05:35,406 - yfinance - DEBUG -       Exiting _get_cookie_and_crumb_basic()
+2025-04-18 01:05:35,406 - yfinance - DEBUG -      Exiting _get_cookie_and_crumb()
+2025-04-18 01:05:35,408 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): query2.finance.yahoo.com:443
+2025-04-18 01:05:35,732 - urllib3.connectionpool - DEBUG - https://query2.finance.yahoo.com:443 "GET /v8/finance/chart/NVDA?period1=1704085200&period2=1727928000&interval=1d&includePrePost=False&events=div%2Csplits%2CcapitalGains&crumb=Wysn6ELpKJM HTTP/1.1" 200 None
+2025-04-18 01:05:35,732 - yfinance - DEBUG - response code=200
+2025-04-18 01:05:35,732 - yfinance - DEBUG -     Exiting _make_request()
+2025-04-18 01:05:35,732 - yfinance - DEBUG -    Exiting get()
+2025-04-18 01:05:35,734 - yfinance - DEBUG - NVDA: yfinance received OHLC data: 2024-01-02 14:30:00 -> 2024-10-02 13:30:00
+2025-04-18 01:05:35,736 - yfinance - DEBUG - NVDA: OHLC after cleaning: 2024-01-02 09:30:00-05:00 -> 2024-10-02 09:30:00-04:00
+2025-04-18 01:05:35,748 - yfinance - DEBUG - NVDA: OHLC after combining events: 2024-01-02 00:00:00-05:00 -> 2024-10-02 00:00:00-04:00
+2025-04-18 01:05:35,752 - yfinance - DEBUG - NVDA: yfinance returning OHLC: 2024-01-02 00:00:00-05:00 -> 2024-10-02 00:00:00-04:00
+2025-04-18 01:05:35,752 - yfinance - DEBUG -   Exiting history()
+2025-04-18 01:05:35,752 - yfinance - DEBUG -  Exiting history()
+2025-04-18 01:05:35,753 - yfinance - DEBUG - Exiting download()
+2025-04-18 01:05:35,768 - __main__ - INFO - Created indicator: rsi14 of type RSI
+2025-04-18 01:05:35,772 - __main__ - INFO - BUY ORDER CREATED - Size: 20, Current Position: 0
+2025-04-18 01:05:35,773 - __main__ - INFO - BUY EXECUTED, Price: 86.84, Cost: 1736.75, Comm: 1.74, Position Size: 20.0
+2025-04-18 01:05:35,774 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 20.0
+2025-04-18 01:05:35,774 - __main__ - INFO - SELL EXECUTED, Price: 94.88, Cost: 1563.07, Comm: 1.71, Position Size: 38.0
+2025-04-18 01:05:35,775 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 38.0
+2025-04-18 01:05:35,775 - __main__ - INFO - SELL EXECUTED, Price: 94.34, Cost: -1335.73, Comm: 1.70, Position Size: 56.0
+2025-04-18 01:05:35,775 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 56.0
+2025-04-18 01:05:35,775 - __main__ - INFO - SELL EXECUTED, Price: 93.57, Cost: -1684.23, Comm: 1.68, Position Size: 74.0
+2025-04-18 01:05:35,775 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 74.0
+2025-04-18 01:05:35,775 - __main__ - INFO - SELL EXECUTED, Price: 95.43, Cost: -1717.70, Comm: 1.72, Position Size: 92.0
+2025-04-18 01:05:35,775 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 92.0
+2025-04-18 01:05:35,776 - __main__ - INFO - SELL EXECUTED, Price: 101.99, Cost: -1835.90, Comm: 1.84, Position Size: 110.0
+2025-04-18 01:05:35,776 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 110.0
+2025-04-18 01:05:35,776 - __main__ - INFO - SELL EXECUTED, Price: 104.41, Cost: -1879.46, Comm: 1.88, Position Size: 128.0
+2025-04-18 01:05:35,776 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 128.0
+2025-04-18 01:05:35,776 - __main__ - INFO - SELL EXECUTED, Price: 110.21, Cost: -1983.74, Comm: 1.98, Position Size: 146.0
+2025-04-18 01:05:35,776 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 146.0
+2025-04-18 01:05:35,776 - __main__ - INFO - SELL EXECUTED, Price: 113.01, Cost: -2034.23, Comm: 2.03, Position Size: 164.0
+2025-04-18 01:05:35,776 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 164.0
+2025-04-18 01:05:35,777 - __main__ - INFO - SELL EXECUTED, Price: 114.61, Cost: -2063.02, Comm: 2.06, Position Size: 182.0
+2025-04-18 01:05:35,777 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 182.0
+2025-04-18 01:05:35,777 - __main__ - INFO - SELL EXECUTED, Price: 112.48, Cost: -2024.69, Comm: 2.02, Position Size: 200.0
+2025-04-18 01:05:35,777 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 200.0
+2025-04-18 01:05:35,777 - __main__ - INFO - SELL EXECUTED, Price: 113.58, Cost: -2044.51, Comm: 2.04, Position Size: 218.0
+2025-04-18 01:05:35,777 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 218.0
+2025-04-18 01:05:35,777 - __main__ - INFO - SELL EXECUTED, Price: 115.68, Cost: -2082.20, Comm: 2.08, Position Size: 236.0
+2025-04-18 01:05:35,777 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 236.0
+2025-04-18 01:05:35,778 - __main__ - INFO - SELL EXECUTED, Price: 118.33, Cost: -2129.98, Comm: 2.13, Position Size: 254.0
+2025-04-18 01:05:35,778 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 254.0
+2025-04-18 01:05:35,778 - __main__ - INFO - SELL EXECUTED, Price: 124.01, Cost: -2232.13, Comm: 2.23, Position Size: 272.0
+2025-04-18 01:05:35,778 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 272.0
+2025-04-18 01:05:35,778 - __main__ - INFO - SELL EXECUTED, Price: 119.73, Cost: -2155.15, Comm: 2.16, Position Size: 290.0
+2025-04-18 01:05:35,778 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 290.0
+2025-04-18 01:05:35,778 - __main__ - INFO - SELL EXECUTED, Price: 120.33, Cost: -2165.95, Comm: 2.17, Position Size: 308.0
+2025-04-18 01:05:35,778 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 308.0
+2025-04-18 01:05:35,779 - __main__ - INFO - SELL EXECUTED, Price: 121.74, Cost: -2191.32, Comm: 2.19, Position Size: 326.0
+2025-04-18 01:05:35,779 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 326.0
+2025-04-18 01:05:35,779 - __main__ - INFO - SELL EXECUTED, Price: 123.03, Cost: -2214.53, Comm: 2.21, Position Size: 344.0
+2025-04-18 01:05:35,779 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 344.0
+2025-04-18 01:05:35,779 - __main__ - INFO - SELL EXECUTED, Price: 129.36, Cost: -2328.45, Comm: 2.33, Position Size: 362.0
+2025-04-18 01:05:35,779 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 362.0
+2025-04-18 01:05:35,779 - __main__ - INFO - SELL EXECUTED, Price: 129.93, Cost: -2338.70, Comm: 2.34, Position Size: 380.0
+2025-04-18 01:05:35,779 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 380.0
+2025-04-18 01:05:35,779 - __main__ - INFO - SELL EXECUTED, Price: 132.96, Cost: -2393.23, Comm: 2.39, Position Size: 398.0
+2025-04-18 01:05:35,780 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 398.0
+2025-04-18 01:05:35,780 - __main__ - INFO - SELL EXECUTED, Price: 131.11, Cost: -2359.94, Comm: 2.36, Position Size: 416.0
+2025-04-18 01:05:35,780 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 416.0
+2025-04-18 01:05:35,781 - __main__ - INFO - SELL EXECUTED, Price: 139.77, Cost: -2515.78, Comm: 2.52, Position Size: 434.0
+2025-04-18 01:05:35,782 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 434.0
+2025-04-18 01:05:35,782 - __main__ - INFO - SELL EXECUTED, Price: 127.09, Cost: -2287.60, Comm: 2.29, Position Size: 452.0
+2025-04-18 01:05:35,782 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 452.0
+2025-04-18 01:05:35,783 - __main__ - INFO - SELL EXECUTED, Price: 123.21, Cost: -2217.77, Comm: 2.22, Position Size: 470.0
+2025-04-18 01:05:35,783 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 470.0
+2025-04-18 01:05:35,783 - __main__ - INFO - SELL EXECUTED, Price: 124.07, Cost: -2233.25, Comm: 2.23, Position Size: 488.0
+2025-04-18 01:05:35,784 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 488.0
+2025-04-18 01:05:35,784 - __main__ - INFO - SELL EXECUTED, Price: 127.35, Cost: -2292.27, Comm: 2.29, Position Size: 506.0
+2025-04-18 01:05:35,784 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 506.0
+2025-04-18 01:05:35,784 - __main__ - INFO - SELL EXECUTED, Price: 134.00, Cost: -2411.95, Comm: 2.41, Position Size: 524.0
+2025-04-18 01:05:35,784 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 524.0
+2025-04-18 01:05:35,785 - __main__ - INFO - SELL EXECUTED, Price: 135.72, Cost: -2442.90, Comm: 2.44, Position Size: 542.0
+2025-04-18 01:05:35,786 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 542.0
+2025-04-18 01:05:35,786 - __main__ - INFO - SELL EXECUTED, Price: 128.37, Cost: -2310.63, Comm: 2.31, Position Size: 560.0
+2025-04-18 01:05:35,787 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 560.0
+2025-04-18 01:05:35,787 - __main__ - INFO - SELL EXECUTED, Price: 129.99, Cost: -2339.78, Comm: 2.34, Position Size: 578.0
+2025-04-18 01:09:08,690 - __main__ - INFO - Running strategy for NVDA from 2024-01-01 to 2024-10-03
+2025-04-18 01:09:08,691 - __main__ - DEBUG - Downloading data for NVDA from 2024-01-01 to 2024-10-03
+2025-04-18 01:09:08,691 - yfinance - DEBUG - Entering download()
+2025-04-18 01:09:08,691 - yfinance - DEBUG - Disabling multithreading because DEBUG logging enabled
+2025-04-18 01:09:08,691 - yfinance - DEBUG - Using User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+2025-04-18 01:09:08,691 - yfinance - DEBUG -  Entering history()
+2025-04-18 01:09:08,692 - peewee - DEBUG - ('CREATE TABLE IF NOT EXISTS "_kv" ("key" VARCHAR(255) NOT NULL PRIMARY KEY, "value" VARCHAR(255)) WITHOUT ROWID', [])
+2025-04-18 01:09:08,692 - peewee - DEBUG - ('SELECT "t1"."key", "t1"."value" FROM "_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['NVDA', 1, 0])
+2025-04-18 01:09:08,714 - yfinance - DEBUG -   Entering history()
+2025-04-18 01:09:08,717 - yfinance - DEBUG - NVDA: Yahoo GET parameters: {'period1': '2024-01-01 00:00:00-05:00', 'period2': '2024-10-03 00:00:00-04:00', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-04-18 01:09:08,717 - yfinance - DEBUG -    Entering get()
+2025-04-18 01:09:08,717 - yfinance - DEBUG -     Entering _make_request()
+2025-04-18 01:09:08,717 - yfinance - DEBUG - url=https://query2.finance.yahoo.com/v8/finance/chart/NVDA
+2025-04-18 01:09:08,717 - yfinance - DEBUG - params=frozendict.frozendict({'period1': 1704085200, 'period2': 1727928000, 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'})
+2025-04-18 01:09:08,717 - yfinance - DEBUG -      Entering _get_cookie_and_crumb()
+2025-04-18 01:09:08,717 - yfinance - DEBUG - cookie_mode = 'basic'
+2025-04-18 01:09:08,717 - yfinance - DEBUG -       Entering _get_cookie_and_crumb_basic()
+2025-04-18 01:09:08,718 - peewee - DEBUG - ('CREATE TABLE IF NOT EXISTS "_cookieschema" ("strategy" VARCHAR(255) NOT NULL PRIMARY KEY, "fetch_date" DATETIME NOT NULL, "cookie_bytes" BLOB NOT NULL) WITHOUT ROWID', [])
+2025-04-18 01:09:08,718 - peewee - DEBUG - ('SELECT "t1"."strategy", "t1"."fetch_date", "t1"."cookie_bytes" FROM "_cookieschema" AS "t1" WHERE ("t1"."strategy" = ?) LIMIT ? OFFSET ?', ['basic', 1, 0])
+2025-04-18 01:09:08,719 - yfinance - DEBUG - loaded persistent cookie
+2025-04-18 01:09:08,719 - yfinance - DEBUG - reusing cookie
+2025-04-18 01:09:08,720 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): query1.finance.yahoo.com:443
+2025-04-18 01:09:08,950 - urllib3.connectionpool - DEBUG - https://query1.finance.yahoo.com:443 "GET /v1/test/getcrumb HTTP/1.1" 200 11
+2025-04-18 01:09:08,951 - yfinance - DEBUG - crumb = 'Wysn6ELpKJM'
+2025-04-18 01:09:08,952 - yfinance - DEBUG -       Exiting _get_cookie_and_crumb_basic()
+2025-04-18 01:09:08,952 - yfinance - DEBUG -      Exiting _get_cookie_and_crumb()
+2025-04-18 01:09:08,954 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): query2.finance.yahoo.com:443
+2025-04-18 01:09:09,208 - urllib3.connectionpool - DEBUG - https://query2.finance.yahoo.com:443 "GET /v8/finance/chart/NVDA?period1=1704085200&period2=1727928000&interval=1d&includePrePost=False&events=div%2Csplits%2CcapitalGains&crumb=Wysn6ELpKJM HTTP/1.1" 200 None
+2025-04-18 01:09:09,252 - yfinance - DEBUG - response code=200
+2025-04-18 01:09:09,253 - yfinance - DEBUG -     Exiting _make_request()
+2025-04-18 01:09:09,253 - yfinance - DEBUG -    Exiting get()
+2025-04-18 01:09:09,258 - yfinance - DEBUG - NVDA: yfinance received OHLC data: 2024-01-02 14:30:00 -> 2024-10-02 13:30:00
+2025-04-18 01:09:09,258 - yfinance - DEBUG - NVDA: OHLC after cleaning: 2024-01-02 09:30:00-05:00 -> 2024-10-02 09:30:00-04:00
+2025-04-18 01:09:09,267 - yfinance - DEBUG - NVDA: OHLC after combining events: 2024-01-02 00:00:00-05:00 -> 2024-10-02 00:00:00-04:00
+2025-04-18 01:09:09,270 - yfinance - DEBUG - NVDA: yfinance returning OHLC: 2024-01-02 00:00:00-05:00 -> 2024-10-02 00:00:00-04:00
+2025-04-18 01:09:09,270 - yfinance - DEBUG -   Exiting history()
+2025-04-18 01:09:09,270 - yfinance - DEBUG -  Exiting history()
+2025-04-18 01:09:09,274 - yfinance - DEBUG - Exiting download()
+2025-04-18 01:09:09,296 - __main__ - INFO - Created indicator: rsi14 of type RSI
+2025-04-18 01:09:09,301 - __main__ - INFO - BUY ORDER CREATED - Size: 20, Current Position: 0.0
+2025-04-18 01:09:09,302 - __main__ - INFO - BUY EXECUTED, Price: 86.84, Cost: 1736.75, Comm: 1.74, Position Size: 20.0
+2025-04-18 01:09:09,303 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 20.0
+2025-04-18 01:09:09,304 - __main__ - INFO - SELL EXECUTED, Price: 94.88, Cost: 1563.07, Comm: 1.71, Position Size: 38.0
+2025-04-18 01:09:09,304 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 38.0
+2025-04-18 01:09:09,304 - __main__ - INFO - SELL EXECUTED, Price: 94.34, Cost: -1335.73, Comm: 1.70, Position Size: 56.0
+2025-04-18 01:09:09,304 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 56.0
+2025-04-18 01:09:09,305 - __main__ - INFO - SELL EXECUTED, Price: 93.57, Cost: -1684.23, Comm: 1.68, Position Size: 74.0
+2025-04-18 01:09:09,306 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 74.0
+2025-04-18 01:09:09,306 - __main__ - INFO - SELL EXECUTED, Price: 95.43, Cost: -1717.70, Comm: 1.72, Position Size: 92.0
+2025-04-18 01:09:09,306 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 92.0
+2025-04-18 01:09:09,307 - __main__ - INFO - SELL EXECUTED, Price: 101.99, Cost: -1835.90, Comm: 1.84, Position Size: 110.0
+2025-04-18 01:09:09,307 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 110.0
+2025-04-18 01:09:09,307 - __main__ - INFO - SELL EXECUTED, Price: 104.41, Cost: -1879.46, Comm: 1.88, Position Size: 128.0
+2025-04-18 01:09:09,307 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 128.0
+2025-04-18 01:09:09,307 - __main__ - INFO - SELL EXECUTED, Price: 110.21, Cost: -1983.74, Comm: 1.98, Position Size: 146.0
+2025-04-18 01:09:09,308 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 146.0
+2025-04-18 01:09:09,308 - __main__ - INFO - SELL EXECUTED, Price: 113.01, Cost: -2034.23, Comm: 2.03, Position Size: 164.0
+2025-04-18 01:09:09,308 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 164.0
+2025-04-18 01:09:09,308 - __main__ - INFO - SELL EXECUTED, Price: 114.61, Cost: -2063.02, Comm: 2.06, Position Size: 182.0
+2025-04-18 01:09:09,308 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 182.0
+2025-04-18 01:09:09,308 - __main__ - INFO - SELL EXECUTED, Price: 112.48, Cost: -2024.69, Comm: 2.02, Position Size: 200.0
+2025-04-18 01:09:09,309 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 200.0
+2025-04-18 01:09:09,309 - __main__ - INFO - SELL EXECUTED, Price: 113.58, Cost: -2044.51, Comm: 2.04, Position Size: 218.0
+2025-04-18 01:09:09,309 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 218.0
+2025-04-18 01:09:09,309 - __main__ - INFO - SELL EXECUTED, Price: 115.68, Cost: -2082.20, Comm: 2.08, Position Size: 236.0
+2025-04-18 01:09:09,309 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 236.0
+2025-04-18 01:09:09,309 - __main__ - INFO - SELL EXECUTED, Price: 118.33, Cost: -2129.98, Comm: 2.13, Position Size: 254.0
+2025-04-18 01:09:09,309 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 254.0
+2025-04-18 01:09:09,309 - __main__ - INFO - SELL EXECUTED, Price: 124.01, Cost: -2232.13, Comm: 2.23, Position Size: 272.0
+2025-04-18 01:09:09,310 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 272.0
+2025-04-18 01:09:09,310 - __main__ - INFO - SELL EXECUTED, Price: 119.73, Cost: -2155.15, Comm: 2.16, Position Size: 290.0
+2025-04-18 01:09:09,310 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 290.0
+2025-04-18 01:09:09,310 - __main__ - INFO - SELL EXECUTED, Price: 120.33, Cost: -2165.95, Comm: 2.17, Position Size: 308.0
+2025-04-18 01:09:09,310 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 308.0
+2025-04-18 01:09:09,310 - __main__ - INFO - SELL EXECUTED, Price: 121.74, Cost: -2191.32, Comm: 2.19, Position Size: 326.0
+2025-04-18 01:09:09,310 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 326.0
+2025-04-18 01:09:09,310 - __main__ - INFO - SELL EXECUTED, Price: 123.03, Cost: -2214.53, Comm: 2.21, Position Size: 344.0
+2025-04-18 01:09:09,310 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 344.0
+2025-04-18 01:09:09,311 - __main__ - INFO - SELL EXECUTED, Price: 129.36, Cost: -2328.45, Comm: 2.33, Position Size: 362.0
+2025-04-18 01:09:09,311 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 362.0
+2025-04-18 01:09:09,311 - __main__ - INFO - SELL EXECUTED, Price: 129.93, Cost: -2338.70, Comm: 2.34, Position Size: 380.0
+2025-04-18 01:09:09,311 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 380.0
+2025-04-18 01:09:09,311 - __main__ - INFO - SELL EXECUTED, Price: 132.96, Cost: -2393.23, Comm: 2.39, Position Size: 398.0
+2025-04-18 01:09:09,311 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 398.0
+2025-04-18 01:09:09,311 - __main__ - INFO - SELL EXECUTED, Price: 131.11, Cost: -2359.94, Comm: 2.36, Position Size: 416.0
+2025-04-18 01:09:09,311 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 416.0
+2025-04-18 01:09:09,311 - __main__ - INFO - SELL EXECUTED, Price: 139.77, Cost: -2515.78, Comm: 2.52, Position Size: 434.0
+2025-04-18 01:09:09,312 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 434.0
+2025-04-18 01:09:09,312 - __main__ - INFO - SELL EXECUTED, Price: 127.09, Cost: -2287.60, Comm: 2.29, Position Size: 452.0
+2025-04-18 01:09:09,312 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 452.0
+2025-04-18 01:09:09,312 - __main__ - INFO - SELL EXECUTED, Price: 123.21, Cost: -2217.77, Comm: 2.22, Position Size: 470.0
+2025-04-18 01:09:09,312 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 470.0
+2025-04-18 01:09:09,312 - __main__ - INFO - SELL EXECUTED, Price: 124.07, Cost: -2233.25, Comm: 2.23, Position Size: 488.0
+2025-04-18 01:09:09,313 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 488.0
+2025-04-18 01:09:09,313 - __main__ - INFO - SELL EXECUTED, Price: 127.35, Cost: -2292.27, Comm: 2.29, Position Size: 506.0
+2025-04-18 01:09:09,313 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 506.0
+2025-04-18 01:09:09,313 - __main__ - INFO - SELL EXECUTED, Price: 134.00, Cost: -2411.95, Comm: 2.41, Position Size: 524.0
+2025-04-18 01:09:09,313 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 524.0
+2025-04-18 01:09:09,313 - __main__ - INFO - SELL EXECUTED, Price: 135.72, Cost: -2442.90, Comm: 2.44, Position Size: 542.0
+2025-04-18 01:09:09,315 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 542.0
+2025-04-18 01:09:09,315 - __main__ - INFO - SELL EXECUTED, Price: 128.37, Cost: -2310.63, Comm: 2.31, Position Size: 560.0
+2025-04-18 01:09:09,315 - __main__ - INFO - SELL ORDER CREATED - Size: 18, Current Position: 560.0
+2025-04-18 01:09:09,315 - __main__ - INFO - SELL EXECUTED, Price: 129.99, Cost: -2339.78, Comm: 2.34, Position Size: 578.0
+2025-04-18 01:09:09,317 - __main__ - ERROR - Error saving results to output.json: `np.float_` was removed in the NumPy 2.0 release. Use `np.float64` instead.
+2025-04-18 01:11:17,861 - yfinance - DEBUG - Entering download()
+2025-04-18 01:11:17,861 - yfinance - DEBUG - Disabling multithreading because DEBUG logging enabled
+2025-04-18 01:11:17,861 - yfinance - DEBUG - Using User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:135.0) Gecko/20100101 Firefox/135.0
+2025-04-18 01:11:17,861 - yfinance - DEBUG -  Entering history()
+2025-04-18 01:11:17,862 - peewee - DEBUG - ('CREATE TABLE IF NOT EXISTS "_kv" ("key" VARCHAR(255) NOT NULL PRIMARY KEY, "value" VARCHAR(255)) WITHOUT ROWID', [])
+2025-04-18 01:11:17,862 - peewee - DEBUG - ('SELECT "t1"."key", "t1"."value" FROM "_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['NVDA', 1, 0])
+2025-04-18 01:11:17,887 - yfinance - DEBUG -   Entering history()
+2025-04-18 01:11:17,891 - yfinance - DEBUG - NVDA: Yahoo GET parameters: {'period1': '2024-01-01 00:00:00-05:00', 'period2': '2024-10-03 00:00:00-04:00', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-04-18 01:11:17,891 - yfinance - DEBUG -    Entering get()
+2025-04-18 01:11:17,891 - yfinance - DEBUG -     Entering _make_request()
+2025-04-18 01:11:17,891 - yfinance - DEBUG - url=https://query2.finance.yahoo.com/v8/finance/chart/NVDA
+2025-04-18 01:11:17,891 - yfinance - DEBUG - params=frozendict.frozendict({'period1': 1704085200, 'period2': 1727928000, 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'})
+2025-04-18 01:11:17,891 - yfinance - DEBUG -      Entering _get_cookie_and_crumb()
+2025-04-18 01:11:17,891 - yfinance - DEBUG - cookie_mode = 'basic'
+2025-04-18 01:11:17,891 - yfinance - DEBUG -       Entering _get_cookie_and_crumb_basic()
+2025-04-18 01:11:17,892 - peewee - DEBUG - ('CREATE TABLE IF NOT EXISTS "_cookieschema" ("strategy" VARCHAR(255) NOT NULL PRIMARY KEY, "fetch_date" DATETIME NOT NULL, "cookie_bytes" BLOB NOT NULL) WITHOUT ROWID', [])
+2025-04-18 01:11:17,892 - peewee - DEBUG - ('SELECT "t1"."strategy", "t1"."fetch_date", "t1"."cookie_bytes" FROM "_cookieschema" AS "t1" WHERE ("t1"."strategy" = ?) LIMIT ? OFFSET ?', ['basic', 1, 0])
+2025-04-18 01:11:17,892 - yfinance - DEBUG - loaded persistent cookie
+2025-04-18 01:11:17,892 - yfinance - DEBUG - reusing cookie
+2025-04-18 01:11:17,894 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): query1.finance.yahoo.com:443
+2025-04-18 01:11:18,102 - urllib3.connectionpool - DEBUG - https://query1.finance.yahoo.com:443 "GET /v1/test/getcrumb HTTP/1.1" 200 11
+2025-04-18 01:11:18,104 - yfinance - DEBUG - crumb = 'Wysn6ELpKJM'
+2025-04-18 01:11:18,104 - yfinance - DEBUG -       Exiting _get_cookie_and_crumb_basic()
+2025-04-18 01:11:18,104 - yfinance - DEBUG -      Exiting _get_cookie_and_crumb()
+2025-04-18 01:11:18,106 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): query2.finance.yahoo.com:443
+2025-04-18 01:11:18,354 - urllib3.connectionpool - DEBUG - https://query2.finance.yahoo.com:443 "GET /v8/finance/chart/NVDA?period1=1704085200&period2=1727928000&interval=1d&includePrePost=False&events=div%2Csplits%2CcapitalGains&crumb=Wysn6ELpKJM HTTP/1.1" 200 None
+2025-04-18 01:11:18,355 - yfinance - DEBUG - response code=200
+2025-04-18 01:11:18,355 - yfinance - DEBUG -     Exiting _make_request()
+2025-04-18 01:11:18,356 - yfinance - DEBUG -    Exiting get()
+2025-04-18 01:11:18,360 - yfinance - DEBUG - NVDA: yfinance received OHLC data: 2024-01-02 14:30:00 -> 2024-10-02 13:30:00
+2025-04-18 01:11:18,362 - yfinance - DEBUG - NVDA: OHLC after cleaning: 2024-01-02 09:30:00-05:00 -> 2024-10-02 09:30:00-04:00
+2025-04-18 01:11:18,377 - yfinance - DEBUG - NVDA: OHLC after combining events: 2024-01-02 00:00:00-05:00 -> 2024-10-02 00:00:00-04:00
+2025-04-18 01:11:18,380 - yfinance - DEBUG - NVDA: yfinance returning OHLC: 2024-01-02 00:00:00-05:00 -> 2024-10-02 00:00:00-04:00
+2025-04-18 01:11:18,380 - yfinance - DEBUG -   Exiting history()
+2025-04-18 01:11:18,380 - yfinance - DEBUG -  Exiting history()
+2025-04-18 01:11:18,384 - yfinance - DEBUG - Exiting download()
+2025-04-18 01:11:18,385 - __main__ - ERROR - Error occurred during execution
+Traceback (most recent call last):
+  File "C:\Users\tejki\Desktop\AlgoBlocks\STC\frontend\backend\strategy_runner.py", line 271, in run_strategy
+    results = cerebro.run()
+  File "C:\Users\tejki\AppData\Local\Programs\Python\Python313\Lib\site-packages\backtrader\cerebro.py", line 1132, in run
+    runstrat = self.runstrategies(iterstrat)
+  File "C:\Users\tejki\AppData\Local\Programs\Python\Python313\Lib\site-packages\backtrader\cerebro.py", line 1215, in runstrategies
+    data._start()
+    ~~~~~~~~~~~^^
+  File "C:\Users\tejki\AppData\Local\Programs\Python\Python313\Lib\site-packages\backtrader\feed.py", line 203, in _start
+    self.start()
+    ~~~~~~~~~~^^
+  File "C:\Users\tejki\AppData\Local\Programs\Python\Python313\Lib\site-packages\backtrader\feeds\pandafeed.py", line 212, in start
+    colnames = [x.lower() for x in self.p.dataname.columns.values]
+                ^^^^^^^
+AttributeError: 'tuple' object has no attribute 'lower'
+2025-04-18 01:18:40,899 - __main__ - INFO - Starting strategy execution...
+2025-04-18 01:18:40,899 - __main__ - INFO - Running strategy for NVDA from 2024-01-01 to 2024-10-03
+2025-04-18 01:18:40,899 - __main__ - INFO - Downloading market data...
+2025-04-18 01:18:40,899 - yfinance - DEBUG - Entering download()
+2025-04-18 01:18:40,899 - yfinance - DEBUG - Disabling multithreading because DEBUG logging enabled
+2025-04-18 01:18:40,900 - yfinance - DEBUG - Using User-Agent: Mozilla/5.0 (X11; Linux i686; rv:135.0) Gecko/20100101 Firefox/135.0
+2025-04-18 01:18:40,900 - yfinance - DEBUG -  Entering history()
+2025-04-18 01:18:40,901 - peewee - DEBUG - ('CREATE TABLE IF NOT EXISTS "_kv" ("key" VARCHAR(255) NOT NULL PRIMARY KEY, "value" VARCHAR(255)) WITHOUT ROWID', [])
+2025-04-18 01:18:40,901 - peewee - DEBUG - ('SELECT "t1"."key", "t1"."value" FROM "_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['NVDA', 1, 0])
+2025-04-18 01:18:40,927 - yfinance - DEBUG -   Entering history()
+2025-04-18 01:18:40,930 - yfinance - DEBUG - NVDA: Yahoo GET parameters: {'period1': '2024-01-01 00:00:00-05:00', 'period2': '2024-10-03 00:00:00-04:00', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-04-18 01:18:40,930 - yfinance - DEBUG -    Entering get()
+2025-04-18 01:18:40,930 - yfinance - DEBUG -     Entering _make_request()
+2025-04-18 01:18:40,930 - yfinance - DEBUG - url=https://query2.finance.yahoo.com/v8/finance/chart/NVDA
+2025-04-18 01:18:40,930 - yfinance - DEBUG - params=frozendict.frozendict({'period1': 1704085200, 'period2': 1727928000, 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'})
+2025-04-18 01:18:40,930 - yfinance - DEBUG -      Entering _get_cookie_and_crumb()
+2025-04-18 01:18:40,930 - yfinance - DEBUG - cookie_mode = 'basic'
+2025-04-18 01:18:40,930 - yfinance - DEBUG -       Entering _get_cookie_and_crumb_basic()
+2025-04-18 01:18:40,931 - peewee - DEBUG - ('CREATE TABLE IF NOT EXISTS "_cookieschema" ("strategy" VARCHAR(255) NOT NULL PRIMARY KEY, "fetch_date" DATETIME NOT NULL, "cookie_bytes" BLOB NOT NULL) WITHOUT ROWID', [])
+2025-04-18 01:18:40,931 - peewee - DEBUG - ('SELECT "t1"."strategy", "t1"."fetch_date", "t1"."cookie_bytes" FROM "_cookieschema" AS "t1" WHERE ("t1"."strategy" = ?) LIMIT ? OFFSET ?', ['basic', 1, 0])
+2025-04-18 01:18:40,931 - yfinance - DEBUG - loaded persistent cookie
+2025-04-18 01:18:40,932 - yfinance - DEBUG - reusing cookie
+2025-04-18 01:18:40,933 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): query1.finance.yahoo.com:443
+2025-04-18 01:18:41,140 - urllib3.connectionpool - DEBUG - https://query1.finance.yahoo.com:443 "GET /v1/test/getcrumb HTTP/1.1" 200 11
+2025-04-18 01:18:41,142 - yfinance - DEBUG - crumb = 'Wysn6ELpKJM'
+2025-04-18 01:18:41,142 - yfinance - DEBUG -       Exiting _get_cookie_and_crumb_basic()
+2025-04-18 01:18:41,142 - yfinance - DEBUG -      Exiting _get_cookie_and_crumb()
+2025-04-18 01:18:41,144 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): query2.finance.yahoo.com:443
+2025-04-18 01:18:41,415 - urllib3.connectionpool - DEBUG - https://query2.finance.yahoo.com:443 "GET /v8/finance/chart/NVDA?period1=1704085200&period2=1727928000&interval=1d&includePrePost=False&events=div%2Csplits%2CcapitalGains&crumb=Wysn6ELpKJM HTTP/1.1" 200 None
+2025-04-18 01:18:41,417 - yfinance - DEBUG - response code=200
+2025-04-18 01:18:41,417 - yfinance - DEBUG -     Exiting _make_request()
+2025-04-18 01:18:41,417 - yfinance - DEBUG -    Exiting get()
+2025-04-18 01:18:41,424 - yfinance - DEBUG - NVDA: yfinance received OHLC data: 2024-01-02 14:30:00 -> 2024-10-02 13:30:00
+2025-04-18 01:18:41,426 - yfinance - DEBUG - NVDA: OHLC after cleaning: 2024-01-02 09:30:00-05:00 -> 2024-10-02 09:30:00-04:00
+2025-04-18 01:18:41,439 - yfinance - DEBUG - NVDA: OHLC after combining events: 2024-01-02 00:00:00-05:00 -> 2024-10-02 00:00:00-04:00
+2025-04-18 01:18:41,442 - yfinance - DEBUG - NVDA: yfinance returning OHLC: 2024-01-02 00:00:00-05:00 -> 2024-10-02 00:00:00-04:00
+2025-04-18 01:18:41,442 - yfinance - DEBUG -   Exiting history()
+2025-04-18 01:18:41,442 - yfinance - DEBUG -  Exiting history()
+2025-04-18 01:18:41,444 - yfinance - DEBUG - Exiting download()
+2025-04-18 01:18:41,444 - __main__ - INFO - Preparing data for backtrader...
+2025-04-18 01:18:41,445 - __main__ - INFO - Adding strategy to Cerebro...
+2025-04-18 01:18:41,445 - __main__ - INFO - Starting backtest...
+2025-04-18 01:18:41,460 - __main__ - INFO - Created indicator: rsi14 of type RSI
+2025-04-18 01:18:41,465 - __main__ - INFO - BUY ORDER CREATED - Size: 20.0, Current Position: 0.0
+2025-04-18 01:18:41,465 - __main__ - INFO - BUY EXECUTED, Price: 86.84, Size: 20.0, Cost: 1736.75, Comm: 1.74, Position: 0.0 -> 20.0
+2025-04-18 01:18:41,467 - __main__ - INFO - SELL ORDER CREATED - Size: 18.0, Current Position: 20.0
+2025-04-18 01:18:41,467 - __main__ - INFO - SELL EXECUTED, Price: 94.88, Size: -18.0, Cost: 1563.07, Comm: 1.71, Position: 20.0 -> 38.0
+2025-04-18 01:18:41,471 - __main__ - INFO - BUY ORDER CREATED - Size: 20.0, Current Position: 38.0
+2025-04-18 01:18:41,472 - __main__ - INFO - BUY EXECUTED, Price: 121.82, Size: 20.0, Cost: 2436.40, Comm: 2.44, Position: 38.0 -> 58.0
+2025-04-18 01:18:41,473 - __main__ - INFO - SELL ORDER CREATED - Size: 18.0, Current Position: 58.0
+2025-04-18 01:18:41,473 - __main__ - INFO - SELL EXECUTED, Price: 128.37, Size: -18.0, Cost: 2135.52, Comm: 2.31, Position: 58.0 -> 76.0
+2025-04-18 01:18:41,474 - __main__ - INFO - BUY ORDER CREATED - Size: 20.0, Current Position: 76.0
+2025-04-18 01:18:41,474 - __main__ - INFO - BUY EXECUTED, Price: 119.50, Size: 20.0, Cost: 2390.01, Comm: 2.39, Position: 76.0 -> 96.0
+2025-04-18 01:18:41,475 - __main__ - INFO - Backtest completed. Final value: 100296.65, Returns: 0.30%
+2025-04-18 01:18:41,476 - __main__ - INFO - Strategy execution completed successfully
+2025-04-18 01:28:54,338 - __main__ - INFO - Running strategy for NVDA from 2024-01-01 to 2024-10-03
+2025-04-18 01:28:54,338 - __main__ - DEBUG - Downloading data for NVDA from 2024-01-01 to 2024-10-03
+2025-04-18 01:28:54,338 - yfinance - DEBUG - Entering download()
+2025-04-18 01:28:54,338 - yfinance - DEBUG - Disabling multithreading because DEBUG logging enabled
+2025-04-18 01:28:54,338 - yfinance - DEBUG - Using User-Agent: Mozilla/5.0 (X11; Linux i686; rv:135.0) Gecko/20100101 Firefox/135.0
+2025-04-18 01:28:54,339 - yfinance - DEBUG -  Entering history()
+2025-04-18 01:28:54,340 - peewee - DEBUG - ('CREATE TABLE IF NOT EXISTS "_kv" ("key" VARCHAR(255) NOT NULL PRIMARY KEY, "value" VARCHAR(255)) WITHOUT ROWID', [])
+2025-04-18 01:28:54,340 - peewee - DEBUG - ('SELECT "t1"."key", "t1"."value" FROM "_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['NVDA', 1, 0])
+2025-04-18 01:28:54,364 - yfinance - DEBUG -   Entering history()
+2025-04-18 01:28:54,369 - yfinance - DEBUG - NVDA: Yahoo GET parameters: {'period1': '2024-01-01 00:00:00-05:00', 'period2': '2024-10-03 00:00:00-04:00', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-04-18 01:28:54,369 - yfinance - DEBUG -    Entering get()
+2025-04-18 01:28:54,369 - yfinance - DEBUG -     Entering _make_request()
+2025-04-18 01:28:54,369 - yfinance - DEBUG - url=https://query2.finance.yahoo.com/v8/finance/chart/NVDA
+2025-04-18 01:28:54,369 - yfinance - DEBUG - params=frozendict.frozendict({'period1': 1704085200, 'period2': 1727928000, 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'})
+2025-04-18 01:28:54,369 - yfinance - DEBUG -      Entering _get_cookie_and_crumb()
+2025-04-18 01:28:54,369 - yfinance - DEBUG - cookie_mode = 'basic'
+2025-04-18 01:28:54,369 - yfinance - DEBUG -       Entering _get_cookie_and_crumb_basic()
+2025-04-18 01:28:54,370 - peewee - DEBUG - ('CREATE TABLE IF NOT EXISTS "_cookieschema" ("strategy" VARCHAR(255) NOT NULL PRIMARY KEY, "fetch_date" DATETIME NOT NULL, "cookie_bytes" BLOB NOT NULL) WITHOUT ROWID', [])
+2025-04-18 01:28:54,371 - peewee - DEBUG - ('SELECT "t1"."strategy", "t1"."fetch_date", "t1"."cookie_bytes" FROM "_cookieschema" AS "t1" WHERE ("t1"."strategy" = ?) LIMIT ? OFFSET ?', ['basic', 1, 0])
+2025-04-18 01:28:54,371 - yfinance - DEBUG - loaded persistent cookie
+2025-04-18 01:28:54,371 - yfinance - DEBUG - reusing cookie
+2025-04-18 01:28:54,374 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): query1.finance.yahoo.com:443
+2025-04-18 01:28:54,607 - urllib3.connectionpool - DEBUG - https://query1.finance.yahoo.com:443 "GET /v1/test/getcrumb HTTP/1.1" 200 11
+2025-04-18 01:28:54,609 - yfinance - DEBUG - crumb = 'Wysn6ELpKJM'
+2025-04-18 01:28:54,609 - yfinance - DEBUG -       Exiting _get_cookie_and_crumb_basic()
+2025-04-18 01:28:54,609 - yfinance - DEBUG -      Exiting _get_cookie_and_crumb()
+2025-04-18 01:28:54,611 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): query2.finance.yahoo.com:443
+2025-04-18 01:28:54,839 - urllib3.connectionpool - DEBUG - https://query2.finance.yahoo.com:443 "GET /v8/finance/chart/NVDA?period1=1704085200&period2=1727928000&interval=1d&includePrePost=False&events=div%2Csplits%2CcapitalGains&crumb=Wysn6ELpKJM HTTP/1.1" 200 None
+2025-04-18 01:28:54,868 - yfinance - DEBUG - response code=200
+2025-04-18 01:28:54,868 - yfinance - DEBUG -     Exiting _make_request()
+2025-04-18 01:28:54,868 - yfinance - DEBUG -    Exiting get()
+2025-04-18 01:28:54,870 - yfinance - DEBUG - NVDA: yfinance received OHLC data: 2024-01-02 14:30:00 -> 2024-10-02 13:30:00
+2025-04-18 01:28:54,871 - yfinance - DEBUG - NVDA: OHLC after cleaning: 2024-01-02 09:30:00-05:00 -> 2024-10-02 09:30:00-04:00
+2025-04-18 01:28:54,880 - yfinance - DEBUG - NVDA: OHLC after combining events: 2024-01-02 00:00:00-05:00 -> 2024-10-02 00:00:00-04:00
+2025-04-18 01:28:54,885 - yfinance - DEBUG - NVDA: yfinance returning OHLC: 2024-01-02 00:00:00-05:00 -> 2024-10-02 00:00:00-04:00
+2025-04-18 01:28:54,885 - yfinance - DEBUG -   Exiting history()
+2025-04-18 01:28:54,886 - yfinance - DEBUG -  Exiting history()
+2025-04-18 01:28:54,887 - yfinance - DEBUG - Exiting download()
+2025-04-18 01:28:54,903 - __main__ - INFO - Created indicator: rsi14 of type RSI
+2025-04-18 01:28:54,907 - __main__ - INFO - BUY ORDER CREATED - Size: 20
+2025-04-18 01:28:54,907 - __main__ - INFO - BUY EXECUTED, Price: 86.84, Cost: 1736.75, Comm: 1.74
+2025-04-18 01:28:54,908 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:28:54,909 - __main__ - INFO - SELL EXECUTED, Price: 94.88, Cost: 1563.07, Comm: 1.71
+2025-04-18 01:28:54,909 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:28:54,909 - __main__ - INFO - SELL EXECUTED, Price: 94.34, Cost: -1335.73, Comm: 1.70
+2025-04-18 01:28:54,909 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:28:54,909 - __main__ - INFO - SELL EXECUTED, Price: 93.57, Cost: -1684.23, Comm: 1.68
+2025-04-18 01:28:54,910 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:28:54,910 - __main__ - INFO - SELL EXECUTED, Price: 95.43, Cost: -1717.70, Comm: 1.72
+2025-04-18 01:28:54,910 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:28:54,911 - __main__ - INFO - SELL EXECUTED, Price: 101.99, Cost: -1835.90, Comm: 1.84
+2025-04-18 01:28:54,911 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:28:54,911 - __main__ - INFO - SELL EXECUTED, Price: 104.41, Cost: -1879.46, Comm: 1.88
+2025-04-18 01:28:54,911 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:28:54,911 - __main__ - INFO - SELL EXECUTED, Price: 110.21, Cost: -1983.74, Comm: 1.98
+2025-04-18 01:28:54,911 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:28:54,912 - __main__ - INFO - SELL EXECUTED, Price: 113.01, Cost: -2034.23, Comm: 2.03
+2025-04-18 01:28:54,912 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:28:54,912 - __main__ - INFO - SELL EXECUTED, Price: 114.61, Cost: -2063.02, Comm: 2.06
+2025-04-18 01:28:54,912 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:28:54,912 - __main__ - INFO - SELL EXECUTED, Price: 112.48, Cost: -2024.69, Comm: 2.02
+2025-04-18 01:28:54,912 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:28:54,912 - __main__ - INFO - SELL EXECUTED, Price: 113.58, Cost: -2044.51, Comm: 2.04
+2025-04-18 01:28:54,913 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:28:54,913 - __main__ - INFO - SELL EXECUTED, Price: 115.68, Cost: -2082.20, Comm: 2.08
+2025-04-18 01:28:54,913 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:28:54,913 - __main__ - INFO - SELL EXECUTED, Price: 118.33, Cost: -2129.98, Comm: 2.13
+2025-04-18 01:28:54,913 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:28:54,914 - __main__ - INFO - SELL EXECUTED, Price: 124.01, Cost: -2232.13, Comm: 2.23
+2025-04-18 01:28:54,914 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:28:54,914 - __main__ - INFO - SELL EXECUTED, Price: 119.73, Cost: -2155.15, Comm: 2.16
+2025-04-18 01:28:54,914 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:28:54,915 - __main__ - INFO - SELL EXECUTED, Price: 120.33, Cost: -2165.95, Comm: 2.17
+2025-04-18 01:28:54,916 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:28:54,916 - __main__ - INFO - SELL EXECUTED, Price: 121.74, Cost: -2191.32, Comm: 2.19
+2025-04-18 01:28:54,917 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:28:54,917 - __main__ - INFO - SELL EXECUTED, Price: 123.03, Cost: -2214.53, Comm: 2.21
+2025-04-18 01:28:54,917 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:28:54,918 - __main__ - INFO - SELL EXECUTED, Price: 129.36, Cost: -2328.45, Comm: 2.33
+2025-04-18 01:28:54,918 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:28:54,918 - __main__ - INFO - SELL EXECUTED, Price: 129.93, Cost: -2338.70, Comm: 2.34
+2025-04-18 01:28:54,918 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:28:54,919 - __main__ - INFO - SELL EXECUTED, Price: 132.96, Cost: -2393.23, Comm: 2.39
+2025-04-18 01:28:54,919 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:28:54,919 - __main__ - INFO - SELL EXECUTED, Price: 131.11, Cost: -2359.94, Comm: 2.36
+2025-04-18 01:28:54,919 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:28:54,919 - __main__ - INFO - SELL EXECUTED, Price: 139.77, Cost: -2515.78, Comm: 2.52
+2025-04-18 01:28:54,919 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:28:54,920 - __main__ - INFO - SELL EXECUTED, Price: 127.09, Cost: -2287.60, Comm: 2.29
+2025-04-18 01:28:54,920 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:28:54,920 - __main__ - INFO - SELL EXECUTED, Price: 123.21, Cost: -2217.77, Comm: 2.22
+2025-04-18 01:28:54,920 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:28:54,920 - __main__ - INFO - SELL EXECUTED, Price: 124.07, Cost: -2233.25, Comm: 2.23
+2025-04-18 01:28:54,921 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:28:54,921 - __main__ - INFO - SELL EXECUTED, Price: 127.35, Cost: -2292.27, Comm: 2.29
+2025-04-18 01:28:54,921 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:28:54,921 - __main__ - INFO - SELL EXECUTED, Price: 134.00, Cost: -2411.95, Comm: 2.41
+2025-04-18 01:28:54,921 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:28:54,921 - __main__ - INFO - SELL EXECUTED, Price: 135.72, Cost: -2442.90, Comm: 2.44
+2025-04-18 01:28:54,923 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:28:54,923 - __main__ - INFO - SELL EXECUTED, Price: 128.37, Cost: -2310.63, Comm: 2.31
+2025-04-18 01:28:54,923 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:28:54,923 - __main__ - INFO - SELL EXECUTED, Price: 129.99, Cost: -2339.78, Comm: 2.34
+2025-04-18 01:28:54,926 - __main__ - ERROR - Error saving results to output.json: `np.float_` was removed in the NumPy 2.0 release. Use `np.float64` instead.
+2025-04-18 01:30:38,967 - __main__ - INFO - Running strategy for NVDA from 2024-01-01 to 2024-10-03
+2025-04-18 01:30:38,968 - __main__ - DEBUG - Downloading data for NVDA from 2024-01-01 to 2024-10-03
+2025-04-18 01:30:38,968 - yfinance - DEBUG - Entering download()
+2025-04-18 01:30:38,968 - yfinance - DEBUG - Disabling multithreading because DEBUG logging enabled
+2025-04-18 01:30:38,968 - yfinance - DEBUG - Using User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 14.7; rv:135.0) Gecko/20100101 Firefox/135.0
+2025-04-18 01:30:38,968 - yfinance - DEBUG -  Entering history()
+2025-04-18 01:30:38,969 - peewee - DEBUG - ('CREATE TABLE IF NOT EXISTS "_kv" ("key" VARCHAR(255) NOT NULL PRIMARY KEY, "value" VARCHAR(255)) WITHOUT ROWID', [])
+2025-04-18 01:30:38,970 - peewee - DEBUG - ('SELECT "t1"."key", "t1"."value" FROM "_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['NVDA', 1, 0])
+2025-04-18 01:30:38,998 - yfinance - DEBUG -   Entering history()
+2025-04-18 01:30:39,002 - yfinance - DEBUG - NVDA: Yahoo GET parameters: {'period1': '2024-01-01 00:00:00-05:00', 'period2': '2024-10-03 00:00:00-04:00', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-04-18 01:30:39,002 - yfinance - DEBUG -    Entering get()
+2025-04-18 01:30:39,002 - yfinance - DEBUG -     Entering _make_request()
+2025-04-18 01:30:39,003 - yfinance - DEBUG - url=https://query2.finance.yahoo.com/v8/finance/chart/NVDA
+2025-04-18 01:30:39,003 - yfinance - DEBUG - params=frozendict.frozendict({'period1': 1704085200, 'period2': 1727928000, 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'})
+2025-04-18 01:30:39,003 - yfinance - DEBUG -      Entering _get_cookie_and_crumb()
+2025-04-18 01:30:39,003 - yfinance - DEBUG - cookie_mode = 'basic'
+2025-04-18 01:30:39,003 - yfinance - DEBUG -       Entering _get_cookie_and_crumb_basic()
+2025-04-18 01:30:39,004 - peewee - DEBUG - ('CREATE TABLE IF NOT EXISTS "_cookieschema" ("strategy" VARCHAR(255) NOT NULL PRIMARY KEY, "fetch_date" DATETIME NOT NULL, "cookie_bytes" BLOB NOT NULL) WITHOUT ROWID', [])
+2025-04-18 01:30:39,004 - peewee - DEBUG - ('SELECT "t1"."strategy", "t1"."fetch_date", "t1"."cookie_bytes" FROM "_cookieschema" AS "t1" WHERE ("t1"."strategy" = ?) LIMIT ? OFFSET ?', ['basic', 1, 0])
+2025-04-18 01:30:39,005 - yfinance - DEBUG - loaded persistent cookie
+2025-04-18 01:30:39,005 - yfinance - DEBUG - reusing cookie
+2025-04-18 01:30:39,007 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): query1.finance.yahoo.com:443
+2025-04-18 01:30:39,294 - urllib3.connectionpool - DEBUG - https://query1.finance.yahoo.com:443 "GET /v1/test/getcrumb HTTP/1.1" 200 11
+2025-04-18 01:30:39,295 - yfinance - DEBUG - crumb = 'Wysn6ELpKJM'
+2025-04-18 01:30:39,295 - yfinance - DEBUG -       Exiting _get_cookie_and_crumb_basic()
+2025-04-18 01:30:39,295 - yfinance - DEBUG -      Exiting _get_cookie_and_crumb()
+2025-04-18 01:30:39,297 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): query2.finance.yahoo.com:443
+2025-04-18 01:30:39,509 - urllib3.connectionpool - DEBUG - https://query2.finance.yahoo.com:443 "GET /v8/finance/chart/NVDA?period1=1704085200&period2=1727928000&interval=1d&includePrePost=False&events=div%2Csplits%2CcapitalGains&crumb=Wysn6ELpKJM HTTP/1.1" 200 None
+2025-04-18 01:30:39,510 - yfinance - DEBUG - response code=200
+2025-04-18 01:30:39,510 - yfinance - DEBUG -     Exiting _make_request()
+2025-04-18 01:30:39,510 - yfinance - DEBUG -    Exiting get()
+2025-04-18 01:30:39,512 - yfinance - DEBUG - NVDA: yfinance received OHLC data: 2024-01-02 14:30:00 -> 2024-10-02 13:30:00
+2025-04-18 01:30:39,513 - yfinance - DEBUG - NVDA: OHLC after cleaning: 2024-01-02 09:30:00-05:00 -> 2024-10-02 09:30:00-04:00
+2025-04-18 01:30:39,522 - yfinance - DEBUG - NVDA: OHLC after combining events: 2024-01-02 00:00:00-05:00 -> 2024-10-02 00:00:00-04:00
+2025-04-18 01:30:39,531 - yfinance - DEBUG - NVDA: yfinance returning OHLC: 2024-01-02 00:00:00-05:00 -> 2024-10-02 00:00:00-04:00
+2025-04-18 01:30:39,531 - yfinance - DEBUG -   Exiting history()
+2025-04-18 01:30:39,531 - yfinance - DEBUG -  Exiting history()
+2025-04-18 01:30:39,534 - yfinance - DEBUG - Exiting download()
+2025-04-18 01:30:39,551 - __main__ - INFO - Created indicator: rsi14 of type RSI
+2025-04-18 01:30:39,555 - __main__ - INFO - BUY ORDER CREATED - Size: 20
+2025-04-18 01:30:39,556 - __main__ - INFO - BUY EXECUTED, Price: 86.84, Cost: 1736.75, Comm: 1.74
+2025-04-18 01:30:39,559 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:30:39,559 - __main__ - INFO - SELL EXECUTED, Price: 94.88, Cost: 1563.07, Comm: 1.71
+2025-04-18 01:30:39,560 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:30:39,561 - __main__ - INFO - SELL EXECUTED, Price: 94.34, Cost: -1335.73, Comm: 1.70
+2025-04-18 01:30:39,561 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:30:39,562 - __main__ - INFO - SELL EXECUTED, Price: 93.57, Cost: -1684.23, Comm: 1.68
+2025-04-18 01:30:39,563 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:30:39,564 - __main__ - INFO - SELL EXECUTED, Price: 95.43, Cost: -1717.70, Comm: 1.72
+2025-04-18 01:30:39,565 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:30:39,566 - __main__ - INFO - SELL EXECUTED, Price: 101.99, Cost: -1835.90, Comm: 1.84
+2025-04-18 01:30:39,567 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:30:39,567 - __main__ - INFO - SELL EXECUTED, Price: 104.41, Cost: -1879.46, Comm: 1.88
+2025-04-18 01:30:39,568 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:30:39,568 - __main__ - INFO - SELL EXECUTED, Price: 110.21, Cost: -1983.74, Comm: 1.98
+2025-04-18 01:30:39,568 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:30:39,569 - __main__ - INFO - SELL EXECUTED, Price: 113.01, Cost: -2034.23, Comm: 2.03
+2025-04-18 01:30:39,569 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:30:39,569 - __main__ - INFO - SELL EXECUTED, Price: 114.61, Cost: -2063.02, Comm: 2.06
+2025-04-18 01:30:39,569 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:30:39,570 - __main__ - INFO - SELL EXECUTED, Price: 112.48, Cost: -2024.69, Comm: 2.02
+2025-04-18 01:30:39,570 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:30:39,570 - __main__ - INFO - SELL EXECUTED, Price: 113.58, Cost: -2044.51, Comm: 2.04
+2025-04-18 01:30:39,570 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:30:39,570 - __main__ - INFO - SELL EXECUTED, Price: 115.68, Cost: -2082.20, Comm: 2.08
+2025-04-18 01:30:39,570 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:30:39,571 - __main__ - INFO - SELL EXECUTED, Price: 118.33, Cost: -2129.98, Comm: 2.13
+2025-04-18 01:30:39,571 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:30:39,571 - __main__ - INFO - SELL EXECUTED, Price: 124.01, Cost: -2232.13, Comm: 2.23
+2025-04-18 01:30:39,571 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:30:39,571 - __main__ - INFO - SELL EXECUTED, Price: 119.73, Cost: -2155.15, Comm: 2.16
+2025-04-18 01:30:39,571 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:30:39,571 - __main__ - INFO - SELL EXECUTED, Price: 120.33, Cost: -2165.95, Comm: 2.17
+2025-04-18 01:30:39,572 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:30:39,572 - __main__ - INFO - SELL EXECUTED, Price: 121.74, Cost: -2191.32, Comm: 2.19
+2025-04-18 01:30:39,572 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:30:39,572 - __main__ - INFO - SELL EXECUTED, Price: 123.03, Cost: -2214.53, Comm: 2.21
+2025-04-18 01:30:39,572 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:30:39,572 - __main__ - INFO - SELL EXECUTED, Price: 129.36, Cost: -2328.45, Comm: 2.33
+2025-04-18 01:30:39,573 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:30:39,573 - __main__ - INFO - SELL EXECUTED, Price: 129.93, Cost: -2338.70, Comm: 2.34
+2025-04-18 01:30:39,573 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:30:39,573 - __main__ - INFO - SELL EXECUTED, Price: 132.96, Cost: -2393.23, Comm: 2.39
+2025-04-18 01:30:39,573 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:30:39,573 - __main__ - INFO - SELL EXECUTED, Price: 131.11, Cost: -2359.94, Comm: 2.36
+2025-04-18 01:30:39,574 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:30:39,574 - __main__ - INFO - SELL EXECUTED, Price: 139.77, Cost: -2515.78, Comm: 2.52
+2025-04-18 01:30:39,574 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:30:39,574 - __main__ - INFO - SELL EXECUTED, Price: 127.09, Cost: -2287.60, Comm: 2.29
+2025-04-18 01:30:39,574 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:30:39,574 - __main__ - INFO - SELL EXECUTED, Price: 123.21, Cost: -2217.77, Comm: 2.22
+2025-04-18 01:30:39,575 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:30:39,575 - __main__ - INFO - SELL EXECUTED, Price: 124.07, Cost: -2233.25, Comm: 2.23
+2025-04-18 01:30:39,575 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:30:39,575 - __main__ - INFO - SELL EXECUTED, Price: 127.35, Cost: -2292.28, Comm: 2.29
+2025-04-18 01:30:39,575 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:30:39,576 - __main__ - INFO - SELL EXECUTED, Price: 134.00, Cost: -2411.95, Comm: 2.41
+2025-04-18 01:30:39,576 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:30:39,576 - __main__ - INFO - SELL EXECUTED, Price: 135.72, Cost: -2442.90, Comm: 2.44
+2025-04-18 01:30:39,577 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:30:39,577 - __main__ - INFO - SELL EXECUTED, Price: 128.37, Cost: -2310.63, Comm: 2.31
+2025-04-18 01:30:39,578 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:30:39,578 - __main__ - INFO - SELL EXECUTED, Price: 129.99, Cost: -2339.78, Comm: 2.34
+2025-04-18 01:32:21,867 - __main__ - INFO - Running strategy for NVDA from 2024-01-01 to 2024-10-03
+2025-04-18 01:32:21,867 - __main__ - DEBUG - Downloading data for NVDA from 2024-01-01 to 2024-10-03
+2025-04-18 01:32:21,867 - yfinance - DEBUG - Entering download()
+2025-04-18 01:32:21,867 - yfinance - DEBUG - Disabling multithreading because DEBUG logging enabled
+2025-04-18 01:32:21,867 - yfinance - DEBUG - Using User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36
+2025-04-18 01:32:21,868 - yfinance - DEBUG -  Entering history()
+2025-04-18 01:32:21,869 - peewee - DEBUG - ('CREATE TABLE IF NOT EXISTS "_kv" ("key" VARCHAR(255) NOT NULL PRIMARY KEY, "value" VARCHAR(255)) WITHOUT ROWID', [])
+2025-04-18 01:32:21,869 - peewee - DEBUG - ('SELECT "t1"."key", "t1"."value" FROM "_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['NVDA', 1, 0])
+2025-04-18 01:32:21,895 - yfinance - DEBUG -   Entering history()
+2025-04-18 01:32:21,900 - yfinance - DEBUG - NVDA: Yahoo GET parameters: {'period1': '2024-01-01 00:00:00-05:00', 'period2': '2024-10-03 00:00:00-04:00', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-04-18 01:32:21,900 - yfinance - DEBUG -    Entering get()
+2025-04-18 01:32:21,900 - yfinance - DEBUG -     Entering _make_request()
+2025-04-18 01:32:21,900 - yfinance - DEBUG - url=https://query2.finance.yahoo.com/v8/finance/chart/NVDA
+2025-04-18 01:32:21,900 - yfinance - DEBUG - params=frozendict.frozendict({'period1': 1704085200, 'period2': 1727928000, 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'})
+2025-04-18 01:32:21,900 - yfinance - DEBUG -      Entering _get_cookie_and_crumb()
+2025-04-18 01:32:21,900 - yfinance - DEBUG - cookie_mode = 'basic'
+2025-04-18 01:32:21,900 - yfinance - DEBUG -       Entering _get_cookie_and_crumb_basic()
+2025-04-18 01:32:21,902 - peewee - DEBUG - ('CREATE TABLE IF NOT EXISTS "_cookieschema" ("strategy" VARCHAR(255) NOT NULL PRIMARY KEY, "fetch_date" DATETIME NOT NULL, "cookie_bytes" BLOB NOT NULL) WITHOUT ROWID', [])
+2025-04-18 01:32:21,902 - peewee - DEBUG - ('SELECT "t1"."strategy", "t1"."fetch_date", "t1"."cookie_bytes" FROM "_cookieschema" AS "t1" WHERE ("t1"."strategy" = ?) LIMIT ? OFFSET ?', ['basic', 1, 0])
+2025-04-18 01:32:21,902 - yfinance - DEBUG - loaded persistent cookie
+2025-04-18 01:32:21,903 - yfinance - DEBUG - reusing cookie
+2025-04-18 01:32:21,905 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): query1.finance.yahoo.com:443
+2025-04-18 01:32:22,145 - urllib3.connectionpool - DEBUG - https://query1.finance.yahoo.com:443 "GET /v1/test/getcrumb HTTP/1.1" 200 11
+2025-04-18 01:32:22,146 - yfinance - DEBUG - crumb = 'Wysn6ELpKJM'
+2025-04-18 01:32:22,146 - yfinance - DEBUG -       Exiting _get_cookie_and_crumb_basic()
+2025-04-18 01:32:22,146 - yfinance - DEBUG -      Exiting _get_cookie_and_crumb()
+2025-04-18 01:32:22,147 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): query2.finance.yahoo.com:443
+2025-04-18 01:32:22,383 - urllib3.connectionpool - DEBUG - https://query2.finance.yahoo.com:443 "GET /v8/finance/chart/NVDA?period1=1704085200&period2=1727928000&interval=1d&includePrePost=False&events=div%2Csplits%2CcapitalGains&crumb=Wysn6ELpKJM HTTP/1.1" 200 None
+2025-04-18 01:32:22,416 - yfinance - DEBUG - response code=200
+2025-04-18 01:32:22,416 - yfinance - DEBUG -     Exiting _make_request()
+2025-04-18 01:32:22,416 - yfinance - DEBUG -    Exiting get()
+2025-04-18 01:32:22,419 - yfinance - DEBUG - NVDA: yfinance received OHLC data: 2024-01-02 14:30:00 -> 2024-10-02 13:30:00
+2025-04-18 01:32:22,421 - yfinance - DEBUG - NVDA: OHLC after cleaning: 2024-01-02 09:30:00-05:00 -> 2024-10-02 09:30:00-04:00
+2025-04-18 01:32:22,435 - yfinance - DEBUG - NVDA: OHLC after combining events: 2024-01-02 00:00:00-05:00 -> 2024-10-02 00:00:00-04:00
+2025-04-18 01:32:22,438 - yfinance - DEBUG - NVDA: yfinance returning OHLC: 2024-01-02 00:00:00-05:00 -> 2024-10-02 00:00:00-04:00
+2025-04-18 01:32:22,439 - yfinance - DEBUG -   Exiting history()
+2025-04-18 01:32:22,439 - yfinance - DEBUG -  Exiting history()
+2025-04-18 01:32:22,441 - yfinance - DEBUG - Exiting download()
+2025-04-18 01:32:22,457 - __main__ - INFO - Created indicator: rsi14 of type RSI
+2025-04-18 01:32:22,463 - __main__ - INFO - BUY ORDER CREATED - Size: 20
+2025-04-18 01:32:22,464 - __main__ - INFO - BUY EXECUTED, Price: 86.84, Cost: 1736.75, Comm: 1.74
+2025-04-18 01:32:22,465 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:32:22,466 - __main__ - INFO - SELL EXECUTED, Price: 94.88, Cost: 1563.07, Comm: 1.71
+2025-04-18 01:32:22,466 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:32:22,466 - __main__ - INFO - SELL EXECUTED, Price: 94.34, Cost: -1335.73, Comm: 1.70
+2025-04-18 01:32:22,466 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:32:22,467 - __main__ - INFO - SELL EXECUTED, Price: 93.57, Cost: -1684.23, Comm: 1.68
+2025-04-18 01:32:22,467 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:32:22,468 - __main__ - INFO - SELL EXECUTED, Price: 95.43, Cost: -1717.70, Comm: 1.72
+2025-04-18 01:32:22,468 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:32:22,468 - __main__ - INFO - SELL EXECUTED, Price: 101.99, Cost: -1835.90, Comm: 1.84
+2025-04-18 01:32:22,468 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:32:22,468 - __main__ - INFO - SELL EXECUTED, Price: 104.41, Cost: -1879.46, Comm: 1.88
+2025-04-18 01:32:22,468 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:32:22,469 - __main__ - INFO - SELL EXECUTED, Price: 110.21, Cost: -1983.74, Comm: 1.98
+2025-04-18 01:32:22,469 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:32:22,469 - __main__ - INFO - SELL EXECUTED, Price: 113.01, Cost: -2034.23, Comm: 2.03
+2025-04-18 01:32:22,469 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:32:22,469 - __main__ - INFO - SELL EXECUTED, Price: 114.61, Cost: -2063.02, Comm: 2.06
+2025-04-18 01:32:22,469 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:32:22,470 - __main__ - INFO - SELL EXECUTED, Price: 112.48, Cost: -2024.69, Comm: 2.02
+2025-04-18 01:32:22,470 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:32:22,470 - __main__ - INFO - SELL EXECUTED, Price: 113.58, Cost: -2044.51, Comm: 2.04
+2025-04-18 01:32:22,470 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:32:22,470 - __main__ - INFO - SELL EXECUTED, Price: 115.68, Cost: -2082.20, Comm: 2.08
+2025-04-18 01:32:22,471 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:32:22,471 - __main__ - INFO - SELL EXECUTED, Price: 118.33, Cost: -2129.98, Comm: 2.13
+2025-04-18 01:32:22,471 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:32:22,471 - __main__ - INFO - SELL EXECUTED, Price: 124.01, Cost: -2232.13, Comm: 2.23
+2025-04-18 01:32:22,471 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:32:22,471 - __main__ - INFO - SELL EXECUTED, Price: 119.73, Cost: -2155.15, Comm: 2.16
+2025-04-18 01:32:22,471 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:32:22,472 - __main__ - INFO - SELL EXECUTED, Price: 120.33, Cost: -2165.95, Comm: 2.17
+2025-04-18 01:32:22,472 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:32:22,472 - __main__ - INFO - SELL EXECUTED, Price: 121.74, Cost: -2191.32, Comm: 2.19
+2025-04-18 01:32:22,472 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:32:22,472 - __main__ - INFO - SELL EXECUTED, Price: 123.03, Cost: -2214.53, Comm: 2.21
+2025-04-18 01:32:22,472 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:32:22,473 - __main__ - INFO - SELL EXECUTED, Price: 129.36, Cost: -2328.45, Comm: 2.33
+2025-04-18 01:32:22,473 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:32:22,473 - __main__ - INFO - SELL EXECUTED, Price: 129.93, Cost: -2338.70, Comm: 2.34
+2025-04-18 01:32:22,473 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:32:22,473 - __main__ - INFO - SELL EXECUTED, Price: 132.96, Cost: -2393.23, Comm: 2.39
+2025-04-18 01:32:22,473 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:32:22,473 - __main__ - INFO - SELL EXECUTED, Price: 131.11, Cost: -2359.94, Comm: 2.36
+2025-04-18 01:32:22,473 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:32:22,474 - __main__ - INFO - SELL EXECUTED, Price: 139.77, Cost: -2515.78, Comm: 2.52
+2025-04-18 01:32:22,474 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:32:22,474 - __main__ - INFO - SELL EXECUTED, Price: 127.09, Cost: -2287.60, Comm: 2.29
+2025-04-18 01:32:22,474 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:32:22,474 - __main__ - INFO - SELL EXECUTED, Price: 123.21, Cost: -2217.77, Comm: 2.22
+2025-04-18 01:32:22,474 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:32:22,474 - __main__ - INFO - SELL EXECUTED, Price: 124.07, Cost: -2233.25, Comm: 2.23
+2025-04-18 01:32:22,475 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:32:22,475 - __main__ - INFO - SELL EXECUTED, Price: 127.35, Cost: -2292.27, Comm: 2.29
+2025-04-18 01:32:22,475 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:32:22,475 - __main__ - INFO - SELL EXECUTED, Price: 134.00, Cost: -2411.95, Comm: 2.41
+2025-04-18 01:32:22,475 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:32:22,475 - __main__ - INFO - SELL EXECUTED, Price: 135.72, Cost: -2442.90, Comm: 2.44
+2025-04-18 01:32:22,477 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:32:22,478 - __main__ - INFO - SELL EXECUTED, Price: 128.37, Cost: -2310.63, Comm: 2.31
+2025-04-18 01:32:22,478 - __main__ - INFO - SELL ORDER CREATED - Size: 18
+2025-04-18 01:32:22,478 - __main__ - INFO - SELL EXECUTED, Price: 129.99, Cost: -2339.78, Comm: 2.34
