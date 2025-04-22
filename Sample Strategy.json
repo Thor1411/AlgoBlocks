@@ -1,0 +1,48 @@
+{
+  "name": "kkk",
+  "parameters": {},
+  "indicators": [],
+  "rules": [
+    {
+      "type": "stop_loss",
+      "value": 20
+    },
+    {
+      "type": "take_profit",
+      "value": 20
+    },
+    {
+      "condition": {
+        "operator": "and",
+        "conditions": [
+          {
+            "operator": "CROSSOVER",
+            "left": {
+              "price": "close"
+            },
+            "right": {
+              "indicator": "sma20"
+            }
+          },
+          {
+            "operator": ">",
+            "left": {
+              "indicator": "rsi14"
+            },
+            "right": {
+              "value": 50
+            }
+          }
+        ]
+      },
+      "action": {
+        "type": "sell",
+        "value": 20
+      }
+    }
+  ],
+  "riskManagement": {
+    "stopLoss": "20",
+    "takeProfit": "20"
+  }
+}
