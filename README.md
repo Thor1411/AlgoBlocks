@@ -117,5 +117,5 @@ With AlgoBlocks, users can:
 
 Empower your trading journey with **AlgoBlocks**—because trading should be simple, effective, and accessible to everyone.
 
-##Video Demo
+###Video Demo
 https://github.com/user-attachments/assets/e972b1b3-f2e1-4d12-a53e-318f0273ed32
